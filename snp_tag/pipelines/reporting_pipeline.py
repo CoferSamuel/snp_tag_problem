@@ -469,6 +469,16 @@ def ejecutar_reportes_visualizacion(
         # Inicializa a cero la desviación estándar para la columna del promedio global de ranking.
         df_std_config['Average Ranking Overall'] = 0.0
 
+        # Componentes aislados (Medias)
+        df_mean_algo = df_final.groupby(['algorithm']).mean(numeric_only=True).reset_index()
+        df_mean_init = df_final.groupby(['init']).mean(numeric_only=True).reset_index()
+        df_mean_cross = df_final.groupby(['crossover']).mean(numeric_only=True).reset_index()
+
+        # Componentes aislados (Desviación estándar)
+        df_std_algo = df_final.groupby(['algorithm']).std(numeric_only=True).reset_index()
+        df_std_init = df_final.groupby(['init']).std(numeric_only=True).reset_index()
+        df_std_cross = df_final.groupby(['crossover']).std(numeric_only=True).reset_index()
+
         # Creación del DataFrame agregado 'resultados_agregados_{modo}.csv'
         df_agregado = pd.DataFrame()
         df_agregado['algorithm'] = df_mean_config['algorithm']
@@ -504,18 +514,28 @@ def ejecutar_reportes_visualizacion(
             logger.info("      • ⚠️  Impresión de rankings omitida por configuración.")
             
         # Mapeo estructurado para cada tipo de ranking
-        # Cada tupla contiene: (nombre_métrica, ¿ascendente?, flecha_consola, tipo_de_dataframe)
-        metricas_ranking = [] if ('rankings' not in cfg.postprocesamiento_activo and 'todas' not in cfg.postprocesamiento_activo) else [
-            ('Range', False, '↑', 'config'),
-            ('MinSum', True, '↓', 'config'),
-            ('SumMin', True, '↓', 'config'),
-            ('MaxToleranceRate', False, '↑', 'config'),
-            ('AvgToleranceRate', False, '↑', 'config'),
-            ('AvgHammingDistance', False, '↑', 'config'),
-            ('Hypervolume', False, '↑', 'config'),
-            ('IGD+', True, '↓', 'config'),
-            ('GD+', True, '↓', 'config')
+        # Cada tupla contiene: (nombre_métrica, ¿ascendente?, flecha_consola)
+        metricas_base = [
+            ('Range', False, '↑'),
+            ('MinSum', True, '↓'),
+            ('SumMin', True, '↓'),
+            ('MaxToleranceRate', False, '↑'),
+            ('AvgToleranceRate', False, '↑'),
+            ('AvgHammingDistance', False, '↑'),
+            ('Hypervolume', False, '↑'),
+            ('IGD+', True, '↓'),
+            ('GD+', True, '↓')
         ]
+        
+        metricas_ranking = []
+        if 'rankings' in cfg.postprocesamiento_activo or 'todas' in cfg.postprocesamiento_activo:
+            for metrica, asc, flecha in metricas_base:
+                metricas_ranking.extend([
+                    (metrica, asc, flecha, 'config'),
+                    (metrica, asc, flecha, 'algorithm'),
+                    (metrica, asc, flecha, 'init'),
+                    (metrica, asc, flecha, 'crossover')
+                ])
         
         for metrica, ascending, flecha, tipo in metricas_ranking:  # Itera sobre los rankings de métricas.
             if tipo == 'config':  # Si el tipo es configuración.
@@ -524,26 +544,47 @@ def ejecutar_reportes_visualizacion(
                 cols_grp = ['algorithm', 'init', 'crossover']  # Columnas de agrupación.
             elif tipo == 'algorithm':  # Si el tipo es algoritmo.
                 df_act = df_mean_algo  # Medias por algoritmo.
-                df_std_act = None  # No aplica desviación estándar.
+                df_std_act = df_std_algo  # Desviación estándar.
                 cols_grp = ['algorithm']  # Columna de agrupación.
             elif tipo == 'init':  # Si el tipo es inicialización.
                 df_act = df_mean_init  # Medias por inicialización.
-                df_std_act = None  # No aplica desviación.
+                df_std_act = df_std_init  # Desviación estándar.
                 cols_grp = ['init']  # Columna de agrupación.
             else: # crossover  # Si es crossover.
                 df_act = df_mean_cross  # Medias por operador de cruce.
-                df_std_act = None  # No aplica desviación.
+                df_std_act = df_std_cross  # Desviación estándar.
                 cols_grp = ['crossover']  # Columna de agrupación.
 
             if metrica in df_act.columns:  # Procesa si la métrica de interés está presente.
-                logger.info(f"      • \033[1m{metrica}\033[0m ({flecha})")  # Resalta la métrica y optimalidad en logs.
-                df_sorted = df_act.sort_values(by=metrica, ascending=ascending)  # Ordena el dataframe según optimalidad.
+                df_sorted = df_act.sort_values(by=metrica, ascending=ascending).copy()  # Ordena el dataframe según optimalidad.
                 
+                # Insertar la columna de desviación estándar si está disponible
+                if df_std_act is not None and metrica in df_std_act.columns:
+                    # Mapeo de desviación estándar alineado con las columnas de grupo
+                    df_sorted[f'{metrica}_std'] = df_sorted.apply(
+                        lambda r: df_std_act.loc[
+                            (df_std_act[cols_grp] == r[cols_grp]).all(axis=1), metrica
+                        ].values[0] if not df_std_act.loc[(df_std_act[cols_grp] == r[cols_grp]).all(axis=1)].empty else np.nan,
+                        axis=1
+                    )
+                    cols_csv = cols_grp + [metrica, f'{metrica}_std']
+                else:
+                    cols_csv = cols_grp + [metrica]
+
                 # Ruta del archivo CSV físico donde exportar el ranking.
-                ruta_csv = os.path.join(cfg.carpetas['rankings'], f"ranking_{metrica.replace(' ', '_')}_{cfg.modo_ejecucion}.csv")
+                if tipo == 'config':
+                    nombre_csv = f"ranking_{metrica.replace(' ', '_')}_{cfg.modo_ejecucion}.csv"
+                else:
+                    nombre_csv = f"ranking_{tipo}_{metrica.replace(' ', '_')}_{cfg.modo_ejecucion}.csv"
+                    
+                ruta_csv = os.path.join(cfg.carpetas['rankings'], nombre_csv)
                 # Escribe la tabla de clasificación ordenada al archivo físico CSV.
-                df_sorted[cols_grp + [metrica]].to_csv(ruta_csv, index=False)
+                df_sorted[cols_csv].to_csv(ruta_csv, index=False)
                 
+                if tipo != 'config':
+                    continue # Evitar imprimir en terminal el top 10 de los aisaldos (silencioso)
+                    
+                logger.info(f"      • \033[1m{metrica}\033[0m ({flecha})")  # Resalta la métrica y optimalidad en logs.
                 total = len(df_sorted)  # Número de elementos en el ranking.
                 
                 for idx, (_, row) in enumerate(df_sorted.head(10).iterrows(), 1):  # Recorre las 10 mejores configuraciones.

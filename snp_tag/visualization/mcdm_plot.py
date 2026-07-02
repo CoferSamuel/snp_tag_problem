@@ -120,7 +120,7 @@ def _graficar_scatter_mcdm(
     destacados: Dict[str, Tuple[np.ndarray, str, str, str]], 
     titulo_global: str,
     ruta_salida: str,
-    dpi: int = 300,
+    dpi: int = 100,
 ) -> None:
     """
     Genera un panel 2×2 resaltando las selecciones MCDM en las proyecciones del Pareto.
@@ -190,7 +190,7 @@ def _graficar_radar_pseudo_pesos(
     pesos_obj: np.ndarray,
     titulo: str,
     ruta_salida: str,
-    dpi: int = 300
+    dpi: int = 100
 ) -> None:
     """
     Genera un gráfico tipo radar (araña) comparando Pseudo-Pesos vs las expectativas.
@@ -250,7 +250,7 @@ def _graficar_radar_mcdm(
     destacados: Dict[str, Tuple[np.ndarray, str, str, str]],
     titulo: str,
     ruta_salida: str,
-    dpi: int = 300
+    dpi: int = 100
 ) -> None:
     """Genera un Radar plot superponiendo las soluciones MCDM destacadas."""
     etiquetas = _NOMBRES_OBJETIVOS
@@ -296,7 +296,7 @@ def _graficar_petal_mcdm(
     destacados: Dict[str, Tuple[np.ndarray, str, str, str]],
     titulo: str,
     ruta_salida: str,
-    dpi: int = 300
+    dpi: int = 100
 ) -> None:
     """Genera un diagrama de pétalos (Petal diagram) para las soluciones MCDM."""
     valid_destacados = {k: v for k, v in destacados.items() if len(v[0]) > 0}
@@ -359,7 +359,7 @@ def analizar_decision_mcdm(
     modo_transformacion_objetivos: str = 'neg',
     modo_evaluacion: str = 'absoluta',
     pesos_usuario: Optional[np.ndarray] = None,
-    dpi: int = 300,
+    dpi: int = 100,
     emitir_log: bool = True,
 ) -> List[Tuple[str, str]]:
     """

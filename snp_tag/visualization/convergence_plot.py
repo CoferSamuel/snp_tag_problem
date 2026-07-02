@@ -29,7 +29,7 @@ from snp_tag.utils.terminal import imprimir_grafico_guardado
 
 def graficar_evolucion_generacional(df_gen: pd.DataFrame, dir_salida: Optional[str] = None, 
                                    etiqueta_modo: Optional[str] = None, 
-                                   figsize: Tuple[int, int] = (16, 12), dpi: int = 300,
+                                   figsize: Tuple[int, int] = (16, 12), dpi: int = 100,
                                    emitir_log: bool = True) -> List[Tuple[str, str]]:
     """
     Genera una figura de convergencia por cada algoritmo, con subgráficas (3x3)
@@ -196,7 +196,7 @@ def graficar_evolucion_generacional(df_gen: pd.DataFrame, dir_salida: Optional[s
 
 def graficar_convergencia_hipervolumen(df_gen: pd.DataFrame, dir_salida: Optional[str] = None, 
                                      etiqueta_modo: Optional[str] = None, 
-                                     figsize: Tuple[int, int] = (10, 6), dpi: int = 300,
+                                     figsize: Tuple[int, int] = (10, 6), dpi: int = 100,
                                      emitir_log: bool = True) -> List[Tuple[str, str]]:
     """
     Genera una figura individual mostrando únicamente la evolución del Hipervolumen 

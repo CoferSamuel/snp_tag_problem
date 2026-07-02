@@ -1,0 +1,8 @@
+Group,Mean,Equivalence_Lines
+AGEMOEA2,0.26601743253297083,"['Equivalence_Line_1: AGEMOEA2 to SMSEMOA', 'Equivalence_Line_2: UNSGA3 to SPEA2']"
+SMSEMOA,0.2658248928104145,"['Equivalence_Line_1: AGEMOEA2 to SMSEMOA', 'Equivalence_Line_2: UNSGA3 to SPEA2']"
+UNSGA3,0.258226151685507,"['Equivalence_Line_1: AGEMOEA2 to SMSEMOA', 'Equivalence_Line_2: UNSGA3 to SPEA2']"
+NSGA3,0.25821699334059806,"['Equivalence_Line_1: AGEMOEA2 to SMSEMOA', 'Equivalence_Line_2: UNSGA3 to SPEA2']"
+SPEA2,0.2552204985461423,"['Equivalence_Line_1: AGEMOEA2 to SMSEMOA', 'Equivalence_Line_2: UNSGA3 to SPEA2']"
+NSGA2,0.23992901202843842,"['Equivalence_Line_1: AGEMOEA2 to SMSEMOA', 'Equivalence_Line_2: UNSGA3 to SPEA2']"
+RVEA,0.22002654334982086,"['Equivalence_Line_1: AGEMOEA2 to SMSEMOA', 'Equivalence_Line_2: UNSGA3 to SPEA2']"

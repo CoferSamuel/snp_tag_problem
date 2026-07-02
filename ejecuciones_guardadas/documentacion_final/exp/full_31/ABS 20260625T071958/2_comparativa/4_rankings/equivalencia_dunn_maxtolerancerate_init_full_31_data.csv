@@ -1,0 +1,4 @@
+Group,Mean
+greedy_multi,0.2698378432265569
+random_dense,0.23834403674931612
+greedy_ting,0.23086903256494057

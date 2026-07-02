@@ -131,7 +131,7 @@ def graficar_frentes_pareto(df_datos: pd.DataFrame, nombre_algoritmo: str,
                             nombre_init: Optional[str] = None,
                             carpetas: Optional[Dict] = None,
                             etiqueta_modo: Optional[str] = None,
-                            dpi: int = 300,
+                            dpi: int = 100,
                             emitir_log: bool = True,
                             limites_ejes: Optional[Dict[str, Tuple[float, float]]] = None,
                             modo_transformacion_objetivos: str = 'neg',
@@ -265,7 +265,7 @@ def graficar_frentes_pareto(df_datos: pd.DataFrame, nombre_algoritmo: str,
     return artefactos
 
 def graficar_correlacion_objetivos_pareto(df_total: pd.DataFrame, carpetas: Dict[str, str], etiqueta_modo: str,
-                                          dpi: int = 300, emitir_log: bool = True,
+                                          dpi: int = 100, emitir_log: bool = True,
                                           modo_transformacion_objetivos: str = 'neg',
                                           modo_evaluacion: str = 'absoluta') -> List[Tuple[str, str]]:
     """
@@ -325,7 +325,7 @@ def graficar_correlacion_objetivos_pareto(df_total: pd.DataFrame, carpetas: Dict
     return [(ruta, "Correlación objetivos Pareto (Valores Reales)")]
 
 def graficar_coordenadas_paralelas_pareto(df_total: pd.DataFrame, seed: int, carpetas: Dict[str, str], etiqueta_modo: str,
-                                          dpi: int = 300, emitir_log: bool = True,
+                                          dpi: int = 100, emitir_log: bool = True,
                                           modo_transformacion_objetivos: str = 'neg',
                                           modo_evaluacion: str = 'absoluta') -> List[Tuple[str, str]]:
     """
@@ -455,7 +455,7 @@ def graficar_frentes_pareto_agregados(df_datos: pd.DataFrame, titulo_gen: str,
                                      hue_col: str = 'init',
                                      style_col: Optional[str] = None,
                                      carpetas: Optional[Dict[str, str]] = None,
-                                     dpi: int = 300,
+                                     dpi: int = 100,
                                      emitir_log: bool = True,
                                      limites_ejes: Optional[Dict[str, Tuple[float, float]]] = None,
                                      modo_transformacion_objetivos: str = 'neg',

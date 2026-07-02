@@ -39,6 +39,7 @@ from snp_tag.visualization.fronts_plot import (
     graficar_frentes_pareto_agregados)  # Funciones para graficar los frentes de Pareto.
 from snp_tag.visualization.mcdm_plot import analizar_decision_mcdm  # Función del módulo de toma de decisiones multi-criterio.
 from snp_tag.visualization.stats_plot import (graficar_analisis_kruskal_dunn,
+                                              graficar_diagrama_equivalencia_grid,
                                               graficar_boxplot_metricas,
                                               graficar_media_std_metricas,
                                               graficar_violin_metricas)  # Gráficas estadísticas y tests.
@@ -625,10 +626,24 @@ def ejecutar_reportes_visualizacion(
             imprimir_subseccion("Validación Estadística (Kruskal-Wallis y Dunn)", icono="🔬")
             graficar_hm = 'estadistica' in cfg.postprocesamiento_activo or 'todas' in cfg.postprocesamiento_activo
             metricas_est = ['Range', 'MinSum', 'SumMin', 'MaxToleranceRate', 'AvgToleranceRate', 'AvgHammingDistance', 'Hypervolume', 'IGD+', 'GD+']
+            
+            # Crear subcarpetas para diagramas de equivalencia
+            dir_equivalencia = os.path.join(cfg.carpetas['rankings'], "diagramas_equivalencia")
+            dir_equivalencia_grids = os.path.join(dir_equivalencia, "agregados")
+            os.makedirs(dir_equivalencia, exist_ok=True)
+            os.makedirs(dir_equivalencia_grids, exist_ok=True)
+            
             for metrica in metricas_est:
                 if metrica in df_final.columns:
                     for col_group in ['config', 'algorithm', 'init', 'crossover']:
-                        graficar_analisis_kruskal_dunn(df_final, cfg.carpetas['rankings'], metrica, cfg.modo_ejecucion, col_group=col_group, indent=9, graficar=graficar_hm)
+                        graficar_analisis_kruskal_dunn(df_final, cfg.carpetas['rankings'], metrica, cfg.modo_ejecucion, col_group=col_group, indent=9, graficar=graficar_hm, dir_equivalencia=dir_equivalencia, dpi=cfg.report_plot_dpi)
+            
+            # Generar los grids que agrupan todas las métricas por algoritmo, init y cruce
+            metricas_disponibles = [m for m in metricas_est if m in df_final.columns]
+            if metricas_disponibles:
+                for col_group, titulo in zip(['algorithm', 'init', 'crossover'], ['Algoritmo', 'Inicialización', 'Cruce']):
+                    graficar_diagrama_equivalencia_grid(df_final, dir_equivalencia_grids, metricas_disponibles, cfg.modo_ejecucion, col_group=col_group, titulo=titulo, dpi=cfg.report_plot_dpi)
+
 
     if 'mcdm' in cfg.postprocesamiento_activo:  # Procesa la sección MCDM si está activa en la configuración.
         imprimir_subseccion("Análisis de Decisión Multi-Criterio (MCDM)", icono="🎯")  # Encabezado en terminal.

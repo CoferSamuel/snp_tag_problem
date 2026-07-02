@@ -29,10 +29,8 @@ from snp_tag.utils.terminal import (imprimir_grafico_guardado,
                                     imprimir_subseccion)
 from snp_tag.constants import HIGHER_IS_BETTER_METRICS, METRICS_DISPLAY_NAMES
 
-def graficar_diagrama_equivalencia(means_series: pd.Series, p_dunn: pd.DataFrame, metrica_objetivo: str, dir_salida: str, etiqueta_modo: str, col_group: str, titulo: str, dpi: int = 100) -> None:
-    """
-    Genera un diagrama de barras de equivalencia estadística basado en los p-valores del post-hoc de Dunn.
-    """
+def _calcular_intervalos_dunn(means_series: pd.Series, p_dunn: pd.DataFrame, metrica_objetivo: str) -> tuple:
+    """Calcula los grupos ordenados, medias e intervalos maximales de equivalencia."""
     is_higher_better = metrica_objetivo in HIGHER_IS_BETTER_METRICS
     sorted_groups = means_series.sort_values(ascending=not is_higher_better)
     groups = sorted_groups.index.tolist()
@@ -43,7 +41,6 @@ def graficar_diagrama_equivalencia(means_series: pd.Series, p_dunn: pd.DataFrame
     for i in range(n):
         for j in range(n-1, i, -1):
             g1, g2 = groups[i], groups[j]
-            # Extraer p-valor de forma segura de la matriz
             if g1 in p_dunn.index and g2 in p_dunn.columns:
                 p = p_dunn.loc[g1, g2]
             elif g2 in p_dunn.index and g1 in p_dunn.columns:
@@ -53,7 +50,7 @@ def graficar_diagrama_equivalencia(means_series: pd.Series, p_dunn: pd.DataFrame
                 
             if p >= 0.05:
                 intervals.append((i, j))
-                break # longest from i
+                break
                 
     maximal_intervals = []
     for i, j in intervals:
@@ -65,65 +62,75 @@ def graficar_diagrama_equivalencia(means_series: pd.Series, p_dunn: pd.DataFrame
         if is_maximal:
             maximal_intervals.append((i, j))
             
-    # Ajuste de tamaño dinámico
-    fig, ax = plt.subplots(figsize=(max(8, len(maximal_intervals)*0.8 + 6), max(4, n*0.4 + 1.5)))
-    
-    # Coordenadas Y (espaciadas uniformemente, el mejor arriba)
+    return groups, means, maximal_intervals
+
+def dibujar_diagrama_equivalencia_ax(ax: plt.Axes, groups: list, means: list, maximal_intervals: list, metrica_objetivo: str, titulo: str, incluir_titulo: bool = True) -> list:
+    """
+    Dibuja un diagrama de barras de equivalencia estadística sobre un eje específico usando intervalos precalculados.
+    Devuelve los datos de cliques para posible exportación.
+    """
+    n = len(groups)
+            
     y_coords = np.arange(n, 0, -1)
     
-    # Puntos de dispersión sobre el eje X=0
     ax.scatter([0]*n, y_coords, color='#C41E3A', zorder=5, label='Valor medio', 
                edgecolors='white', linewidths=1.5, s=100)
     
-    # Etiquetas en formato de doble columna
     for idx, (g, m, y) in enumerate(zip(groups, means, y_coords)):
-        # Valor numérico a distancia física fija del punto (ej. 15 puntos a la izquierda)
         ax.annotate(f"{m:.4f}", xy=(0, y), xytext=(-15, 0), textcoords="offset points", 
                     ha='right', va='center', fontsize=10, color='#7F8C8D')
-        # Nombre del algoritmo a distancia física fija del punto (ej. 65 puntos a la izquierda)
         ax.annotate(g, xy=(0, y), xytext=(-65, 0), textcoords="offset points", 
                     ha='right', va='center', fontsize=10, color='#2C3E50', fontweight='bold')
         
     cliques_data = []
-    # Líneas verticales de equivalencia
     for line_idx, (i, j) in enumerate(maximal_intervals):
-        x_line = line_idx + 1 # Cada línea se dibuja un paso más a la derecha
+        x_line = line_idx + 1
         y_start = y_coords[i]
         y_end = y_coords[j]
-        # Trazo principal grueso
         label = 'Equivalencia estadística (p ≥ 0.05)' if line_idx == 0 else None
         ax.plot([x_line, x_line], [y_start, y_end], color='#4682B4', linewidth=4, solid_capstyle='round', label=label)
         
-        # Conectores horizontales desde los puntos hasta la línea
         for k in range(i, j+1):
             ax.plot([0, x_line], [y_coords[k], y_coords[k]], color='#4682B4', linestyle='-', linewidth=1.5, alpha=0.3)
             
         cliques_data.append(f"Equivalence_Line_{line_idx+1}: {groups[i]} to {groups[j]}")
 
     ax.set_ylim(0.5, n + 0.5)
-    # Calculamos un límite izquierdo dinámico y simétrico para forzar a plt.title a centrarse en el ancho total
     right_limit = max(1, len(maximal_intervals)) + 0.5
     
-    # Añadimos textos invisibles a la derecha reflejando las columnas de la izquierda
-    # para que bbox_inches='tight' asigne el mismo ancho y centre el título.
-    # Usamos offset points también para simetría exacta
-    max_g_str = max(groups, key=len)
-    ax.annotate("0.0000", xy=(right_limit, y_coords[0]), xytext=(15, 0), textcoords="offset points", 
+    max_g_str = max(groups, key=len) if groups else ""
+    ax.annotate("0.0000", xy=(right_limit, y_coords[0] if len(y_coords) > 0 else 1), xytext=(15, 0), textcoords="offset points", 
                 ha='left', va='center', fontsize=10, alpha=0.0)
-    ax.annotate(max_g_str, xy=(right_limit, y_coords[0]), xytext=(65, 0), textcoords="offset points", 
+    ax.annotate(max_g_str, xy=(right_limit, y_coords[0] if len(y_coords) > 0 else 1), xytext=(65, 0), textcoords="offset points", 
                 ha='left', va='center', fontsize=10, fontweight='bold', alpha=0.0)
     
     ax.set_xlim(left=-0.2, right=right_limit)
 
-    # Título y Leyenda
+    if incluir_titulo:
+        metrica_mostrar = METRICS_DISPLAY_NAMES.get(metrica_objetivo, metrica_objetivo)
+        ax.set_title(f'{metrica_mostrar}', pad=10, fontweight='bold', color='#2C3E50')
+    
+    ax.axis('off')
+    return cliques_data
+
+
+def graficar_diagrama_equivalencia(means_series: pd.Series, p_dunn: pd.DataFrame, metrica_objetivo: str, dir_salida: str, etiqueta_modo: str, col_group: str, titulo: str, dpi: int = 100) -> None:
+    """
+    Genera un diagrama de barras de equivalencia estadística individual basado en los p-valores del post-hoc de Dunn.
+    """
+    n = len(means_series)
+    groups, means, maximal_intervals = _calcular_intervalos_dunn(means_series, p_dunn, metrica_objetivo)
+    
+    fig, ax = plt.subplots(figsize=(max(8, len(maximal_intervals)*0.8 + 6), max(4, n*0.4 + 1.5)))
+    
+    cliques_data = dibujar_diagrama_equivalencia_ax(ax, groups, means, maximal_intervals, metrica_objetivo, titulo, incluir_titulo=False)
+    
     metrica_mostrar = METRICS_DISPLAY_NAMES.get(metrica_objetivo, metrica_objetivo)
-    plt.title(f'Ranking y Equivalencia Estadística de Dunn\n{metrica_mostrar} | {titulo}', pad=20, fontweight='bold', color='#2C3E50')
+    plt.suptitle(f'Ranking y Equivalencia Estadística de Dunn\n{metrica_mostrar} | {titulo}', y=1.05, fontweight='bold', color='#2C3E50')
     fig.legend(title='Leyenda', title_fontsize='small', loc='lower center', 
                bbox_to_anchor=(0.5, -0.05), ncol=2, frameon=True, fontsize='small',
                facecolor='#f8f9fa', edgecolor='#cccccc')
     
-    ax.axis('off')
-    # tight_layout puede ignorar la leyenda de la figura, le damos algo de margen abajo
     plt.tight_layout(rect=[0, 0.05, 1, 1])
     
     ruta_cd = os.path.join(dir_salida, f"equivalencia_dunn_{metrica_objetivo.lower()}_{col_group}_{etiqueta_modo}.png")
@@ -139,6 +146,68 @@ def graficar_diagrama_equivalencia(means_series: pd.Series, p_dunn: pd.DataFrame
     print(f"{espacios}    ", end="")
     imprimir_grafico_guardado(ruta_cd, f"Diagrama de Equivalencias")
     plt.close()
+
+def graficar_diagrama_equivalencia_grid(df_runs: pd.DataFrame, dir_salida: str, metricas: list, etiqueta_modo: str, col_group: str, titulo: str, dpi: int = 100) -> None:
+    """
+    Genera un grid (cuadrícula) con todos los diagramas de equivalencia de Dunn para un col_group.
+    """
+    df_plot = df_runs.copy()
+    if 'config' not in df_plot.columns:
+        df_plot['config'] = df_plot['algorithm'] + '-' + df_plot['init'] + '-' + df_plot['crossover']
+    
+    n_metricas = len(metricas)
+    if n_metricas == 0:
+        return
+        
+    cols = min(3, n_metricas)
+    rows = (n_metricas + cols - 1) // cols
+    
+    fig, axes = plt.subplots(rows, cols, figsize=(7 * cols, 4 * rows))
+    if n_metricas == 1:
+        axes = np.array([axes])
+    axes = axes.flatten()
+    
+    # Para la leyenda global
+    handles_added = False
+    
+    for idx, metrica in enumerate(metricas):
+        ax = axes[idx]
+        stat, p_val, p_dunn = compute_kruskal_dunn(df_plot, metrica, col_group)
+        if p_dunn is None:
+            ax.axis('off')
+            metrica_mostrar = METRICS_DISPLAY_NAMES.get(metrica, metrica)
+            ax.set_title(f'{metrica_mostrar}', pad=10, fontweight='bold', color='#2C3E50')
+            ax.text(0.5, 0.5, 'Kruskal-Wallis omitido', ha='center', va='center', color='gray')
+            continue
+            
+        means_series = df_plot.groupby(col_group)[metrica].mean()
+        groups, means, maximal_intervals = _calcular_intervalos_dunn(means_series, p_dunn, metrica)
+        dibujar_diagrama_equivalencia_ax(ax, groups, means, maximal_intervals, metrica, titulo)
+        
+        if not handles_added and ax.get_legend_handles_labels()[0]:
+            handles, labels = ax.get_legend_handles_labels()
+            handles_added = True
+            
+    # Ocultar ejes vacíos si los hay
+    for idx in range(n_metricas, len(axes)):
+        axes[idx].axis('off')
+        
+    plt.suptitle(f'Ranking y Equivalencia Estadística de Dunn | {titulo}', fontsize=20, fontweight='bold', color='#2C3E50', y=1.02)
+    
+    if handles_added:
+        fig.legend(handles, labels, title='Leyenda', title_fontsize='large', loc='lower center', 
+                   bbox_to_anchor=(0.5, -0.05), ncol=2, frameon=True, fontsize='medium',
+                   facecolor='#f8f9fa', edgecolor='#cccccc')
+                   
+    plt.tight_layout()
+    
+    ruta_cd = os.path.join(dir_salida, f"equivalencia_dunn_grid_{col_group}_{etiqueta_modo}.png")
+    plt.savefig(ruta_cd, dpi=dpi, bbox_inches='tight')
+    plt.close()
+    
+    espacios = " " * 9
+    print(f"{espacios}    ", end="")
+    imprimir_grafico_guardado(ruta_cd, f"Grid Diagrama Equivalencias ({titulo})")
 
 
 def graficar_rendimiento_tiempo(df_runs: pd.DataFrame, dir_salida: str, etiqueta_modo: str, dpi: int = 100) -> None:
@@ -390,7 +459,7 @@ def graficar_boxplot_metricas(df_runs: pd.DataFrame, dir_salida: str, etiqueta_m
     return artefactos
 
 
-def graficar_analisis_kruskal_dunn(df_runs: pd.DataFrame, dir_salida: str, metrica_objetivo: str, etiqueta_modo: str, col_group: str = 'config', dpi: int = 100, indent: int = 9, graficar: bool = True) -> None:
+def graficar_analisis_kruskal_dunn(df_runs: pd.DataFrame, dir_salida: str, metrica_objetivo: str, etiqueta_modo: str, col_group: str = 'config', dpi: int = 100, indent: int = 9, graficar: bool = True, dir_equivalencia: str = None) -> None:
     """
     Evalúa contrastes no paramétricos multivariables y exporta un heatmap de los p-values.
 
@@ -470,7 +539,8 @@ def graficar_analisis_kruskal_dunn(df_runs: pd.DataFrame, dir_salida: str, metri
         
         # Generar Diagrama de Equivalencia (CD)
         means_series = df_plot.groupby(col_group)[metrica_objetivo].mean()
-        graficar_diagrama_equivalencia(means_series, p_dunn, metrica_objetivo, dir_salida, etiqueta_modo, col_group, titulo, dpi)
+        dir_eq = dir_equivalencia if dir_equivalencia else dir_salida
+        graficar_diagrama_equivalencia(means_series, p_dunn, metrica_objetivo, dir_eq, etiqueta_modo, col_group, titulo, dpi)
 
 
 

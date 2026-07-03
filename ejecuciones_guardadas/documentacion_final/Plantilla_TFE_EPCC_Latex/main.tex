@@ -1,8 +1,8 @@
+%\PassOptionsToPackage{draft}{graphicx}
 \documentclass[minitoc, hidelinks, headlogo, framedcover]{tfeEPCC}
 \usepackage[spanish, es-tabla]{babel} % Comentar si se va a realizar en inglés
-\usepackage{parskip} % Quitar comentario si se quieren distinguir los párrafos con saltos y quitar las sangrías
-% TODO QUITAR COMENTARIO
-\usepackage{lipsum} % Este paquete es para poner texto genérico en los capítulos, quitar cuando ya se hayan redactado
+% \usepackage{parskip} % Quitar comentario si se quieren distinguir los párrafos con saltos y quitar las sangrías
+
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \renewcommand{\algorithmicrequire}{\textbf{Entrada:}}
@@ -10,6 +10,7 @@
 \usepackage{tikz}
 \usepackage{longtable}
 \usepackage{booktabs}
+\usepackage{subcaption}  % subfigures en el anexo de matrices de significancia
 \usetikzlibrary{positioning, matrix, arrows.meta, babel}
 
 
@@ -46,14 +47,31 @@
 % Dedicatorias del trabajo, pueden ser en español o inglés dependiendo de lo que se considere más apropiado
 
 \chapter*{Resumen}
-EL RESUMEN EN ESPAÑOL
+
+La selección de etiquetas SNP (\textit{Single Nucleotide Polymorphism}) consiste en identificar el subconjunto mínimo de variantes genéticas capaz de representar la variación alélica de una población. Se trata de un problema de optimización combinatoria de elevada complejidad computacional, con un espacio de búsqueda del orden de $2^{772}$ posibles soluciones para el conjunto de datos empleado en este estudio, derivado del trabajo de Hinds \textit{et al.}
+
+En este trabajo se plantea un estudio comparativo de siete algoritmos evolutivos (NSGA-II, AGE-MOEA-II, NSGA-III, U-NSGA-III, SPEA2, SMS-EMOA y RVEA) implementados sobre el marco de trabajo \texttt{pymoo}. Los factores de variación evaluados abarcan tres estrategias de inicialización (\textit{Greedy Ting}, \textit{Random Dense} y \textit{Greedy Multi}) y cuatro operadores de cruce (UX, HUX, 2P y 1P), lo que da lugar a un total de 84 configuraciones distintas, cada una ejecutada con 31 réplicas independientes. Los algoritmos se evalúan bajo dos formulaciones de las funciones objetivos del problema: una formulación absoluta, propuesta en este trabajo, y una formulación proporcional, adaptada de la literatura de referencia.
+
+Se analizan nueve métricas de rendimiento (HV, IGD+, GD+, Rango, MínSuma, SumaMín, Tmed, Tmáx y Hmed) mediante el contraste estadístico de Kruskal-Wallis seguido del test post-hoc de Dunn-Holm. Este análisis produce un conjunto de estratos de equivalencia estadística que permiten comparar el efecto de cada factor de variación sobre la calidad del frente de Pareto obtenido.
+
+Los resultados muestran que la inicialización es el factor con mayor influencia sobre el rendimiento global, explicando el $64{,}46\%$ de la varianza total frente al $16{,}67\%$ del algoritmo base. Las estrategias \textit{Greedy Ting} y \textit{Random Dense} lideran de forma consistente los primeros estratos estadísticos, mientras que \textit{Greedy Multi} queda relegada. En cuanto a los operadores de cruce, su impacto global es residual ($4{,}51\%$), aunque UX y HUX ocupan el primer estrato de rendimiento y son intercambiables en la práctica. Respecto a los algoritmos, NSGA-II domina en el experimento absoluto, mientras que AGE-MOEA-II emerge como el algoritmo más competitivo en el experimento proporcional. RVEA obtiene consistentemente el rendimiento más bajo de todos los algoritmos evaluados.
+
+Finalmente, se contrasta el trabajo con el estudio de referencia de Moqa \textit{et al.}, observándose discrepancias en el rendimiento de los algoritmos y en el papel de la inicialización, cuya causa exacta no puede determinarse sin acceso al código fuente original de dicho estudio.
 
 \noindent\textbf{Palabras clave}: \printkeywords.
 
 \chapter*{Abstract}
-EL RESUMEN EN INGLÉS
+Single Nucleotide Polymorphism (SNP) tag selection consists of identifying the minimum subset of genetic variants capable of representing the allelic variation of a population. It is a combinatorial optimization problem of high computational complexity, with a search space on the order of $2^{772}$ possible solutions for the dataset used in this study, derived from the work of Hinds \textit{et al.}
 
-\noindent\textbf{Keywords}: Most important or descriptive words, separated by commas.
+This work presents a comparative study of seven evolutionary algorithms (NSGA-II, AGE-MOEA-II, NSGA-III, U-NSGA-III, SPEA2, SMS-EMOA, and RVEA) implemented on the \texttt{pymoo} framework. The evaluated variation factors encompass three initialization strategies (\textit{Greedy Ting}, \textit{Random Dense}, and \textit{Greedy Multi}) and four crossover operators (UX, HUX, 2P, and 1P), resulting in a total of 84 distinct configurations, each executed with 31 independent replicas. The algorithms are evaluated under two objective function formulations of the problem: an absolute formulation, proposed in this work, and a proportional formulation, adapted from the reference literature.
+
+Nine performance metrics (HV, IGD+, GD+, Range, MinSum, SumMin, AvgT, MaxT, and AvgHD) are analyzed using the Kruskal-Wallis statistical contrast followed by the Dunn-Holm post-hoc test. This analysis produces a set of statistical equivalence strata that allow comparing the effect of each variation factor on the quality of the obtained Pareto front.
+
+The results show that initialization is the factor with the greatest influence on overall performance, explaining $64.46\%$ of the total variance compared to $16.67\%$ for the base algorithm. The \textit{Greedy Ting} and \textit{Random Dense} strategies consistently lead the first statistical strata, while \textit{Greedy Multi} is relegated. Regarding crossover operators, their overall impact is residual ($4.51\%$), although UX and HUX occupy the first performance stratum and are practically interchangeable. Concerning the algorithms, NSGA-II dominates in the absolute experiment, whereas AGE-MOEA-II emerges as the most competitive algorithm in the proportional experiment. RVEA consistently obtains the lowest performance of all the evaluated algorithms.
+
+Finally, the work is contrasted with the reference study by Moqa \textit{et al.}, observing discrepancies in algorithm performance and the role of initialization, the exact cause of which cannot be determined without access to the original source code of said study.
+
+\noindent\textbf{Keywords}: SNP tag selection, Evolutionary Algorithms, Many-Objective Optimization, PyMoo.
 
 % Índices con enlaces de las secciones, tablas y figuras
 \newpage

@@ -9,116 +9,120 @@ En esta sección se presentan y discuten los resultados obtenidos en el primer e
 
 En esta subsección se expone el análisis visual del frente de Pareto agregado para cada algoritmo evaluado. 
 
-Como aclaración inicial, debe señalarse la ausencia del algoritmo MOEA/D en los resultados. Aunque este algoritmo basado en descomposición fue contemplado en el diseño experimental, la implementación interna de la librería \texttt{pymoo} \cite{pymoo} carece de soporte nativo para el manejo de restricciones durante la ejecución de su versión base. Si bien existen variantes en la literatura científica que dotan a MOEA/D de mecanismos para gestionar este tipo de espacios \cite{jan2010moea}, la implementación oficial del marco de trabajo utilizado resulta incompatible con la inecuación matemática ($G(X) \le 0$) impuesta para garantizar la factibilidad biológica del problema de selección de etiquetas SNP \cite{bafna2003haplotypes}. Por consiguiente, este algoritmo debió ser excluido de las simulaciones.
+Como aclaración inicial, debe señalarse la ausencia del algoritmo MOEA/D en los resultados. Aunque este algoritmo basado en descomposición fue contemplado en el diseño experimental, la implementación interna de la librería \texttt{pymoo} \cite{pymoo} carece de soporte nativo para el manejo de restricciones durante la ejecución de su versión base. Si bien existen variantes en la literatura científica que dotan a MOEA/D de mecanismos para gestionar este tipo de espacios \cite{jan2010moea}, la implementación oficial del marco de optimización utilizado resulta incompatible con la inecuación matemática ($G(X) \le 0$) impuesta para garantizar la factibilidad biológica del problema de selección de etiquetas SNP \cite{bafna2003haplotypes}. Por consiguiente, este algoritmo debió ser excluido de las simulaciones.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_nsga2_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_nsga2_full_31.png}
     \caption[Frente de Pareto agregado: NSGA-II]{Frente de Pareto agregado generado por el algoritmo NSGA-II. Tamaño de la población del frente: 2637 soluciones.}
     \label{fig:pareto_nsga2}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_spea2_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_spea2_full_31.png}
     \caption[Frente de Pareto agregado: SPEA2]{Frente de Pareto agregado generado por el algoritmo SPEA2. Tamaño de la población del frente: 2640 soluciones.}
     \label{fig:pareto_spea2}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_nsga3_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_nsga3_full_31.png}
     \caption[Frente de Pareto agregado: NSGA-III]{Frente de Pareto agregado generado por el algoritmo NSGA-III. Tamaño de la población del frente: 308 soluciones.}
     \label{fig:pareto_nsga3}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_unsga3_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_unsga3_full_31.png}
     \caption[Frente de Pareto agregado: U-NSGA-III]{Frente de Pareto agregado generado por el algoritmo U-NSGA-III. Tamaño de la población del frente: 303 soluciones.}
     \label{fig:pareto_unsga3}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_rvea_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_rvea_full_31.png}
     \caption[Frente de Pareto agregado: RVEA]{Frente de Pareto agregado generado por el algoritmo RVEA. Tamaño de la población del frente: 292 soluciones.}
     \label{fig:pareto_rvea}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_smsemoa_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_smsemoa_full_31.png}
     \caption[Frente de Pareto agregado: SMS-EMOA]{Frente de Pareto agregado generado por el algoritmo SMS-EMOA. Tamaño de la población del frente: 2359 soluciones.}
     \label{fig:pareto_smsemoa}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_agemoea2_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_agemoea2_full_31.png}
     \caption[Frente de Pareto agregado: AGE-MOEA-II]{Frente de Pareto agregado generado por el algoritmo AGE-MOEA-II. Tamaño de la población del frente: 2640 soluciones.}
     \label{fig:pareto_agemoea2}
 \end{figure}
 
-El análisis de los frentes de Pareto agregados revela una clara jerarquía en el impacto de los distintos componentes sobre el espacio de soluciones del problema de selección de etiquetas SNP.
+El análisis de los frentes de Pareto agregados revela una jerarquía en el impacto de los distintos componentes sobre el espacio de soluciones del problema de selección de etiquetas SNP.
 
-En primer lugar, se observa que las estrategias de inicialización poblacional determinan la región del espacio objetivo hacia la que converge cada frente de manera predominante, evidenciando una correlación directa entre los cuatro objetivos matemáticos evaluados. La estrategia \textit{greedy\_multi} concentra las soluciones en la zona de máxima compacidad (generando soluciones con un número reducido de ~30 SNP de media), aunque a costa de minimizar simultáneamente los niveles del resto de objetivos (de media): la tolerancia se desploma a ~6 fallos, la disimilitud a ~15 y el balance a ~10. Esta configuración restringe la diversidad de la búsqueda y aproxima a los individuos al límite estricto de la factibilidad biológica ($f_2 = 1$). Por el contrario, la inicialización \textit{random\_dense} orienta la búsqueda hacia el extremo opuesto del hiperespacio, hallando soluciones con valores medios muy elevados en tolerancia (~73), disimilitud (~133) y balance (~446, valor subóptimo), aumentando también la compacidad (requiriendo la selección de una cantidad excesiva de ~345 SNP). Finalmente, la estrategia \textit{greedy\_ting} actúa como un punto de compromiso, compensando el rendimiento conjunto en los cuatro objetivos matemáticos (compacidad de ~232 SNP, tolerancia de ~44, disimilitud de ~89 y balance de ~260) y permitiendo explorar la zona central del frente de Pareto.
+En primer lugar, se observa que las estrategias de inicialización poblacional determinan la región del espacio objetivo hacia la que converge cada frente de manera predominante, evidenciando una correlación directa entre los cuatro objetivos matemáticos evaluados. La estrategia \textit{greedy\_multi} concentra las soluciones en la zona de máxima compacidad (generando soluciones con un número reducido de ~30 SNP de media), aunque a costa de minimizar simultáneamente los niveles del resto de objetivos (de media): la tolerancia cae a ~6 fallos, la disimilitud a ~15 y el balance a ~10. Esta configuración restringe la diversidad de la búsqueda y aproxima a los individuos al límite estricto de la factibilidad biológica ($f_2 = 1$).
 
-En segundo lugar, el rendimiento algorítmico presenta variaciones evidentes según el paradigma utilizado. Los algoritmos evolutivos basados en dominancia de Pareto (NSGA-II y SPEA2) y en geometría de proximidad (AGE-MOEA-II) muestran una mayor capacidad de retención de individuos no dominados, generando los frentes con la cardinalidad más alta del estudio (~220 soluciones válidas de media por ejecución). De igual modo, SMS-EMOA mantiene un nivel de densidad poblacional altamente competitivo en base a su optimización de hipervolumen, promediando ~196 soluciones. En contraste, los algoritmos de muchos objetivos o MaOEA (NSGA-III, U-NSGA-III y RVEA), basados en la descomposición del espacio mediante vectores de referencia, evidencian severas limitaciones en este escenario: al proyectar dichas direcciones de forma uniforme sobre un espacio de búsqueda fuertemente sesgado por la inecuación de factibilidad, muchas de esas líneas de referencia no logran asociarse a soluciones válidas. Como resultado empírico, estos algoritmos sufren una pérdida drástica de individuos y producen frentes con una densidad poblacional marcadamente inferior (promediando ~26 soluciones en NSGA-III, ~25 en U-NSGA-III y cayendo hasta el mínimo de ~24 soluciones válidas en RVEA).
+Por el contrario, la inicialización \textit{random\_dense} orienta la búsqueda hacia el extremo opuesto del hiperespacio, hallando soluciones con valores medios muy elevados en tolerancia (~73), disimilitud (~133) y balance (~446, valor subóptimo), aumentando también la compacidad (requiriendo la selección de una cantidad excesiva de ~345 SNP). Finalmente, la estrategia \textit{greedy\_ting} actúa como un punto de compromiso, compensando el rendimiento conjunto en los cuatro objetivos matemáticos (compacidad de ~232 SNP, tolerancia de ~44, disimilitud de ~89 y balance de ~260) y permitiendo explorar la zona central del frente de Pareto.
 
-Finalmente, el análisis cuantitativo de los frentes confirma la ausencia de diferencias significativas atribuibles a los operadores de cruce. Al evaluar los valores medios globales de las soluciones generadas por cada variante, los resultados empíricos resultan virtualmente idénticos en los cuatro objetivos: los cruces de un punto y dos puntos alcanzan una compacidad promedio de ~201 y ~202 SNP (con tolerancias de ~39 y ~40, disimilitudes de ~77 y ~78, y balances de ~238 y ~243). De forma análoga, el cruce uniforme y el medio uniforme convergen en compacidades medias de ~205 y ~201 SNP (con tolerancias de ~43, disimilitudes de ~81 y ~80, y balances de ~237 y ~238). Estas cifras constatan que las distribuciones de los cuatro operadores se encuentran superpuestas en el espacio objetivo, lo que indica que, para el problema de selección de etiquetas SNP, el mecanismo de recombinación de material genético queda eclipsado por el profundo sesgo espacial que impone la inicialización poblacional.
+En segundo lugar, el rendimiento algorítmico presenta variaciones según el paradigma utilizado. Los EAs basados en dominancia de Pareto (NSGA-II y SPEA2) y en geometría de proximidad (AGE-MOEA-II) muestran una mayor capacidad de retención de individuos no dominados, generando los frentes con la cardinalidad más alta del estudio (~220 soluciones válidas de media por ejecución). De igual modo, SMS-EMOA mantiene un nivel de densidad poblacional altamente competitivo en base a su optimización de hipervolumen, promediando ~196 soluciones.
+
+En contraste, los MaOEA (NSGA-III, U-NSGA-III y RVEA), basados en la descomposición del espacio mediante vectores de referencia, evidencian limitaciones en este escenario: al proyectar dichas direcciones de forma uniforme sobre un espacio de búsqueda fuertemente sesgado por la inecuación de factibilidad, muchas de esas líneas de referencia no logran asociarse a soluciones válidas. Como resultado, estos algoritmos sufren una pérdida de individuos y producen frentes con una densidad poblacional marcadamente inferior (promediando ~26 soluciones en NSGA-III, ~25 en U-NSGA-III y cayendo hasta el mínimo de ~24 soluciones válidas en RVEA).
+
+Finalmente, el análisis cuantitativo de los frentes confirma la ausencia de diferencias significativas atribuibles a los operadores de cruce. Al evaluar los valores medios globales de las soluciones generadas por cada variante, los resultados resultan similares en los cuatro objetivos: los cruces de un punto y dos puntos alcanzan una compacidad promedio de ~201 y ~202 SNP, con tolerancias de ~39 y ~40, disimilitudes de ~77 y ~78, y balances de ~238 y ~243, respectivamente.
+
+De forma análoga, el cruce uniforme y el medio uniforme convergen en compacidades medias de ~205 y ~201 SNP, con tolerancias de ~43, disimilitudes de ~81 y ~80, y balances de ~237 y ~238, respectivamente. Estas cifras constatan que las distribuciones de los cuatro operadores se encuentran superpuestas en el espacio objetivo, lo que indica que, para el problema de selección de etiquetas SNP, el mecanismo de recombinación de material genético queda relegado a un segundo plano por el profundo sesgo espacial que impone la inicialización poblacional.
 
 \subsection{Dinámica de convergencia}
 
-Para garantizar que las trayectorias evolutivas mostradas constituyan una representación fidedigna del comportamiento típico de los algoritmos, se ha llevado a cabo un riguroso proceso de filtrado estadístico previo a su visualización. De las 31 ejecuciones independientes por configuración, se ha optado por seleccionar la réplica mediana en función de su valor final de hipervolumen.
-
-El hipervolumen se consolida como la métrica idónea para este análisis de convergencia generacional debido a su naturaleza integral. Al penalizar simultáneamente tanto la lejanía respecto al frente óptimo (falta de convergencia) como la concentración de soluciones (falta de diversidad), el crecimiento continuo de esta métrica es una garantía matemática de que la población evoluciona de forma positiva.
+El análisis de la dinámica de convergencia permite observar cómo evoluciona la calidad geométrica de la población a lo largo del proceso de optimización. A continuación, se presentan las trayectorias generacionales del hipervolumen para cada algoritmo, extraídas utilizando el filtrado estadístico por réplica mediana detallado en la sección metodológica.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/2_metricas_convergencia/convergencia_hv_nsga2_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/2_metricas_convergencia/convergencia_hv_nsga2_full_31.png}
     \caption[Dinámica de convergencia: NSGA-II]{Evolución generacional del hipervolumen para el algoritmo NSGA-II.}
     \label{fig:conv_nsga2}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/2_metricas_convergencia/convergencia_hv_spea2_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/2_metricas_convergencia/convergencia_hv_spea2_full_31.png}
     \caption[Dinámica de convergencia: SPEA2]{Evolución generacional del hipervolumen para el algoritmo SPEA2.}
     \label{fig:conv_spea2}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/2_metricas_convergencia/convergencia_hv_nsga3_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/2_metricas_convergencia/convergencia_hv_nsga3_full_31.png}
     \caption[Dinámica de convergencia: NSGA-III]{Evolución generacional del hipervolumen para el algoritmo NSGA-III.}
     \label{fig:conv_nsga3}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/2_metricas_convergencia/convergencia_hv_unsga3_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/2_metricas_convergencia/convergencia_hv_unsga3_full_31.png}
     \caption[Dinámica de convergencia: U-NSGA-III]{Evolución generacional del hipervolumen para el algoritmo U-NSGA-III.}
     \label{fig:conv_unsga3}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/2_metricas_convergencia/convergencia_hv_rvea_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/2_metricas_convergencia/convergencia_hv_rvea_full_31.png}
     \caption[Dinámica de convergencia: RVEA]{Evolución generacional del hipervolumen para el algoritmo RVEA.}
     \label{fig:conv_rvea}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/2_metricas_convergencia/convergencia_hv_smsemoa_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/2_metricas_convergencia/convergencia_hv_smsemoa_full_31.png}
     \caption[Dinámica de convergencia: SMS-EMOA]{Evolución generacional del hipervolumen para el algoritmo SMS-EMOA.}
     \label{fig:conv_smsemoa}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/2_metricas_convergencia/convergencia_hv_agemoea2_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/2_metricas_convergencia/convergencia_hv_agemoea2_full_31.png}
     \caption[Dinámica de convergencia: AGE-MOEA-II]{Evolución generacional del hipervolumen para el algoritmo AGE-MOEA-II.}
     \label{fig:conv_agemoea2}
 \end{figure}
@@ -129,15 +133,19 @@ La inspección conjunta de las siete trayectorias revela fenómenos estructurale
 
 La capacidad para mantener un progreso continuo durante el proceso evolutivo divide a los algoritmos en dos perfiles. Por un lado, la dinámica de la mayoría de los algoritmos se caracteriza por presentar una curva estabilizada en el tramo final de la evolución. Independientemente de los valores absolutos que alcancen, sus trazas generacionales muestran una forma notablemente aplanada durante las últimas cien iteraciones, evidenciando que la búsqueda ha madurado y el ritmo de mejora se ha ralentizado con el paso de las generaciones.
 
-Por otro lado, el comportamiento de RVEA constituye la única divergencia estructural apreciable en estos gráficos del experimento. Con la inicialización \textit{Greedy Ting}, su hipervolumen experimenta un decrecimiento sistemático: las configuraciones pierden de media en torno a un $40$\% respecto a su estado inicial. A diferencia de otros algoritmos basados en vectores, RVEA evalúa a los individuos utilizando la Distancia Penalizada por Ángulo (APD). Como detallan los propios creadores del algoritmo (Cheng et al.), la arquitectura de RVEA asume deliberadamente que no es necesario normalizar el espacio de objetivos al rango $[0, 1]$ porque la adaptación de los vectores de referencia soluciona las diferencias de escala~\cite{cheng2016reference}.
+Por otro lado, el comportamiento de RVEA constituye la única divergencia estructural apreciable en estos gráficos del experimento. Con la inicialización \textit{Greedy Ting}, su hipervolumen experimenta un decrecimiento general: las configuraciones pierden de media en torno a un $40$\% respecto a su estado inicial. A diferencia de otros algoritmos basados en vectores, RVEA evalúa a los individuos utilizando la Distancia Penalizada por Ángulo (APD). Como detallan los propios creadores del algoritmo (Cheng et al.), la arquitectura de RVEA asume que no es necesario normalizar el espacio de objetivos al rango $[0, 1]$ porque la adaptación de los vectores de referencia soluciona las diferencias de escala~\cite{cheng2016reference}.
 
-Sin embargo, aunque esta adaptación corrige el cálculo de los ángulos, la componente base de la APD sigue siendo la distancia euclidiana bruta al punto ideal. Dado que el espacio objetivo de este problema presenta escalas abismalmente distintas —con el Balance ($f_4 \in [0, 2140]$) y la Compacidad ($f_1 \in [1, 772]$) superando masivamente a la Disimilitud ($f_3 \in [0, 256]$) y a la Tolerancia ($f_2 \in [0, 129]$)—, la asunción teórica de Cheng fracasa: la distancia euclidiana bruta (sin escalar) queda irremediablemente dominada por las magnitudes mayores. Para evitar la penalización de la métrica APD, el algoritmo se ve forzado a reducir el Balance y la Compacidad. La experimentación confirma empíricamente este fallo estructural: al promediar las 31 réplicas generadas, el $93.2\%$ de la población de RVEA colapsa hacia soluciones con paneles reducidos (por debajo de las 70 etiquetas SNP). Al concentrarse en el origen del espacio objetivo para minimizar las distancias brutas de $f_4$ y $f_1$, RVEA ignora por completo la exploración del resto del frente de Pareto y sufre pérdida de diversidad.
+Sin embargo, aunque esta adaptación corrige el cálculo de los ángulos, la componente base de la APD sigue siendo la distancia euclidiana bruta al punto ideal. Dado que el espacio objetivo de este problema presenta escalas muy distintas —con el Balance ($f_4 \in [0, 2140]$) y la Compacidad ($f_1 \in [1, 772]$) superando a la Disimilitud ($f_3 \in [0, 256]$) y a la Tolerancia ($f_2 \in [0, 129]$)—, la asunción teórica de Cheng resulta subóptima para este problema: la distancia euclidiana bruta (sin escalar) queda dominada por las magnitudes mayores.
 
-Este defecto provoca otro problema: al colapsar hacia el origen (buscando paneles de SNPs reducidos), el algoritmo cruza la frontera de factibilidad biológica del problema. Los paneles extremadamente pequeños son incapaces de distinguir a todos los pares de haplotipos del dataset, lo que provoca que su tolerancia caiga a cero ($f_2 = 0$) e infrinjan la restricción matemática del problema ($G(X)$). El análisis empírico corrobora esta hipótesis: al finalizar las ejecuciones, una abrumadora media de $202.7$ individuos de la población final de RVEA (el $92\%$) son soluciones biológicamente infactibles. Mientras que NSGA-II o SMS-EMOA logran sostener frentes compuestos íntegramente por $220$ soluciones válidas, RVEA tiene una alta población con soluciones infactibles. Al aplicar el filtro de factibilidad para extraer el frente de Pareto definitivo, RVEA sufre una purga masiva que reduce su cardinalidad útil a una media general de apenas $24$ soluciones.
+Para evitar la penalización de la métrica APD, el algoritmo se ve forzado a reducir el Balance y la Compacidad. La experimentación confirma este fallo estructural: al promediar las 31 réplicas generadas, el $93.2\%$ de la población de RVEA se compone de paneles reducidos (por debajo de las 70 etiquetas SNP). Al concentrarse en el origen del espacio objetivo para minimizar las distancias brutas de $f_4$ y $f_1$, RVEA ignora por completo la exploración del resto del frente de Pareto y sufre pérdida de diversidad.
+
+Esta limitación provoca otro problema: al concentrarse hacia el origen (buscando paneles de SNPs reducidos), el algoritmo cruza la frontera de factibilidad biológica del problema. Los paneles pequeños son incapaces de distinguir a todos los pares de haplotipos del conjunto de datos, lo que provoca que su tolerancia caiga a cero ($f_2 = 0$) e infrinjan la restricción matemática del problema ($G(X)$).
+
+Al finalizar las ejecuciones, una media de $202.7$ individuos de la población final de RVEA (el $92\%$) son soluciones biológicamente infactibles. Mientras que NSGA-II o SMS-EMOA logran sostener frentes compuestos por $220$ soluciones válidas, RVEA tiene una alta población con soluciones infactibles. Al aplicar el filtro de factibilidad para extraer el frente de Pareto definitivo, RVEA experimenta un filtrado que reduce su cardinalidad útil a una media general de apenas $24$ soluciones.
 
 \subsubsection{Análisis de las inicializaciones}
 
-Las estrategias de inicialización establecen un punto de partida cuantificable desde la generación cero. Tanto \textit{Greedy Ting} como \textit{Random Dense} inician con valores medios de hipervolumen en torno a $0{,}255$, mientras que \textit{Greedy Multi} parte de $\approx 0{,}023$ en todos los algoritmos. Esta diferencia de magnitud se mantiene a lo largo de la evolución: tras 500 generaciones, las configuraciones con \textit{Greedy Multi} apenas alcanzan una media de $0{,}045$, mientras que las otras dos inicializaciones superan los $0{,}40$ en los algoritmos con mayor hipervolumen final. Se aprecia un efecto catapulta en todos los algoritmos (salvo RVEA) con las inicializaciones \textit{Greedy Ting} y \textit{Random Dense}, ya que ambas proveen a la población inicial de un conjunto de soluciones que elevan drásticamente el hipervolumen en las primeras etapas, ahorrando cientos de generaciones de exploración básica frente al arranque de \textit{Greedy Multi}.
+Las estrategias de inicialización establecen un punto de partida cuantificable desde la generación cero. Tanto \textit{Greedy Ting} como \textit{Random Dense} inician con valores medios de hipervolumen en torno a $0{,}255$, mientras que \textit{Greedy Multi} parte de $\approx 0{,}023$ en todos los algoritmos. Esta diferencia de magnitud se mantiene a lo largo de la evolución: tras 500 generaciones, las configuraciones con \textit{Greedy Multi} apenas alcanzan una media de $0{,}045$, mientras que las otras dos inicializaciones superan los $0{,}40$ en los algoritmos con mayor hipervolumen final. Se aprecia un efecto catapulta en todos los algoritmos (salvo RVEA) con las inicializaciones \textit{Greedy Ting} y \textit{Random Dense}, ya que ambas proveen a la población inicial de un conjunto de soluciones que elevan el hipervolumen en las primeras etapas, ahorrando cientos de generaciones de exploración básica frente al arranque de \textit{Greedy Multi}.
 
 \subsubsection{Análisis de los operadores de cruce}
 
@@ -145,28 +153,30 @@ Al observar las trazas de convergencia, se evidencia que los operadores de cruce
 
 Sin embargo, aunque su efecto en la aceleración de la búsqueda sea secundario, el mecanismo de recombinación sí afecta al rendimiento final, un fenómeno que se analizará en profundidad en la siguiente sección en la que se analizan los resultados de las métricas.
 
-\subsubsection{Justificación empírica del criterio de parada}
+\subsubsection{Justificación del criterio de parada}
 
-El análisis de la dinámica de convergencia en el tramo final de las ejecuciones (generaciones 400 a 500) proporciona la validación empírica para el criterio de parada establecido en el diseño experimental. Si se analiza la totalidad de las 84 configuraciones evaluadas en este experimento, el incremento medio del hipervolumen en estas últimas 100 generaciones se sitúa en un marginal $+1{,}06\%$. Estos datos evidencian que extender la evolución a un número mayor de iteraciones (por ejemplo, 1000 generaciones) duplicaría el coste computacional del proceso para lograr incrementos prácticamente despreciables en la calidad del frente de Pareto. Por consiguiente, el límite de 500 generaciones se consolida empíricamente como un punto de corte óptimo que garantiza un equilibrio estricto entre la exhaustividad de la búsqueda y la economía computacional.
+El análisis de la dinámica de convergencia en el tramo final de las ejecuciones (generaciones 400 a 500) proporciona la validación para el criterio de parada establecido en el diseño experimental. Si se analiza la totalidad de las 84 configuraciones evaluadas en este experimento, el incremento medio del hipervolumen en estas últimas 100 generaciones se sitúa en un marginal $+1{,}06\%$. Estos datos evidencian que extender la evolución a un número mayor de iteraciones (por ejemplo, 1000 generaciones) duplicaría el coste computacional del proceso para lograr incrementos prácticamente despreciables en la calidad del frente de Pareto. Por consiguiente, el límite de 500 generaciones se consolida como un punto de corte óptimo que garantiza un equilibrio estricto entre la exhaustividad de la búsqueda y la economía computacional.
 
 \subsection{Análisis estadístico de las métricas}
 % Presentación y discusión de resultados individuales (medias, varianzas, boxplots).
 
-Para adaptar el volumen de datos empíricos a las dimensiones del documento (véase la Tabla \ref{tab:resultados_metricas}), se ha establecido un sistema de abreviaturas para identificar cada configuración y métrica. Las configuraciones algorítmicas se estructuran bajo la nomenclatura \textit{Algoritmo-Inicialización-Cruce}. Específicamente, los algoritmos se denotan como NS2 (NSGA-II), SP2 (SPEA2), SMS (SMS-EMOA), NS3 (NSGA-III), US3 (U-NSGA-III), RV (RVEA) y AG2 (AGE-MOEA-II). Las estrategias de inicialización se abrevian como GM (\textit{Greedy Multi}), GT (\textit{Greedy Ting}) y RD (\textit{Random Dense}), mientras que los operadores de recombinación se indican mediante 1P (un punto), 2P (dos puntos), UX (uniforme) y HUX (medio uniforme). De forma análoga, para las métricas se utilizan los acrónimos HV (Hipervolumen), IGD+ (Error de generación invertido plus), GD+ (Error de generación plus), Rng (\textit{Range}), MSum (\textit{MinSum}), SMin (\textit{SumMin}), AvgT (Tolerancia media), MaxT (Tolerancia máxima) y AvgHD (Distancia media de Hamming).
+Para adaptar el volumen de datos a las dimensiones del documento (véase la Tabla \ref{tab:resultados_metricas}), se ha establecido un sistema de abreviaturas para identificar cada configuración y métrica. Las configuraciones algorítmicas se estructuran bajo la nomenclatura \textit{Algoritmo-Inicialización-Cruce}. Específicamente, los algoritmos se denotan como NS2 (NSGA-II), SP2 (SPEA2), SMS (SMS-EMOA), NS3 (NSGA-III), US3 (U-NSGA-III), RV (RVEA) y AG2 (AGE-MOEA-II).
+
+Las estrategias de inicialización se abrevian como GM (\textit{Greedy Multi}), GT (\textit{Greedy Ting}) y RD (\textit{Random Dense}), mientras que los operadores de recombinación se indican mediante 1P (un punto), 2P (dos puntos), UX (uniforme) y HUX (medio uniforme). De forma análoga, para las métricas se utilizan los acrónimos HV (Hipervolumen), IGD+ (Error de generación invertido plus), GD+ (Error de generación plus), Rng (Rango), MSum (MínSuma), SMin (SumaMín), Tmed (Tolerancia media), Tmáx (Tolerancia máxima) y Hmed (Distancia media de Hamming).
 
 \begingroup
 \tiny
 \setlength{\tabcolsep}{0.5pt}
 \begin{longtable}{@{}lccccccccc@{}}
-\caption[Resultados empíricos de las métricas de evaluación]{Resultados empíricos globales del experimento absoluto (valores promedio y desviación típica en el subíndice a lo largo de 31 ejecuciones independientes). Se resalta en negrita el \textit{Top 5} de configuraciones algorítmicas con mejor rendimiento para cada métrica individual.}
+\caption[Resultados de las métricas de evaluación (Absoluto)]{Resultados globales del experimento absoluto (valores promedio y desviación típica en el subíndice a lo largo de 31 ejecuciones independientes). Se resalta en negrita el \textit{Top 5} de configuraciones algorítmicas con mejor rendimiento para cada métrica individual.}
 \label{tab:resultados_metricas} \\
 \toprule
-\textbf{Config} & \textbf{HV} & \textbf{IGD+} & \textbf{GD+} & \textbf{Rng} & \textbf{MSum} & \textbf{SMin} & \textbf{AvgT} & \textbf{MaxT} & \textbf{AvgHD} \\
+\textbf{Config} & \textbf{HV} & \textbf{IGD+} & \textbf{GD+} & \textbf{Rng} & \textbf{MSum} & \textbf{SMin} & \textbf{Tmed} & \textbf{Tmáx} & \textbf{Hmed} \\
 \midrule
 \endfirsthead
 \multicolumn{10}{c}{{\bfseries \tablename\ \thetable{} -- continua desde la página anterior}} \\
 \toprule
-\textbf{Config} & \textbf{HV} & \textbf{IGD+} & \textbf{GD+} & \textbf{Rng} & \textbf{MSum} & \textbf{SMin} & \textbf{AvgT} & \textbf{MaxT} & \textbf{AvgHD} \\
+\textbf{Config} & \textbf{HV} & \textbf{IGD+} & \textbf{GD+} & \textbf{Rng} & \textbf{MSum} & \textbf{SMin} & \textbf{Tmed} & \textbf{Tmáx} & \textbf{Hmed} \\
 \midrule
 \endhead
 \midrule \multicolumn{10}{r}{{Continúa en la siguiente página...}} \\
@@ -274,16 +284,27 @@ El análisis de la métrica hipervolumen (HV) expone una estratificación del re
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_hypervolume_algorithm_full_31.png"}
-    \caption{Ranking y Equivalencia de Dunn para Hipervolumen (Absoluto): Algoritmos}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_hypervolume_algorithm_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Hipervolumen (Absoluto): Algoritmos}
     \label{fig:dunn_hv_abs_alg}
 \end{figure}
 
-Desde la perspectiva de los algoritmos evolutivos aislados, el test de significancia permite estructurar el rendimiento en niveles diferenciados. Resulta sumamente destacable que NSGA-II exhiba el mayor rendimiento a pesar de estar diseñado originalmente para problemas multi-objetivo (MO). Este rendimiento se explica por el comportamiento de su operador de distancia de agrupamiento (\textit{crowding distance}). Al escalar a cuatro objetivos, se produce una pérdida drástica de presión por el mecanismo de ordenación de frentes: el análisis masivo de las trazas poblacionales confirma que, de media, la dominancia de Pareto de NSGA-II colapsa por completo en la generación 36, momento en el cual el 100\% absoluto de la población pasa a residir en el primer frente.
+Desde la perspectiva de los EAs aislados, el test de significancia permite estructurar el rendimiento en niveles diferenciados. Resulta destacable que NSGA-II exhiba el mayor rendimiento a pesar de estar diseñado originalmente para MOP. Al escalar a cuatro objetivos, se produce una pérdida de presión por el mecanismo de ordenación de frentes: el análisis de las trazas poblacionales confirma que, de media, la dominancia de Pareto de NSGA-II se satura por completo en la generación 36, momento en el cual el 100\% absoluto de la población pasa a residir en el primer frente.
 
-Como consecuencia, la \textit{crowding distance} asume el protagonismo total de la selección, la cual actúa como un estimador de proximidad robusto~\cite{ishibuchi2015behavior}. Si bien los estudios clásicos advierten que este operador pierde eficacia en problemas continuos de muchos objetivos (al empujar agresivamente las soluciones hacia los extremos vaciando el centro del frente)~\cite{purshouse2003evolutionary, ishibuchi2008evolutionary, deb2013evolutionary}, la literatura especializada documenta un comportamiento radicalmente distinto en espacios discretos~\cite{ishibuchi2008performance, ishibuchi2015behavior}. En consecuencia, NSGA-II logra una expansión notable que maximiza el hipervolumen sin perder densidad competitiva en las regiones centrales del frente.
+Como consecuencia, la distancia de agrupamiento asume el protagonismo total de la selección, actuando como estimador de diversidad en el espacio de objetivos. Si bien los estudios clásicos advierten que este operador pierde eficacia en MaOPs continuos ~\cite{purshouse2003evolutionary, ishibuchi2008evolutionary, deb2013evolutionary}, Ishibuchi et al.~\cite{ishibuchi2015behavior} demuestran que NSGA-II puede superar a otros algoritmos cuando los objetivos presentan una alta correlación entre sí. 
 
-El segundo escalón de rendimiento es ocupado de forma individual por AGE-MOEA-II, cuya estimación de la geometría de proximidad logra un balance competitivo en las métricas estudiadas. Este resultado es coherente con el diseño original del algoritmo, concebido para operar sobre topologías irregulares y discontinuas, características de los problemas combinatorios de Ingeniería de Software Basada en Búsqueda (SBSE)~\cite{panichella2022adaptive}. A diferencia de los enfoques basados en vectores, AGE-MOEA-II no asume una geometría predefinida, sino que estima la curvatura del frente de Pareto de forma adaptativa. De forma excepcional, AGE-MOEA-II es el único algoritmo del estudio que emplea el mecanismo de ordenación de frentes de Pareto capaz de evadir totalmente la resistencia a la dominancia: nunca llega a forzar al 100\% de su población al primer frente. Esta propiedad le permite mantener permanentemente una fracción de individuos dominados que inyectan diversidad genética fresca en cada iteración.
+Este trabajo aporta evidencia empírica de que dicha condición se cumple (Figura~\ref{fig:corr_spearman_abs}): el análisis de correlación de Spearman aplicado sobre el conjunto completo de soluciones del frente de Pareto final ($n = 347\,545$) revela que todos los pares de objetivos presentan una correlación positiva y estadísticamente significativa ($\rho \geq 0{,}96$, $p < 0{,}001$). Esta formulación altamente correlacionada del espacio objetivo hace que la distancia de agrupamiento, en ausencia de presión de dominancia efectiva, actúe como un estimador de diversidad global eficaz, promoviendo una expansión del frente que maximiza el hipervolumen.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{../exp_aux/correlacion/corr_spearman_experimento_abs.png}
+    \caption[Análisis de correlación de Spearman (Absoluto)]{Matriz de correlación de Spearman (izquierda) y p-valores en escala logarítmica (derecha) para los cuatro objetivos en el experimento absoluto. El análisis estadístico confirma una sinergia casi perfecta ($\rho \geq 0{,}96$, $p < 0{,}001$) entre todas las métricas, lo que reduce drásticamente la dimensionalidad efectiva del espacio de búsqueda.}
+    \label{fig:corr_spearman_abs}
+\end{figure}
+
+El segundo escalón de rendimiento es ocupado de forma individual por AGE-MOEA-II, cuya estimación de la geometría de proximidad logra un balance competitivo en las métricas estudiadas. Este resultado es coherente con el diseño original del algoritmo, concebido para operar sobre topologías irregulares y discontinuas, características de los problemas combinatorios de Ingeniería de Software Basada en Búsqueda (SBSE)~\cite{panichella2022adaptive}.
+
+A diferencia de los enfoques basados en vectores, AGE-MOEA-II no asume una geometría predefinida, sino que estima la curvatura del frente de Pareto de forma adaptativa. De forma excepcional, AGE-MOEA-II es el único algoritmo del estudio que emplea el mecanismo de ordenación de frentes de Pareto capaz de evadir la resistencia a la dominancia: nunca llega a forzar al 100\% de su población al primer frente. Esta propiedad le permite mantener permanentemente una fracción de individuos dominados que inyectan diversidad genética fresca en cada iteración.
 
 En un tercer estrato de equivalencia estadística se agrupan los MaOEA (U-NSGA-III y NSGA-III) junto con un algoritmo clásico como SPEA2. El rendimiento relativo de NSGA-III y U-NSGA-III evidencia las limitaciones de los enfoques basados en vectores de referencia en este espacio discreto. Estos algoritmos distribuyen sus vectores asumiendo que el frente de Pareto forma una superficie continua y uniforme (un \textit{simplex})~\cite{deb2013evolutionary}. Sin embargo, la topología discreta del problema de selección de etiquetas SNP presenta un frente de Pareto discontinuo. 
 
@@ -293,31 +314,35 @@ Por el contrario, SPEA2 no presupone ninguna forma geométrica inicial. Su estim
 
 Adicionalmente, el mecanismo de asignación de aptitud de SPEA2 (basado en la fuerza de los dominadores) sufre el mismo agotamiento que NSGA-II: el 100\% de su población pasa a ser no dominada en una media estable de 45,2 generaciones. Llegados a este umbral de saturación, todos los individuos supervivientes obtienen una aptitud bruta idéntica de cero, lo que delega toda la presión selectiva restante a su estimador de densidad poblacional.
 
-Por su parte, SMS-EMOA ocupa el penúltimo estrato de rendimiento de la clasificación. Su bajo desempeño en la métrica de hipervolumen es una consecuencia directa de un estancamiento prematuro derivado de una severa pérdida de diversidad genética: el análisis de colapso de dominancia revela que SMS-EMOA concentra al 100\% de su población en el primer frente de Pareto en una media de apenas 18,5 generaciones, operando el 96\% restante de la ejecución bajo un estancamiento crítico. Este colapso se debe a su estrategia de evolución de estado estacionario ($\mu+1$) operando sobre un espacio combinatorio altamente discreto. Como detallan Beume et al. en la propuesta original de SMS-EMOA, la arquitectura $\mu+1$ se adoptó estrictamente para reducir el alto coste computacional que exige el cálculo del hipervolumen, admitiendo la carencia de operadores de variación especializados para gestionar la diversidad~\cite{beume2007sms}. 
+Por su parte, SMS-EMOA ocupa el penúltimo estrato de rendimiento de la clasificación. Su bajo desempeño en la métrica de hipervolumen es una consecuencia directa de un estancamiento prematuro derivado de una pérdida de diversidad genética. SMS-EMOA concentra al 100\% de su población en el primer frente de Pareto en una media de apenas 18,5 generaciones, operando el 96\% restante de la ejecución bajo un estancamiento relevante.
 
-Al generar y reemplazar un único individuo por iteración, el algoritmo descarta de forma fulminante cualquier solución genéticamente divergente que quede dominada. Este mecanismo purga la diversidad genética prematuramente y empuja las nuevas soluciones hacia el centro del espacio de búsqueda. Este colapso de la varianza poblacional resulta fatal en ausencia de un mecanismo explícito de preservación de nichos~\cite{deb2001multi}. Dado que SMS-EMOA confía exclusivamente en la contribución marginal al hipervolumen, la población entra en un bucle de homogeneización perjudicial. 
+El estancamiento se produce por la estrategia de evolución de estado estacionario ($\mu+1$) operando sobre un espacio combinatorio altamente discreto. Como detallan Beume et al. en la propuesta original de SMS-EMOA, la arquitectura $\mu+1$ se adoptó para reducir el alto coste computacional que exige el cálculo del hipervolumen, admitiendo la carencia de operadores de variación especializados para gestionar la diversidad~\cite{beume2007sms}.
 
-La literatura reciente ya ha documentado empíricamente este fallo de SMS-EMOA en problemas puramente combinatorios y discretos (\textit{knapsack problems}): el análisis integral de Ishibuchi et al.~\cite{ishibuchi2015behavior} demuestra que permitir a algoritmos como SMS-EMOA elegir progenitores de toda la población de forma global agrava severamente la pérdida de diversidad. Sus estudios concluyen que, debido a su estructura espacial, la selección global desplaza el frente hacia regiones centrales estancadas; para evitar que algoritmos basados en hipervolumen se paralicen en estos espacios discretos, es estrictamente necesario recombinar soluciones locales muy similares (vecindarios), protegiendo la diversidad frente a la convergencia central. El análisis empírico de las ejecuciones confirma este fenómeno limitante: independientemente del operador de cruce utilizado, el grueso de la población de SMS-EMOA queda atrapada permanentemente en un estrato central sumamente estrecho por el colapso temprano, perdiendo el material genético necesario para expandirse hacia los extremos.
+Al generar un único individuo por iteración, la diversidad que se genera es muy escasa. Esta reducción de la diversidad poblacional afecta negativamente en ausencia de un mecanismo explícito de preservación de nichos~\cite{deb2001multi} y depender exclusivamente en la contribución al hipervolumen, como se demuestra, no ofrece buenos resultados.
 
-Finalmente, RVEA se posiciona en el último estrato estadístico de forma significativa. En este caso, la deficiencia de la métrica APD (que asume una homogeneidad de escalas inexistente en este problema) fuerza a la población a converger masivamente hacia el origen del espacio objetivo. Este desplazamiento provoca que el algoritmo cruce la frontera de factibilidad biológica; al finalizar las ejecuciones, el $92\%$ de sus individuos representa soluciones inválidas (con tolerancia cero), reduciendo su cardinalidad útil a una media de apenas 24 soluciones factibles y relegando al algoritmo evolutivo a la última posición absoluta.
+Con respecto a la ausencia de mecanismos de preservación de nichos, la literatura reciente ya ha documentado este fallo de SMS-EMOA en problemas combinatorios y discretos: el análisis de Ishibuchi et al.~\cite{ishibuchi2015behavior} demuestra que permitir a algoritmos como SMS-EMOA elegir progenitores de toda la población de forma global empeora la diversidad.
+
+Su estudio concluye que, debido a su estructura espacial, la selección desplaza el frente hacia regiones centrales estancadas; para evitar que algoritmos basados en hipervolumen se estanquen en estos espacios discretos, es necesario recombinar soluciones locales muy similares (vecindarios), protegiendo la diversidad frente a la convergencia central. El análisis de las ejecuciones confirma este fenómeno limitante: independientemente del operador de cruce utilizado, el grueso de la población de SMS-EMOA se concentra permanentemente en un estrato central estrecho, perdiendo el material genético necesario para expandirse hacia los extremos.
+
+Finalmente, RVEA se posiciona en el último estrato estadístico de forma significativa. En este caso, la deficiencia de la métrica APD (que asume una homogeneidad de escalas inexistente en este problema) fuerza a la población a converger hacia el origen del espacio objetivo. Este desplazamiento provoca que el algoritmo cruce la frontera de factibilidad biológica; al finalizar las ejecuciones, el $92\%$ de sus individuos representa soluciones inválidas (con tolerancia cero), reduciendo su cardinalidad útil a una media de apenas 24 soluciones factibles y relegando al EA a la última posición absoluta.
 
 \subparagraph{Análisis por inicialización}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_hypervolume_init_full_31.png"}
-    \caption{Ranking y Equivalencia de Dunn para Hipervolumen (Absoluto): Inicialización}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_hypervolume_init_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Hipervolumen (Absoluto): Inicialización}
     \label{fig:dunn_hv_abs_init}
 \end{figure}
 
-Al evaluar las estrategias de inicialización de forma aislada, el test estadístico confirma los patrones identificados en la dinámica de convergencia. La inicialización \textit{Random Dense} se sitúa en el primer nivel de significancia al inyectar la máxima diversidad estocástica desde la generación cero. En el segundo escalón se posiciona \textit{Greedy Ting}, la cual logra un rendimiento destacado gracias a su efecto de impulso inicial, aunque con menor diversidad genética potencial que el enfoque puramente aleatorio. El nivel inferior es ocupado invariablemente por \textit{Greedy Multi}, cuyo arranque casi nulo limita severamente la expansión del frente y el rendimiento integral de los algoritmos.
+Al evaluar las estrategias de inicialización de forma aislada, el test estadístico confirma los patrones identificados en la dinámica de convergencia. La inicialización \textit{Random Dense} se sitúa en el primer nivel de significancia al inyectar la máxima diversidad estocástica desde la generación cero. En el segundo escalón se posiciona \textit{Greedy Ting}, la cual logra un rendimiento destacado debido a su efecto de impulso inicial, aunque con menor éxito que \textit{Random Dense}. El nivel inferior es ocupado por \textit{Greedy Multi}, cuyo arranque casi nulo limita la expansión del frente y el rendimiento de los algoritmos.
 
 \subparagraph{Análisis por operador de cruce}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_hypervolume_crossover_full_31.png"}
-    \caption{Ranking y Equivalencia de Dunn para Hipervolumen (Absoluto): Cruce}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_hypervolume_crossover_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Hipervolumen (Absoluto): Cruce}
     \label{fig:dunn_hv_abs_crossover}
 \end{figure}
 
@@ -329,7 +354,7 @@ En el segundo nivel se ubica el cruce de dos puntos (2P), que demuestra superior
 
 \subparagraph{Análisis por configuración global}
 
-El análisis descriptivo revela un liderazgo claro de las configuraciones sustentadas en la inicialización \textit{Greedy Ting}. El primer puesto lo ocupa la configuración NSGA-II con \textit{Greedy Ting} y el cruce uniforme (NS2-GT-UX), alcanzando un valor mínimo de $0{,}0273$. 
+El análisis descriptivo revela un liderazgo de las configuraciones sustentadas en la inicialización \textit{Greedy Ting}. El primer puesto lo ocupa la configuración NSGA-II con \textit{Greedy Ting} y el cruce uniforme (NS2-GT-UX), alcanzando un valor mínimo de $0{,}0273$. 
 
 Mediante el enfoque \textit{Many-to-One} comparando contra la configuración líder, el test estadístico confirma que el primer nivel de significancia está compuesto mayoritariamente por variantes que utilizan esta estrategia de inicialización, logrando un rendimiento superior independientemente del algoritmo subyacente (más detalles de este grupo de control se encuentran en el Anexo~\ref{anexo:elite_igd}).
 
@@ -338,13 +363,13 @@ Estos resultados confirman los ofrecidos por la métrica del hipervolumen, ya qu
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_igd+_algorithm_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para IGD+ (Absoluto): Algoritmos}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_igd+_algorithm_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para IGD+ (Absoluto): Algoritmos}
     \label{fig:dunn_igd+_abs_algorithm}
 \end{figure}
 
 
-La evaluación estadística desde la perspectiva algorítmica estructura los resultados en distintos niveles. En el estrato superior destaca NSGA-II, el cual presenta el mejor rendimiento global sin diferencias estadísticamente significativas frente a AGE-MOEA-II. Este último actúa como puente estadístico, puesto que su desempeño empírico también resulta equivalente al de los algoritmos de muchos objetivos basados en vectores de referencia (NSGA-III y U-NSGA-III), los cuales conforman un segundo bloque estadístico.
+La evaluación estadística desde la perspectiva algorítmica estructura los resultados en distintos niveles. En el estrato superior destaca NSGA-II, el cual presenta el mejor rendimiento global sin diferencias estadísticamente significativas frente a AGE-MOEA-II. Este último actúa como puente estadístico, puesto que su desempeño también resulta equivalente al de los MaOEAs basados en vectores de referencia (NSGA-III y U-NSGA-III), los cuales conforman un segundo bloque estadístico.
 
 En un estrato inferior de significancia se posicionan SPEA2 y SMS-EMOA (equivalentes estadísticamente entre sí), mostrando mayores dificultades para aproximarse de forma homogénea al frente empírico. Finalmente, RVEA ocupa de forma estricta la última posición, presentando los valores de distancia más elevados de todo el experimento.
 
@@ -352,29 +377,29 @@ En un estrato inferior de significancia se posicionan SPEA2 y SMS-EMOA (equivale
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_igd+_init_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para IGD+ (Absoluto): Inicialización}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_igd+_init_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para IGD+ (Absoluto): Inicialización}
     \label{fig:dunn_igd+_abs_init}
 \end{figure}
 
 
 La evaluación de las estrategias de inicialización sitúa a \textit{Greedy Ting} en el primer nivel de significancia estadística, superando de forma estricta al resto de opciones. Este rendimiento superior se fundamenta en su topología híbrida: la inyección de soluciones deterministas en los extremos geométricos del problema asegura que el frente de referencia quede cubierto desde las primeras generaciones, minimizando así las distancias medidas por IGD+.
 
-En el segundo nivel se posiciona \textit{Random Dense}, cuya alta diversidad estocástica favorece una exploración amplia pero con tendencia a poblar la zona central del espacio de búsqueda. Por último, \textit{Greedy Multi} queda relegado al estrato inferior. Al forzar a la población a converger prematuramente hacia un clúster diminuto en el espacio objetivo, la inmensa mayoría de los puntos del frente de referencia carecen de soluciones cercanas, lo que provoca que la métrica IGD+ penalice drásticamente su rendimiento.
+En el segundo nivel se posiciona \textit{Random Dense}, cuya alta diversidad estocástica favorece una exploración amplia pero con tendencia a poblar la zona central del espacio de búsqueda. Por último, \textit{Greedy Multi} queda relegado al estrato inferior. Al forzar a la población a converger prematuramente hacia un clúster diminuto en el espacio objetivo, la inmensa mayoría de los puntos del frente de referencia carecen de soluciones cercanas, lo que provoca que la métrica IGD+ penalice su rendimiento.
 
 \subparagraph{Análisis por cruce}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_igd+_crossover_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para IGD+ (Absoluto): Cruce}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_igd+_crossover_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para IGD+ (Absoluto): Cruce}
     \label{fig:dunn_igd+_abs_crossover}
 \end{figure}
 
 
 El análisis estadístico de los operadores de cruce revela una distribución en tres niveles de rendimiento diferenciados. El primer estrato de significancia agrupa a los cruces uniformes (UX y HUX), los cuales carecen de diferencias estadísticas entre sí pero logran las menores distancias globales. 
 
-En el segundo nivel se ubica de forma aislada el cruce de dos puntos (2P), seguido en la última posición por el cruce de un punto (1P). Este escalonamiento empírico demuestra que, en cromosomas de alta dimensionalidad como los requeridos para el problema de selección de etiquetas SNP, una alta tasa de recombinación genética resulta fundamental para evitar el estancamiento y alcanzar de forma integral el frente óptimo.
+En el segundo nivel se ubica de forma aislada el cruce de dos puntos (2P), seguido en la última posición por el cruce de un punto (1P). Este escalonamiento demuestra que, en cromosomas de alta dimensionalidad como los requeridos para el problema de selección de etiquetas SNP, una alta tasa de recombinación genética resulta fundamental para evitar el estancamiento y alcanzar de forma integral el frente óptimo.
 
 \subsubsection{Métricas geométricas puras}
 
@@ -384,16 +409,16 @@ Esta subsección analiza de forma aislada la convergencia de las soluciones resp
 
 \subparagraph{Análisis por configuración global}
 
-El análisis descriptivo revela un liderazgo absoluto de las configuraciones sustentadas en la inicialización \textit{Greedy Multi}. El primer puesto lo ocupa la configuración SMS-EMOA con \textit{Greedy Multi} y el cruce uniforme (SMS-GM-UX), alcanzando un valor mínimo de $0{,}0001$.
+Destacan las configuraciones sustentadas en la inicialización \textit{Greedy Multi}. El primer puesto lo ocupa la configuración SMS-EMOA con \textit{Greedy Multi} y el cruce uniforme (SMS-GM-UX), alcanzando un valor mínimo de $0{,}0001$.
 
-Mediante el enfoque \textit{Many-to-One} comparando contra la configuración líder, el bloque de alto rendimiento está compuesto íntegramente por variantes que utilizan \textit{Greedy Multi} . Este resultado es diametralmente opuesto al observado en IGD+: mientras que \textit{Greedy Multi} maximiza la convergencia puntual al colapsar la población hacia una región muy reducida del espacio objetivo, lo que sitúa los puntos generados extremadamente cerca del frente de referencia, esa misma concentración impide la cobertura global del frente. Esto ilustra una de las tensiones fundamentales entre las métricas de convergencia pura (GD+) y las métricas de convergencia-diversidad conjunta (IGD+ o HV) descritas en la literatura~\cite{ishibuchi2018modified}.
+Mediante el enfoque \textit{Many-to-One} comparando contra la configuración líder, el bloque de alto rendimiento está compuesto íntegramente por variantes que utilizan \textit{Greedy Multi} . Este resultado es opuesto al observado en IGD+: mientras que \textit{Greedy Multi} maximiza la convergencia puntual al concentrar la población hacia una región muy reducida del espacio objetivo, lo que sitúa los puntos generados muy cerca del frente de referencia, esa misma concentración impide la cobertura global del frente. Esto ilustra una de las tensiones fundamentales entre las métricas de convergencia pura (GD+) y las métricas de convergencia-diversidad conjunta (IGD+ o HV) descritas en la literatura~\cite{ishibuchi2018modified}.
 
 \subparagraph{Análisis por algoritmo}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_gd+_algorithm_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para GD+ (Absoluto): Algoritmos}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_gd+_algorithm_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para GD+ (Absoluto): Algoritmos}
     \label{fig:dunn_gd+_abs_algorithm}
 \end{figure}
 
@@ -406,15 +431,15 @@ En el segundo estrato se agrupan estadísticamente AGE-MOEA-II y SPEA2, superand
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_gd+_init_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para GD+ (Absoluto): Inicialización}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_gd+_init_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para GD+ (Absoluto): Inicialización}
     \label{fig:dunn_gd+_abs_init}
 \end{figure}
 
 
 La evaluación de las estrategias de inicialización sitúa a \textit{Greedy Multi} en el primer nivel, con diferencias estadísticamente significativas frente a las demás estrategias. La media de GD+ para \textit{Greedy Multi} es de $0{,}0005$, frente a $0{,}0291$ para \textit{Random Dense} y $0{,}0344$ para \textit{Greedy Ting}.
 
-Este comportamiento empírico se explica por el diseño de \textit{Greedy Multi}: al concentrar todos los individuos en la solución voraz de menor compacidad, la población inicial ya reside en una región de altísima calidad. Las distancias al frente de referencia son mínimas desde la generación cero, y la evolución las reduce aún más. En contrapartida, tanto \textit{Random Dense} como \textit{Greedy Ting} distribuyen la población a lo largo de todo el espacio objetivo, lo que implica que parte de los individuos parten de posiciones alejadas del frente de referencia, pero poseen de mayor diversidad.
+Este comportamiento se explica por el diseño de \textit{Greedy Multi}: al concentrar todos los individuos en la solución voraz de menor compacidad, la población inicial ya reside en una región de altísima calidad. Las distancias al frente de referencia son mínimas desde la generación cero, y la evolución las reduce aún más. En contrapartida, tanto \textit{Random Dense} como \textit{Greedy Ting} distribuyen la población a lo largo de todo el espacio objetivo, lo que implica que parte de los individuos parten de posiciones alejadas del frente de referencia, pero poseen de mayor diversidad.
 
 \textit{Random Dense} y \textit{Greedy Ting} se distinguen estadísticamente entre sí ($p = 5{,}6 \times 10^{-6}$), con \textit{Random Dense} obteniendo un GD+ medio inferior ($0{,}0291$ frente a $0{,}0344$).
 
@@ -422,8 +447,8 @@ Este comportamiento empírico se explica por el diseño de \textit{Greedy Multi}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_gd+_crossover_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para GD+ (Absoluto): Cruce}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_gd+_crossover_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para GD+ (Absoluto): Cruce}
     \label{fig:dunn_gd+_abs_crossover}
 \end{figure}
 
@@ -436,33 +461,35 @@ La jerarquía observada replica la estructura encontrada en IGD+ y en hipervolum
 
 \subparagraph{Análisis por configuración global}
 
-El análisis descriptivo revela un dominio claro de las configuraciones basadas en el algoritmo NSGA-II con la estrategia \textit{Greedy Ting}. La configuración NS2-GT-UX presenta el valor máximo del experimento ($2{,}4229$), seguida de cerca por el resto de variantes NSGA-II con la misma inicialización. 
+El análisis descriptivo revela un dominio de las configuraciones basadas en el algoritmo NSGA-II con la estrategia \textit{Greedy Ting}. La configuración NS2-GT-UX presenta el valor máximo del experimento ($2{,}4229$), seguida de cerca por el resto de variantes NSGA-II con la misma inicialización. 
 
-Mediante el enfoque \textit{Many-to-One} se agrupan estadísticamente las configuraciones; se identifica un primer nivel de significancia compuesto íntegramente por algoritmos que utilizan \textit{Greedy Ting}, confirmando la influencia crítica de la estrategia de inicialización poblacional para la cobertura del espacio de búsqueda .
+Mediante el enfoque \textit{Many-to-One} se agrupan estadísticamente las configuraciones; se identifica un primer nivel de significancia compuesto íntegramente por algoritmos que utilizan \textit{Greedy Ting}, confirmando la influencia de la estrategia de inicialización poblacional para la cobertura del espacio de búsqueda .
 
 \subparagraph{Análisis por algoritmo}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_range_algorithm_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para Rango (Absoluto): Algoritmos}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_range_algorithm_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Rango (Absoluto): Algoritmos}
     \label{fig:dunn_range_abs_algorithm}
 \end{figure}
 
 
-La evaluación estadística desde la perspectiva algorítmica revela que NSGA-II obtiene la primera posición absoluta con diferencias estadísticamente significativas frente a todos sus competidores, mostrando empíricamente la mayor capacidad para mantener una dispersión elevada de las soluciones, atribuida a su operador de distancia de agrupamiento (\textit{crowding distance}). Por detrás de él, se consolida un grupo de alto rendimiento formado por AGE-MOEA-II, U-NSGA-III, NSGA-III y SPEA2 (sin diferencias significativas entre ellos). Cabe destacar que SPEA2 actúa como puente estadístico en la comparativa de todos contra todos, ya que también resulta estadísticamente equivalente a SMS-EMOA, situado en un estrato inferior. Finalmente, RVEA ocupa la última posición de forma significativa, registrando los valores más bajos del experimento, lo que refleja una exploración concentrada en una zona limitada del espacio objetivo.
+La evaluación estadística desde la perspectiva algorítmica revela que NSGA-II obtiene la primera posición absoluta con diferencias estadísticamente significativas frente a todos sus competidores, mostrando la mayor capacidad para mantener una dispersión elevada de las soluciones, atribuida a su operador de distancia de agrupamiento. Por detrás de él, se consolida un grupo de alto rendimiento formado por AGE-MOEA-II, U-NSGA-III, NSGA-III y SPEA2 (sin diferencias significativas entre ellos).
+
+Cabe destacar que SPEA2 actúa como puente estadístico en la comparativa de todos contra todos, ya que también resulta estadísticamente equivalente a SMS-EMOA, situado en un estrato inferior. Finalmente, RVEA ocupa la última posición de forma significativa, registrando los valores más bajos del experimento, lo que refleja una exploración concentrada en una zona limitada del espacio objetivo.
 
 \subparagraph{Análisis por inicialización}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_range_init_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para Rango (Absoluto): Inicialización}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_range_init_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Rango (Absoluto): Inicialización}
     \label{fig:dunn_range_abs_init}
 \end{figure}
 
 
-La evaluación de las estrategias de inicialización consolida a \textit{Greedy Ting} en el primer nivel de significancia estadística, superando de forma estricta a \textit{Random Dense} y a \textit{Greedy Multi}. Esta superioridad empírica se explica por su efecto topológico: su naturaleza híbrida inyecta soluciones ancla deterministas en la población inicial que aseguran la cobertura temprana de los extremos geométricos del frente de Pareto. Al combinar estos anclajes periféricos con individuos construidos mediante selección voraz y por aleatoriedad, la estrategia garantiza desde la primera generación un despliegue amplio a lo largo del hiperespacio, facilitando la expansión simétrica de los algoritmos hacia los extremos de compacidad y tolerancia.
+La evaluación de las estrategias de inicialización consolida a \textit{Greedy Ting} en el primer nivel de significancia estadística, superando de forma estricta a \textit{Random Dense} y a \textit{Greedy Multi}. Esta superioridad se explica por su efecto topológico: su naturaleza híbrida inyecta soluciones ancla deterministas en la población inicial que aseguran la cobertura temprana de los extremos geométricos del frente de Pareto. Al combinar estos anclajes periféricos con individuos construidos mediante selección voraz y por aleatoriedad, la estrategia garantiza desde la primera generación un despliegue amplio a lo largo del hiperespacio, facilitando la expansión simétrica de los algoritmos hacia los extremos de compacidad y tolerancia.
 
 En niveles de significancia inferiores se ubican el resto de estrategias. \textit{Random Dense} sitúa la población en un extremo de alta compacidad (activa en torno al 50\% de los SNPs por cada individuo), limitando la capacidad de alcanzar soluciones de alta tolerancia. Por su parte, \textit{Greedy Multi} concentra la búsqueda en el extremo de paneles diminutos, impidiendo la generación de un frente extenso.
 
@@ -470,13 +497,13 @@ En niveles de significancia inferiores se ubican el resto de estrategias. \texti
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_range_crossover_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para Rango (Absoluto): Cruce}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_range_crossover_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Rango (Absoluto): Cruce}
     \label{fig:dunn_range_abs_crossover}
 \end{figure}
 
 
-El análisis estadístico de los operadores de cruce revela que los cruces uniformes (UX y HUX) obtienen el mayor rendimiento para la retención del rango, formando un primer grupo de significancia junto con el cruce de dos puntos (2P), con el cual no presentan diferencias estadísticas. Cabe destacar que el operador 2P actúa como puente estadístico, ya que su rendimiento también resulta equivalente al del cruce de un punto (1P), el cual se sitúa en el estrato inferior y es superado significativamente por los cruces uniformes. La causa empírica de este fenómeno radica en que la alta tasa de intercambio genético de los operadores uniformes incrementa la capacidad exploratoria del algoritmo evolutivo en las regiones periféricas del espacio de búsqueda.
+El análisis estadístico de los operadores de cruce revela que los cruces uniformes (UX y HUX) obtienen el mayor rendimiento para la retención del rango, formando un primer grupo de significancia junto con el cruce de dos puntos (2P), con el cual no presentan diferencias estadísticas. Cabe destacar que el operador 2P actúa como puente estadístico, ya que su rendimiento también resulta equivalente al del cruce de un punto (1P), el cual se sitúa en el estrato inferior y es superado significativamente por los cruces uniformes. La causa de este fenómeno radica en que la alta tasa de intercambio genético de los operadores uniformes incrementa la capacidad exploratoria del EA en las regiones periféricas del espacio de búsqueda.
 
 
 
@@ -484,22 +511,22 @@ El análisis estadístico de los operadores de cruce revela que los cruces unifo
 
 \subsubsection{Métricas de topología local}
 
-Esta sección evalúa la calidad de soluciones individuales clave en regiones específicas del frente de Pareto, analizando el balance central (MinSum) y la convergencia marginal extrema (SumMin).
+Esta sección evalúa la calidad de soluciones individuales clave en regiones específicas del frente de Pareto, analizando el mínimo de las sumas (MínSuma) y la suma de los mínimos (SumaMín).
 
-\paragraph{Balance Central (MinSum)}
+\paragraph{Mínimo de las Sumas (MínSuma)}
 
-El indicador MinSum evalúa la calidad de la solución de compromiso global: mide la suma de los valores objetivos normalizados de la solución que mejor equilibra todos los criterios simultáneamente. A diferencia de IGD+ o Rango, esta métrica no evalúa la extensión del frente, sino la idoneidad de su punto de equilibrio central. Menores valores representan soluciones con un balance más ajustado entre todos los objetivos.
+El indicador MínSuma evalúa la calidad de la solución de compromiso global: mide la suma de los valores objetivos normalizados de la solución que mejor equilibra todos los criterios simultáneamente. A diferencia de IGD+ o Rango, esta métrica no evalúa la extensión del frente, sino la idoneidad de su punto de equilibrio central. Menores valores representan soluciones con un balance más ajustado entre todos los objetivos.
 
 \subparagraph{Análisis por configuración global}
 
-El análisis descriptivo sitúa en el primer puesto a la configuración SMS-EMOA con \textit{Random Dense} y cruce uniforme (SMS-RD-UX), con un valor medio de $1{,}3838$. El bloque de alto rendimiento identificado mediante el enfoque \textit{Many-to-One} comprende 25 configuraciones estadísticamente equivalentes a la líder , combinando las estrategias \textit{Random Dense} y \textit{Greedy Ting} con varios algoritmos y operadores de cruce, con la única excepción de \textit{Greedy Multi}, que queda completamente excluida de este grupo. Este patrón pone de manifiesto que la diversidad del frente de Pareto resulta determinante para encontrar soluciones de compromiso de alta calidad: una inicialización que explora regiones diversas del espacio objetivo permite a los algoritmos identificar el punto de equilibrio óptimo, algo que la concentración extrema de \textit{Greedy Multi} impide sistemáticamente.
+El análisis descriptivo sitúa en el primer puesto a la configuración SMS-EMOA con \textit{Random Dense} y cruce uniforme (SMS-RD-UX), con un valor medio de $1{,}3838$. El bloque de alto rendimiento identificado mediante el enfoque \textit{Many-to-One} comprende 25 configuraciones estadísticamente equivalentes a la líder , combinando las estrategias \textit{Random Dense} y \textit{Greedy Ting} con varios algoritmos y operadores de cruce, con la única excepción de \textit{Greedy Multi}, que queda completamente excluida de este grupo. Este patrón pone de manifiesto que la diversidad del frente de Pareto resulta determinante para encontrar soluciones de compromiso de alta calidad: una inicialización que explora regiones diversas del espacio objetivo permite a los algoritmos identificar el punto de equilibrio óptimo, algo que la concentración extrema de \textit{Greedy Multi} impide.
 
 \subparagraph{Análisis por algoritmo}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_minsum_algorithm_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para MinSum (Absoluto): Algoritmos}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_minsum_algorithm_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para MínSuma (Absoluto): Algoritmos}
     \label{fig:dunn_minsum_abs_algorithm}
 \end{figure}
 
@@ -510,8 +537,8 @@ La evaluación estadística de los algoritmos revela que AGEMOEA2, NSGA-II, NSGA
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_minsum_init_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para MinSum (Absoluto): Inicialización}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_minsum_init_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para MínSuma (Absoluto): Inicialización}
     \label{fig:dunn_minsum_abs_init}
 \end{figure}
 
@@ -524,18 +551,18 @@ La superioridad de \textit{Random Dense} se fundamenta en la distribución de su
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_minsum_crossover_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para MinSum (Absoluto): Cruce}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_minsum_crossover_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para MínSuma (Absoluto): Cruce}
     \label{fig:dunn_minsum_abs_crossover}
 \end{figure}
 
 
-El análisis estadístico de los operadores de cruce establece tres niveles diferenciados. Los cruces uniformes HUX y UX se agrupan en el primer estrato sin diferencias entre sí, mientras que el cruce de dos puntos (2P) ocupa el segundo nivel y el cruce de un punto (1P) el tercero. La causa empírica es consistente con los resultados de las métricas anteriores: los operadores uniformes generan una recombinación más intensa a nivel de locus individual, lo que facilita la combinación de características óptimas de ambos padres para aproximarse al balance central del frente.
-\paragraph{Convergencia Marginal (SumMin)}
+El análisis estadístico de los operadores de cruce establece tres niveles diferenciados. Los cruces uniformes HUX y UX se agrupan en el primer estrato sin diferencias entre sí, mientras que el cruce de dos puntos (2P) ocupa el segundo nivel y el cruce de un punto (1P) el tercero. La causa es consistente con los resultados de las métricas anteriores: los operadores uniformes generan una recombinación más intensa a nivel de locus individual, lo que facilita la combinación de características óptimas de ambos padres para aproximarse al balance central del frente.
+\paragraph{Suma de los Mínimos (SumaMín)}
 
 \subparagraph{Análisis por configuración global}
 
-El análisis descriptivo sitúa en el primer puesto a la configuración NSGA-II con \textit{Greedy Ting} y cruce uniforme (NS2-GT-UX), con un valor medio de $0{,}5326$. Este liderazgo demuestra que SumMin no evalúa la mejor solución individual: para encontrar ese óptimo puntual se requiere tanto diversidad como convergencia, y la inicialización \textit{Greedy Ting} proporciona ambas condiciones al desplegar individuos en todo el espacio objetivo desde la primera generación.
+El análisis descriptivo sitúa en el primer puesto a la configuración NSGA-II con \textit{Greedy Ting} y cruce uniforme (NS2-GT-UX), con un valor medio de $0{,}5326$. Este liderazgo demuestra que SumaMín no evalúa la mejor solución individual: para encontrar ese óptimo puntual se requiere tanto diversidad como convergencia, y la inicialización \textit{Greedy Ting} proporciona ambas condiciones al desplegar individuos en todo el espacio objetivo desde la primera generación.
 
 El bloque de alto rendimiento identificado mediante el enfoque \textit{Many-to-One} comprende 28 configuraciones estadísticamente equivalentes a la líder . La totalidad del bloque emplea \textit{Greedy Ting} o \textit{Random Dense}, mientras que \textit{Greedy Multi} queda excluida por completo, lo que confirma que la concentración extrema de esta estrategia impide encontrar soluciones premiadas por esta métrica.
 
@@ -543,13 +570,13 @@ El bloque de alto rendimiento identificado mediante el enfoque \textit{Many-to-O
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_summin_algorithm_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para SumMin (Absoluto): Algoritmos}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_summin_algorithm_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para SumaMín (Absoluto): Algoritmos}
     \label{fig:dunn_summin_abs_algorithm}
 \end{figure}
 
 
-La evaluación estadística de los algoritmos establece cuatro niveles con solapamiento. NSGA-II ocupa de forma estricta el primer nivel, con diferencias significativas frente a todos los demás algoritmos. Este resultado se atribuye a su operador de \textit{crowding distance}, que mantiene la presión de selección hacia las soluciones más aisladas del frente, favoreciendo la exploración de la región de mínima suma objetiva.
+La evaluación estadística de los algoritmos establece cuatro niveles con solapamiento. NSGA-II ocupa de forma estricta el primer nivel, con diferencias significativas frente a todos los demás algoritmos. Este resultado se atribuye a su operador de distancia de agrupamiento, que mantiene la presión de selección hacia las soluciones más aisladas del frente, favoreciendo la exploración de la región de mínima suma objetiva.
 
 En el segundo nivel se agrupan AGE-MOEA-II, NSGA-III y U-NSGA-III, equivalentes entre sí pero inferiores a NSGA-II. SMS-EMOA y SPEA2 forman un tercer nivel, donde ambos son equivalentes entre sí. Finalmente, RVEA ocupa de forma estricta el último nivel, inferior a todos los demás algoritmos, reflejando las limitaciones de su mecanismo de búsqueda por vectores de referencia para la convergencia puntual.
 
@@ -557,20 +584,20 @@ En el segundo nivel se agrupan AGE-MOEA-II, NSGA-III y U-NSGA-III, equivalentes 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_summin_init_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para SumMin (Absoluto): Inicialización}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_summin_init_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para SumaMín (Absoluto): Inicialización}
     \label{fig:dunn_summin_abs_init}
 \end{figure}
 
 
-La evaluación de las estrategias de inicialización establece tres niveles estrictamente ordenados. \textit{Greedy Ting} ocupa el primer nivel con una media de $0{,}8089$, seguida de \textit{Random Dense} en el segundo nivel ($1{,}0375$). \textit{Greedy Multi} queda relegada al tercer nivel con el valor más elevado ($1{,}8270$).
+La evaluación de las estrategias de inicialización establece tres niveles. \textit{Greedy Ting} ocupa el primer nivel con una media de $0{,}8089$, seguida de \textit{Random Dense} en el segundo nivel ($1{,}0375$). \textit{Greedy Multi} queda relegada al tercer nivel con el valor más elevado ($1{,}8270$).
 
 \subparagraph{Análisis por cruce}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_summin_crossover_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para SumMin (Absoluto): Cruce}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_summin_crossover_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para SumaMín (Absoluto): Cruce}
     \label{fig:dunn_summin_abs_crossover}
 \end{figure}
 
@@ -580,9 +607,9 @@ El análisis estadístico de los operadores de cruce establece tres niveles. Los
 
 \subsubsection{Métricas de dominio biológico}
 
-Este grupo comprende métricas de dominio específico que evalúan la utilidad práctica de las soluciones de etiquetas SNP encontradas, analizando la tasa de eficiencia media de tolerancia (AvgT) y la diversidad de genotipos seleccionados mediante la distancia media de Hamming (AvgHD).
+Este grupo comprende métricas de dominio específico que evalúan la utilidad práctica de las soluciones de etiquetas SNP encontradas, analizando la tasa de eficiencia media de tolerancia (Tmed) y la diversidad de genotipos seleccionados mediante la distancia media de Hamming (Hmed).
 
-\paragraph{Tasa de Eficiencia de Tolerancia Media (AvgT)}
+\paragraph{Tasa de Tolerancia Media (Tmed)}
 
 \subparagraph{Análisis por configuración global}
 
@@ -594,8 +621,8 @@ La métrica premia configuraciones que preservan tolerancias altas sin forzar un
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_avgtolerancerate_algorithm_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para AvgT (Absoluto): Algoritmos}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_avgtolerancerate_algorithm_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Tmed (Absoluto): Algoritmos}
     \label{fig:dunn_avgtolerancerate_abs_algorithm}
 \end{figure}
 
@@ -608,22 +635,22 @@ La posición dominante de SMS-EMOA en esta métrica debe interpretarse en el con
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_avgtolerancerate_init_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para AvgT (Absoluto): Inicialización}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_avgtolerancerate_init_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Tmed (Absoluto): Inicialización}
     \label{fig:dunn_avgtolerancerate_abs_init}
 \end{figure}
 
 
-La evaluación de las estrategias de inicialización establece tres niveles estrictamente ordenados. \textit{Random Dense} ocupa el primer nivel con una media de $0{,}2115$, seguida de \textit{Greedy Multi} en el segundo nivel ($0{,}1899$). \textit{Greedy Ting} queda relegada al tercer nivel con el valor más bajo ($0{,}1766$).
+La evaluación de las estrategias de inicialización establece tres niveles. \textit{Random Dense} ocupa el primer nivel con una media de $0{,}2115$, seguida de \textit{Greedy Multi} en el segundo nivel ($0{,}1899$). \textit{Greedy Ting} queda relegada al tercer nivel con el valor más bajo ($0{,}1766$).
 
-El liderazgo de \textit{Random Dense} se explica porque sitúa la población inicial en la región de alta compacidad relativa (en torno al $50\%$ de densidad genotípica), desde donde el algoritmo evolutivo probablemente pueda explorar soluciones con tolerancias medias elevadas. \textit{Greedy Ting}, pese a formar parte de la configuración global líder al combinarse con SMS-EMOA y HUX, obtiene el peor rendimiento promedio al obligar al algoritmo a destinar recursos exploratorios a los extremos geométricos del espacio, donde la tolerancia media tiende a decaer.
+El liderazgo de \textit{Random Dense} se explica porque sitúa la población inicial en la región de alta compacidad relativa (en torno al $50\%$ de densidad genotípica), desde donde el EA podría explorar soluciones con tolerancias medias elevadas. \textit{Greedy Ting}, pese a formar parte de la configuración global líder al combinarse con SMS-EMOA y HUX, obtiene el peor rendimiento promedio al obligar al algoritmo a destinar recursos exploratorios a los extremos geométricos del espacio, donde la tolerancia media tiende a decaer.
 
 \subparagraph{Análisis por cruce}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_avgtolerancerate_crossover_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para AvgT (Absoluto): Cruce}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_avgtolerancerate_crossover_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Tmed (Absoluto): Cruce}
     \label{fig:dunn_avgtolerancerate_abs_crossover}
 \end{figure}
 
@@ -632,20 +659,20 @@ El análisis estadístico de los operadores de cruce organiza los resultados en 
 
 Esta agrupación dual reitera la ventaja inherente de los mecanismos de alta recombinación. Se repite el mismo patrón observado en métricas anteriores.
 
-\paragraph{Tasa de Tolerancia Máxima (MaxToleranceRate)}
+\paragraph{Tasa de Tolerancia Máxima (Tmáx)}
 
 Esta métrica evalúa la máxima cobertura teórica aportada por un único SNP dentro de la solución, indicando la capacidad del algoritmo para retener los nodos más centrales de la red de desequilibrio de ligamiento. A diferencia de las métricas anteriores, los resultados revelan variaciones importantes en el comportamiento de los componentes estructurales, destacando la influencia de la inicialización determinista.
 
 \subparagraph{Análisis de configuraciones}
 
-El análisis de configuraciones establece a \textit{AGE-MOEA-II + Greedy Multi + UX} como la combinación líder con una tasa máxima media de $0{,}2916$. Sin embargo, la prueba de Dunn agrupa a esta configuración junto con otras 24 combinaciones dentro de la misma clase de equivalencia. Esta extensa agrupación élite (ver Anexo~\ref{tab:elite_maxt_abs}) está dominada abrumadoramente por configuraciones que emplean \textit{Greedy Multi}, lo que sugiere que la retención de los SNPs de máxima tolerancia depende fuertemente del punto de partida proporcionado al algoritmo en el espacio de búsqueda.
+El análisis de configuraciones establece a \textit{AGE-MOEA-II + Greedy Multi + UX} como la combinación líder con una tasa máxima media de $0{,}2916$. Sin embargo, la prueba de Dunn agrupa a esta configuración junto con otras 24 combinaciones dentro de la misma clase de equivalencia. Esta extensa agrupación élite (ver Anexo~\ref{tab:elite_maxt_abs}) está dominada por configuraciones que emplean \textit{Greedy Multi}, lo que sugiere que la retención de los SNPs de máxima tolerancia depende fuertemente del punto de partida proporcionado al algoritmo en el espacio de búsqueda.
 
 \subparagraph{Análisis por algoritmo}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_maxtolerancerate_algorithm_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para MaxToleranceRate (Absoluto): Algoritmos}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_maxtolerancerate_algorithm_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Tmáx (Absoluto): Algoritmos}
     \label{fig:dunn_maxtolerancerate_abs_algorithm}
 \end{figure}
 
@@ -656,8 +683,8 @@ A pesar de que AGE-MOEA-II lidera la configuración óptima, la evaluación algo
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_maxtolerancerate_init_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para MaxToleranceRate (Absoluto): Inicialización}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_maxtolerancerate_init_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Tmáx (Absoluto): Inicialización}
     \label{fig:dunn_maxtolerancerate_abs_init}
 \end{figure}
 
@@ -670,15 +697,15 @@ El liderazgo de \textit{Greedy Multi} se debe a que para alcanzar una alta tasa 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_maxtolerancerate_crossover_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para MaxToleranceRate (Absoluto): Cruce}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_maxtolerancerate_crossover_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Tmáx (Absoluto): Cruce}
     \label{fig:dunn_maxtolerancerate_abs_crossover}
 \end{figure}
 
 
 El operador de cruce mantiene la estructura observada en otras métricas, priorizando la recombinación uniforme. HUX y UX conforman el primer nivel sin diferencias estadísticas entre sí ($0{,}2511$ y $0{,}2509$ respectivamente). El cruce de dos puntos (2P) establece un segundo nivel aislado ($0{,}2435$), mientras que el cruce de un punto (1P) cierra la clasificación en el último nivel de forma independiente ($0{,}2397$). 
 
-\paragraph{Distancia de Hamming Promedio (AvgHD)}
+\paragraph{Distancia de Hamming Promedio (Hmed)}
 
 \subparagraph{Análisis de configuraciones}
 
@@ -689,36 +716,36 @@ El análisis de configuraciones muestra a \textit{SPEA2 + Random Dense + HUX} co
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_avghammingdistance_algorithm_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para AvgHD (Absoluto): Algoritmos}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_avghammingdistance_algorithm_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Hmed (Absoluto): Algoritmos}
     \label{fig:dunn_avghammingdistance_abs_algorithm}
 \end{figure}
 
 
 La evaluación por algoritmo estructura los resultados en cuatro niveles estadísticos. SPEA2 y NSGA-II conforman el estrato superior ($90{,}4433$ y $85{,}4272$ respectivamente). El segundo y tercer nivel actúan como zonas de transición agrupando a NSGA-II, AGE-MOEA-II, NSGA-III, U-NSGA-III y SMS-EMOA a través de solapamientos estadísticos. Finalmente, RVEA cierra la clasificación de manera aislada en el último nivel con el rendimiento más bajo ($52{,}8306$).
 
-El liderazgo conjunto de SPEA2 y NSGA-II responde a su dinámica de optimización. Al carecer de vectores de referencia rígidos que fuercen una distribución perfectamente uniforme entre los cuatro objetivos, estos algoritmos tienden a poblar libremente los extremos del frente de Pareto. Esto les permite acaparar soluciones con valores máximos en el objetivo de disimilitud ($f_3$), elevando considerablemente su promedio global.
+El liderazgo conjunto de SPEA2 y NSGA-II responde a su dinámica de optimización. Al carecer de vectores de referencia rígidos que fuercen una distribución uniforme entre los cuatro objetivos, estos algoritmos tienden a poblar libremente los extremos del frente de Pareto. Esto les permite acaparar soluciones con valores máximos en el objetivo de disimilitud ($f_3$), elevando considerablemente su promedio global.
 
 \subparagraph{Análisis por inicialización}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_avghammingdistance_init_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para AvgHD (Absoluto): Inicialización}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_avghammingdistance_init_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Hmed (Absoluto): Inicialización}
     \label{fig:dunn_avghammingdistance_abs_init}
 \end{figure}
 
 
-El impacto de la inicialización en la disimilitud haplotípica final es absoluto. \textit{Random Dense} domina la clasificación en solitario con un valor superior ($133{,}7285$). \textit{Greedy Ting} ocupa el segundo estrato de forma aislada ($89{,}8245$), mientras que \textit{Greedy Multi} se desploma hasta el último nivel con un valor marginal ($15{,}3006$).
+El impacto de la inicialización en esta métrica es notorio. \textit{Random Dense} domina la clasificación en solitario con un valor superior ($133{,}7285$). \textit{Greedy Ting} ocupa el segundo estrato de forma aislada ($89{,}8245$), mientras que \textit{Greedy Multi} cae hasta el último nivel con un valor marginal ($15{,}3006$).
 
-La superioridad de \textit{Random Dense} radica en su naturaleza estocástica; al iniciar la búsqueda con vectores aleatorios, proporciona a la población la oportunidad de descubrir y progresar hacia las regiones del espacio de objetivos donde se maximiza la distancia de Hamming. Por el contrario, \textit{Greedy Multi} inyecta de forma determinista soluciones optimizadas exclusivamente para minimizar el tamaño ($f_1$) y maximizar la cobertura ($f_2$), ignorando completamente la distinción de haplotipos ($f_3$). Esto provoca que el algoritmo evolutivo arranque anclado en un extremo del frente de Pareto con un rendimiento muy pobre en $f_3$, siendo incapaz de migrar hacia soluciones de alta disimilitud durante las generaciones.
+La superioridad de \textit{Random Dense} radica en su naturaleza estocástica; al iniciar la búsqueda con vectores aleatorios, proporciona a la población la oportunidad de descubrir y progresar hacia las regiones del espacio de objetivos donde se maximiza la distancia de Hamming. Por el contrario, \textit{Greedy Multi} inyecta de forma determinista soluciones optimizadas exclusivamente para minimizar el tamaño ($f_1$) y maximizar la cobertura ($f_2$), ignorando completamente la distinción de haplotipos ($f_3$). Esto provoca que el EA arranque anclado en un extremo del frente de Pareto con un rendimiento muy pobre en $f_3$, siendo incapaz de migrar hacia soluciones de alta disimilitud durante las generaciones.
 
 \subparagraph{Análisis por cruce}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/4_rankings/equivalencia_dunn_avghammingdistance_crossover_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para AvgHD (Absoluto): Cruce}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_avghammingdistance_crossover_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Hmed (Absoluto): Cruce}
     \label{fig:dunn_avghammingdistance_abs_crossover}
 \end{figure}
 
@@ -737,62 +764,64 @@ Al igual que en el experimento absoluto, MOEA/D fue excluido de las simulaciones
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_nsga2_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_nsga2_full_31.png}
     \caption[Frente de Pareto agregado (Proporcional): NSGA-II]{Frente de Pareto agregado generado por el algoritmo NSGA-II. Tamaño de la población del frente: 2637 soluciones.}
     \label{fig:pareto_prop_nsga2}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_spea2_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_spea2_full_31.png}
     \caption[Frente de Pareto agregado (Proporcional): SPEA2]{Frente de Pareto agregado generado por el algoritmo SPEA2. Tamaño de la población del frente: 2640 soluciones.}
     \label{fig:pareto_prop_spea2}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_nsga3_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_nsga3_full_31.png}
     \caption[Frente de Pareto agregado (Proporcional): NSGA-III]{Frente de Pareto agregado generado por el algoritmo NSGA-III. Tamaño de la población del frente: 503 soluciones.}
     \label{fig:pareto_prop_nsga3}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_unsga3_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_unsga3_full_31.png}
     \caption[Frente de Pareto agregado (Proporcional): U-NSGA-III]{Frente de Pareto agregado generado por el algoritmo U-NSGA-III. Tamaño de la población del frente: 504 soluciones.}
     \label{fig:pareto_prop_unsga3}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_rvea_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_rvea_full_31.png}
     \caption[Frente de Pareto agregado (Proporcional): RVEA]{Frente de Pareto agregado generado por el algoritmo RVEA. Tamaño de la población del frente: 809 soluciones.}
     \label{fig:pareto_prop_rvea}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_smsemoa_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_smsemoa_full_31.png}
     \caption[Frente de Pareto agregado (Proporcional): SMS-EMOA]{Frente de Pareto agregado generado por el algoritmo SMS-EMOA. Tamaño de la población del frente: 2492 soluciones.}
     \label{fig:pareto_prop_smsemoa}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_agemoea2_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_agemoea2_full_31.png}
     \caption[Frente de Pareto agregado (Proporcional): AGE-MOEA-II]{Frente de Pareto agregado generado por el algoritmo AGE-MOEA-II. Tamaño de la población del frente: 2639 soluciones.}
     \label{fig:pareto_prop_agemoea2}
 \end{figure}
 
 El análisis de los frentes de Pareto proporcionales mantiene algunas tendencias estructurales observadas en el experimento absoluto, pero introduce cambios en la evaluación de la disimilitud y el balance biológico, revelando cómo la normalización fraccional altera las regiones de interés del algoritmo.
 
-En primer lugar, la influencia de la estrategia de inicialización vuelve a ser el factor dominante en la distribución del frente. La estrategia \textit{Greedy Multi} concentra las soluciones en el extremo de baja compacidad (paneles pequeños, $\sim 22$ SNPs de media), baja tolerancia ($\sim 4$ SNPs de media), la mejor disimilitud proporcional ($\sim 0{,}4590$), pero al mismo tiempo registra los peores valores en balance proporcional del experimento ($\sim 0{,}0118$). En el extremo opuesto, \textit{Random Dense} genera paneles extremadamente grandes ($\sim 269$ SNPs) que presentan la peor disimilitud proporcional ($\sim 0{,}3794$), pero logra el balance proporcional más bajo y por tanto el mejor del experimento ($\sim 0{,}0030$). Por su parte, \textit{Greedy Ting} mantiene su rol como punto de compromiso equilibrando compacidad ($\sim 118$ SNPs) y tolerancia ($\sim 24$ fallos) con un rendimiento intermedio tanto en disimilitud proporcional como en balance proporcional. 
+En primer lugar, la influencia de la estrategia de inicialización vuelve a ser el factor dominante en la distribución del frente. La estrategia \textit{Greedy Multi} concentra las soluciones en el extremo de baja compacidad (paneles pequeños, $\sim 22$ SNPs de media), baja tolerancia ($\sim 4$ SNPs de media), la mejor disimilitud proporcional ($\sim 0{,}4590$), pero al mismo tiempo registra los peores valores en balance proporcional del experimento ($\sim 0{,}0118$). En el extremo opuesto, \textit{Random Dense} genera paneles muy grandes ($\sim 269$ SNPs) que presentan la peor disimilitud proporcional ($\sim 0{,}3794$), pero logra el balance proporcional más bajo y por tanto el mejor del experimento ($\sim 0{,}0030$). Por su parte, \textit{Greedy Ting} mantiene su rol como punto de compromiso equilibrando compacidad ($\sim 118$ SNPs) y tolerancia ($\sim 24$ fallos) con un rendimiento intermedio tanto en disimilitud proporcional como en balance proporcional. 
 
-Esta dicotomía empírica demuestra la fuerte tensión existente en el problema proporcional: una baja compacidad ($f_1$) tiene como consecuencia una alta disimilud proporcional (maximizando $f_3$) y un empeoramiento (crecimiento) del balance ($f_4$). En el experimento absoluto esto era diferente, ya que una baja compacidad tenía como consecuencia una baja disimilitud pero un buen balance.
+Esta dicotomía demuestra la fuerte tensión existente en el problema proporcional: una baja compacidad ($f_1$) tiene como consecuencia una alta disimilud proporcional (maximizando $f_3$) y un empeoramiento (crecimiento) del balance ($f_4$). En el experimento absoluto esto era diferente, ya que una baja compacidad tenía como consecuencia una baja disimilitud pero un buen balance.
 
-Al comparar los valores medios de compacidad de este experimento frente a los de la formulación absoluta, se observa una reducción del tamaño de la compacidad para todas las estrategias de inicialización: \textit{Greedy Multi} desciende de $\sim 30$ a $\sim 22$ SNPs, \textit{Greedy Ting} de $\sim 232$ a $\sim 118$ SNPs, y \textit{Random Dense} de $\sim 345$ a $\sim 269$ SNPs. Esta compresión sugiere la posibilidad de que la elección de esta formulación planteada en la literatura se debe a que estos autores TODO FUENTES trataron de hallar frentes más compactos.
+Al comparar los valores medios de compacidad de este experimento frente a los de la formulación absoluta, se observa una reducción del tamaño de la compacidad para todas las estrategias de inicialización: \textit{Greedy Multi} desciende de $\sim 30$ a $\sim 22$ SNPs, \textit{Greedy Ting} de $\sim 232$ a $\sim 118$ SNPs, y \textit{Random Dense} de $\sim 345$ a $\sim 269$ SNPs.
 
-En segundo lugar, el paradigma algorítmico continúa dictando la densidad de soluciones válidas, aunque la normalización dinámica mitiga en parte las debilidades observadas por algunos algoritmos en el experimento absoluto. Los algoritmos basados en dominancia de Pareto (NSGA-II, SPEA2) y geometría relativa (AGE-MOEA-II) repiten como los generadores de frentes más densos, promediando unas $\sim 220$ soluciones por frente mediano, mientras que SMS-EMOA se mantiene robusto con $\sim 208$ soluciones. La mejora más destacable se produce en los algoritmos de muchos objetivos (NSGA-III, U-NSGA-III y RVEA); aunque siguen conformando los frentes con menos puntos del estudio ($\sim 42$ soluciones medias para NSGA-III y U-NSGA-III, y $\sim 67$ para RVEA), experimentan un incremento apreciable respecto la escasa cardinalidad de sus frentes en el experimento absoluto ($\sim 26$, $\sim 25$ y $\sim 24$ soluciones respectivamente).
+En segundo lugar, el paradigma algorítmico continúa dictando la densidad de soluciones válidas, aunque la normalización dinámica mitiga en parte las debilidades observadas por algunos algoritmos en el experimento absoluto. Los algoritmos basados en dominancia de Pareto (NSGA-II, SPEA2) y geometría relativa (AGE-MOEA-II) repiten como los generadores de frentes más densos, promediando unas $\sim 220$ soluciones por frente mediano, mientras que SMS-EMOA se mantiene robusto con $\sim 208$ soluciones.
+
+La mejora más destacable se produce en los MaOEAs (NSGA-III, U-NSGA-III y RVEA); aunque siguen conformando los frentes con menos puntos del estudio ($\sim 42$ soluciones medias para NSGA-III y U-NSGA-III, y $\sim 67$ para RVEA), experimentan un incremento apreciable respecto la escasa cardinalidad de sus frentes en el experimento absoluto ($\sim 26$, $\sim 25$ y $\sim 24$ soluciones respectivamente).
 
 Por último, el análisis de los operadores de cruce reproduce los hallazgos del experimento previo. No hay diferencias ni patrones apreciables desde el análisis gráfico de los frentes de Pareto, indicando que los principales factores para la formación de los mismos son los algoritmos y las inicializaciones.
 
@@ -802,63 +831,60 @@ El análisis de la evolución generacional durante el experimento de métricas p
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/2_metricas_convergencia/convergencia_hv_nsga2_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/2_metricas_convergencia/convergencia_hv_nsga2_full_31.png}
     \caption[Dinámica de convergencia HV (Proporcional): NSGA-II]{Evolución generacional del Hipervolumen en NSGA-II.}
     \label{fig:conv_hv_prop_nsga2}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/2_metricas_convergencia/convergencia_hv_spea2_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/2_metricas_convergencia/convergencia_hv_spea2_full_31.png}
     \caption[Dinámica de convergencia HV (Proporcional): SPEA2]{Evolución generacional del Hipervolumen en SPEA2.}
     \label{fig:conv_hv_prop_spea2}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/2_metricas_convergencia/convergencia_hv_nsga3_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/2_metricas_convergencia/convergencia_hv_nsga3_full_31.png}
     \caption[Dinámica de convergencia HV (Proporcional): NSGA-III]{Evolución generacional del Hipervolumen en NSGA-III.}
     \label{fig:conv_hv_prop_nsga3}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/2_metricas_convergencia/convergencia_hv_unsga3_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/2_metricas_convergencia/convergencia_hv_unsga3_full_31.png}
     \caption[Dinámica de convergencia HV (Proporcional): U-NSGA-III]{Evolución generacional del Hipervolumen en U-NSGA-III.}
     \label{fig:conv_hv_prop_unsga3}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/2_metricas_convergencia/convergencia_hv_rvea_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/2_metricas_convergencia/convergencia_hv_rvea_full_31.png}
     \caption[Dinámica de convergencia HV (Proporcional): RVEA]{Evolución generacional del Hipervolumen en RVEA.}
     \label{fig:conv_hv_prop_rvea}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/2_metricas_convergencia/convergencia_hv_smsemoa_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/2_metricas_convergencia/convergencia_hv_smsemoa_full_31.png}
     \caption[Dinámica de convergencia HV (Proporcional): SMS-EMOA]{Evolución generacional del Hipervolumen en SMS-EMOA.}
     \label{fig:conv_hv_prop_smsemoa}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/2_metricas_convergencia/convergencia_hv_agemoea2_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/2_metricas_convergencia/convergencia_hv_agemoea2_full_31.png}
     \caption[Dinámica de convergencia HV (Proporcional): AGE-MOEA-II]{Evolución generacional del Hipervolumen en AGE-MOEA-II.}
     \label{fig:conv_hv_prop_agemoea2}
 \end{figure}
 
-La observación empírica de estas gráficas confirma que el comportamiento dinámico intergeneracional se mantiene estable a pesar de la reducción del tamaño de la compacidad. Se reproducen de forma visual los mismos fenómenos estructurales explicados en profundidad en el marco experimental anterior:
+La observación de estas gráficas confirma que el comportamiento dinámico intergeneracional se mantiene estable a pesar de la reducción del tamaño de la compacidad. Se reproducen de forma visual los mismos fenómenos explicados en profundidad en el experimento anterior, aunque también se ven otros diferentes:
 
 \begin{enumerate}
-    \item \textbf{El efecto de impulso temprano de las inicializaciones:} Nuevamente, las estrategias \textit{Random Dense} y \textit{Greedy Ting} inyectan a la población inicial un conjunto de soluciones que influencian positivamente al algoritmo en las primeras generaciones. En contraste, \textit{Greedy Multi} muestra un arranque prácticamente nulo.
-    \item \textbf{La parálisis evolutiva de SMS-EMOA:} Al igual que ocurría en la formulación absoluta, SMS-EMOA experimenta un severo parón evolutivo provocado por una pérdida temprana de diversidad genética. Al operar bajo la inicialización \textit{Greedy Ting}, el algoritmo vuelve a paralizar casi por completo su convergencia en torno a la generación 70, evidenciando empíricamente que la naturaleza estacionaria de su arquitectura $\mu+1$ es estructuralmente incapaz de sostener la exploración a largo plazo en este problema.
-    \item \textbf{El rescate estructural de RVEA:} A diferencia del colapso masivo documentado en la formulación absoluta con \textit{Greedy Ting} (donde perdía un $40\%$ de calidad métrica), RVEA logra mantener una tendencia ascendente en este experimento. Sus configuraciones con \textit{Greedy Ting} inician con un hipervolumen de $\sim 0{,}254$ y finalizan de forma estable en torno a $\sim 0{,}268$. Este cambio probablemente ocurra porque la propia división fraccional altera el espacio de los objetivos $f_3$ y $f_4$ de tal forma que el algoritmo pueda sostener más soluciones en el frente final, fenómeno que como ya se ha estudiado ocurre con el resto de algoritmos basados en vectores de referencia.
-    \item \textbf{El decrecimiento métrico por saturación en SPEA2:} Se documenta una anomalía exclusiva de este experimento proporcional. El hipervolumen de SPEA2 no experimenta un crecimiento monótono, sino que alcanza un pico de rendimiento a lo largo de su evolución (por ejemplo, $\sim 0{,}350$ en la generación 100 con \textit{Greedy Ting}) para posteriormente comenzar a decrecer de forma paulatina hasta el final de la ejecución (cerrando en $\sim 0{,}331$). Este involución probablemente tiene lugar debido a un mal desempeño del mecanismo de desempates de SPEA2, que es el principal operador de los EAs en problemas MaO, ya que la dominancia de Pareto que caracteriza a este algoritmo pasa a un segundo plano.
+    \item \textbf{El efecto de impulso temprano de las inicializaciones:} Nuevamente, las estrategias \textit{Random Dense} y \textit{Greedy Ting} inyectan a la población inicial un conjunto de soluciones que influencian positivamente al algoritmo en las primeras generaciones. En contraste, \textit{Greedy Multi} muestra un arranque prácticamente nulo. Este fenómeno se explicó en el experimento anterior.
+    \item \textbf{La mejora de RVEA:} A diferencia del decrecimiento documentado en la formulación absoluta con \textit{Greedy Ting} (donde perdía un $40\%$ de calidad métrica), RVEA logra mantener una tendencia ascendente en este experimento. Sus configuraciones con \textit{Greedy Ting} inician con un hipervolumen de $\sim 0{,}254$ y finalizan de forma estable en torno a $\sim 0{,}268$. Este cambio podría deberse a que la propia división fraccional altera el espacio de los objetivos $f_3$ y $f_4$ de tal forma que el algoritmo pueda sostener más soluciones en el frente final, fenómeno que como ya se ha estudiado ocurre con el resto de algoritmos basados en vectores de referencia.
+    \item \textbf{El decrecimiento por saturación en SPEA2:} Se documenta un comportamiento particular en este experimento proporcional. El hipervolumen de SPEA2 no experimenta un crecimiento monótono, sino que alcanza un pico de rendimiento a lo largo de su evolución (por ejemplo, $\sim 0{,}350$ en la generación 100 con \textit{Greedy Ting}) para posteriormente comenzar a decrecer de forma paulatina hasta el final de la ejecución (cerrando en $\sim 0{,}331$). Esta involución probablemente tiene lugar debido a un mal desempeño del mecanismo de desempates de SPEA2, que es el principal operador de los EAs en MaOPs, ya que la dominancia de Pareto que caracteriza a este algoritmo pasa a un segundo plano.
 \end{enumerate}
-
-En resumen, la división proporcional de los objetivos mitiga fallas arquitectónicas severas (como la vulnerabilidad geométrica de RVEA), pero no consigue alterar las sinergias básicas entre los motores de búsqueda y la densidad genética inicial.
 
 \subsection{Análisis estadístico de las métricas}
 % Presentación y discusión de resultados individuales (medias, varianzas, boxplots).
@@ -869,15 +895,15 @@ Siguiendo la nomenclatura establecida en el experimento absoluto, la Tabla~\ref{
 \tiny
 \setlength{\tabcolsep}{0.5pt}
 \begin{longtable}{@{}lccccccccc@{}}
-\caption[Resultados empíricos de las métricas de evaluación (Proporcional)]{Resultados empíricos globales del experimento proporcional (valores promedio y desviación típica en el subíndice a lo largo de 31 ejecuciones independientes). Se resalta en negrita el \textit{Top 5} de configuraciones algorítmicas con mejor rendimiento para cada métrica individual.}
+\caption[Resultados de las métricas de evaluación (Proporcional)]{Resultados globales del experimento proporcional (valores promedio y desviación típica en el subíndice a lo largo de 31 ejecuciones independientes). Se resalta en negrita el \textit{Top 5} de configuraciones algorítmicas con mejor rendimiento para cada métrica individual.}
 \label{tab:resultados_metricas_prop} \\
 \toprule
-\textbf{Config} & \textbf{HV} & \textbf{IGD+} & \textbf{GD+} & \textbf{Rng} & \textbf{MSum} & \textbf{SMin} & \textbf{AvgT} & \textbf{MaxT} & \textbf{AvgHD} \\
+\textbf{Config} & \textbf{HV} & \textbf{IGD+} & \textbf{GD+} & \textbf{Rng} & \textbf{MSum} & \textbf{SMin} & \textbf{Tmed} & \textbf{Tmáx} & \textbf{Hmed} \\
 \midrule
 \endfirsthead
 \multicolumn{10}{c}{{\bfseries \tablename\ \thetable{} -- continua desde la página anterior}} \\
 \toprule
-\textbf{Config} & \textbf{HV} & \textbf{IGD+} & \textbf{GD+} & \textbf{Rng} & \textbf{MSum} & \textbf{SMin} & \textbf{AvgT} & \textbf{MaxT} & \textbf{AvgHD} \\
+\textbf{Config} & \textbf{HV} & \textbf{IGD+} & \textbf{GD+} & \textbf{Rng} & \textbf{MSum} & \textbf{SMin} & \textbf{Tmed} & \textbf{Tmáx} & \textbf{Hmed} \\
 \midrule
 \endhead
 \midrule \multicolumn{10}{r}{{Continúa en la siguiente página...}} \\
@@ -977,7 +1003,7 @@ US3-RD-UX & $0.3762_{0.0051}$ & $0.1277_{0.0000}$ & $0.0035_{0.0000}$ & $0.7202_
 
 \subparagraph{Análisis por configuración global}
 
-Tomando como referencia la configuración líder (AGE-MOEA-II-Greedy Ting-UX) y aplicando el test de significancia estadística Dunn-Holm, se identifica un extenso bloque de equivalencia compuesto por 27 configuraciones (detallado en el Anexo~\ref{anexo:elite_hv_prop}). Dentro de este grupo de mayor rendimiento, se documenta un predominio de las inicializaciones \textit{Greedy Ting} y \textit{Random Dense}, descartando a \textit{Greedy Multi}. Asimismo, los operadores de cruce uniformes (UX y HUX) asumen un rol principal frente a los cruces por puntos, lo que confirma empíricamente el patrón que se lleva viendo durante este TFG.
+Tomando como referencia la configuración líder (AGE-MOEA-II-Greedy Ting-UX) y aplicando el test de significancia estadística Dunn-Holm, se identifica un extenso bloque de equivalencia compuesto por 27 configuraciones (detallado en el Anexo~\ref{anexo:elite_hv_prop}). Dentro de este grupo de mayor rendimiento, se documenta un predominio de las inicializaciones \textit{Greedy Ting} y \textit{Random Dense}, descartando a \textit{Greedy Multi}. Asimismo, los operadores de cruce uniformes (UX y HUX) asumen un rol principal frente a los cruces por puntos, lo que confirma el patrón que se lleva viendo durante este TFG.
 
 Con respecto a esta sección del experimento proporcional no hay grandes diferencias con respecto al experimento absoluto.
 
@@ -985,18 +1011,29 @@ Con respecto a esta sección del experimento proporcional no hay grandes diferen
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_hypervolume_algorithm_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para Hipervolumen (Proporcional): Algoritmos}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_hypervolume_algorithm_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Hipervolumen (Proporcional): Algoritmos}
     \label{fig:dunn_hv_prop_alg}
 \end{figure}
 
-Al evaluar los algoritmos evolutivos de forma aislada (Figura~\ref{fig:dunn_hv_prop_alg}), el test estadístico permite estructurar el rendimiento en niveles de significancia diferenciados. El primer grupo estadístico está liderado por AGE-MOEA-II, el cual se halla emparejado estadísticamente con NSGA-II. La principal diferencia con respecto al experimento absoluto es que NSGA-II ha perdido su hegemonía para compartir el primer puesto. 
+Al evaluar los EAs de forma aislada (Figura~\ref{fig:dunn_hv_prop_alg}), el test estadístico permite estructurar el rendimiento en niveles de significancia diferenciados. El primer grupo estadístico está liderado por AGE-MOEA-II, el cual se halla emparejado estadísticamente con NSGA-II. La principal diferencia con respecto al experimento absoluto es que NSGA-II ha perdido el liderazgo estadístico para compartir el primer puesto. 
 
-Bajo esta nueva formulación de objetivos, NSGA-II tarda el doble en purgar a los individuos dominados (media de 70,2 generaciones), lo que retrasa el momento en el que su \textit{crowding distance} puede tomar el control exclusivo de la dispersión poblacional. Por el contrario, AGE-MOEA-II consolida su resistencia  al colapso: es capaz de mantener permanentemente viva una reserva de soluciones dominadas que garantizan la diversidad genética a lo largo de las 500 generaciones.
+Bajo esta nueva formulación de objetivos, NSGA-II tarda el doble en eliminar a los individuos dominados (media de 70,2 generaciones), lo que retrasa el momento en el que su distancia de agrupamiento puede tomar el control exclusivo de la dispersión poblacional, aunque esto no indica ser necesariamente un problema para NSGA-II, al contrario, esto permite a NSGA-II explorar de forma más exhaustiva el espacio de soluciones, utilizando su mecanismo de ordenación de frentes.
 
-El segundo grupo estadístico engloba a los MaOEA (U-NSGA-III y NSGA-III) conjuntamente con SPEA2. Como se ha documentado previamente, los algoritmos basados en vectores de referencia sobre una topología discreta obliga a que parte de los recursos de búsqueda se desvíen hacia regiones infactibles, reduciendo la cardinalidad del frente poblacional resultante~\cite{deb2013evolutionary, ishibuchi2015behavior}. SPEA2 (cuyo colapso de dominancia poblacional promedia unas estables 46,0 generaciones) iguala el rendimiento de este grupo gracias a su mecanismo de archivo externo y a su estimador basado en el $k$-ésimo vecino más cercano ($k$-NN).
+Un factor estructural fundamental evidenciado empíricamente (Figura~\ref{fig:corr_spearman_prop}) es que la normalización proporcional disminuye significativamente la fuerza general de la correlación entre los objetivos. El análisis de Spearman sobre las soluciones del frente de Pareto final en este experimento ($n = 380\,264$) revela que, mientras en la formulación absoluta todos los objetivos estaban casi perfectamente correlacionados ($|\rho| \geq 0{,}90$, siendo la mayoría $\geq 0{,}96$), en la formulación proporcional la magnitud de la correlación cae de forma generalizada (por ejemplo, a $|\rho| = 0{,}57$ entre tolerancia y disimilitud). Esta menor dependencia incrementa la dimensionalidad efectiva del frente de Pareto. Como establecen Ishibuchi \textit{et al.}~\cite{ishibuchi2015behavior}, el buen rendimiento de NSGA-II en MaOEAs depende de una altísima correlación; al romperse esta redundancia, su distancia de agrupamiento pierde eficacia para cubrir las distintas regiones del frente. Por el contrario, AGE-MOEA-II se adapta orgánicamente a esta mayor complejidad gracias a su estimación geométrica y su capacidad de mantener una reserva de individuos dominados durante las 500 generaciones, como se ha comprobado analizando la evolución de la población.
 
-En un estrato inferior se ubica SMS-EMOA junto con SPEA2, que actúa como puente estadístico. El escaso rendimiento de SMS-EMOA agrava los problemas detectados en el experimento absoluto: su arquitectura de estado estacionario provoca una convergencia crítica en la que el 100\% de la población colapsa en el primer frente en una media de 5,2 generaciones. Al purgar cualquier traza de diversidad genética prácticamente tras el inicio de la ejecución, es incapaz de lograr la expansión del frente.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{../exp_aux/correlacion/corr_spearman_experimento_prop.png}
+    \caption[Análisis de correlación de Spearman (Proporcional)]{Matriz de correlación de Spearman (izquierda) y p-valores en escala logarítmica (derecha) para los cuatro objetivos en el experimento proporcional. Se evidencia cómo la normalización matemática rompe la alta dependencia lineal observada en el experimento absoluto (véase Figura~\ref{fig:corr_spearman_abs}), introduciendo correlaciones inversas y reduciendo la magnitud general de correlación (e.g., $|\rho| = 0{,}57$).}
+    \label{fig:corr_spearman_prop}
+\end{figure}
+
+A la luz de estos datos, se puede deducir la razón empírica subyacente por la que Ting \textit{et al.}~\cite{ting2010multi} formularon los objetivos proporcionales originales de esta manera. En un problema biológico donde los objetivos absolutos son intrínsecamente redundantes y sinérgicos, los EAs no se enfrentan a un problema real de optimización de muchos objetivos, ya que el frente de Pareto degenera en una estructura de baja dimensionalidad. Al dividir los objetivos de disimilitud y balance por la compacidad, introdujeron una fuerte descorrelación matemática que transformó el problema en un entorno de muchos objetivos verdaderamente complejo, con conflictos genuinos y alta dimensionalidad efectiva. Si bien es cierto que aún existen correlaciones, son mucho menos acentuadas que en la formulación absoluta. Esta modificación estructural es lo que permite evaluar rigurosamente la capacidad de convergencia y el rendimiento de los algoritmos frente a MaOPs.
+
+El segundo grupo estadístico engloba a los MaOEA (U-NSGA-III y NSGA-III) conjuntamente con SPEA2. Como se ha documentado previamente, los algoritmos basados en vectores de referencia sobre una topología discreta obligan a que parte de los recursos de búsqueda se desvíen hacia regiones infactibles, reduciendo la cardinalidad del frente poblacional resultante~\cite{ishibuchi2015behavior}. SPEA2 (cuya saturación de dominancia poblacional promedia unas estables 46,0 generaciones) iguala el rendimiento de este grupo debido a su mecanismo de archivo externo y a su estimador basado en el $k$-ésimo vecino más cercano ($k$-NN).
+
+En un estrato inferior se ubica SMS-EMOA junto con SPEA2, que actúa como puente estadístico. El escaso rendimiento de SMS-EMOA agrava los problemas detectados en el experimento absoluto: su arquitectura de estado estacionario provoca una convergencia excesiva en la que el 100\% de la población se concentra en el primer frente en una media de 5,2 generaciones. Al eliminar cualquier traza de diversidad genética prácticamente tras el inicio de la ejecución, es incapaz de lograr la expansión del frente.
 
 Finalmente, RVEA se sitúa en la última posición. Aunque la cardinalidad de su frente final sea mayor que en el experimento absoluto, aún no es capaz de mejorar con respecto al resto de algoritmos, obteniendo un resultado bastante alejado de SMS-EMOA.
 
@@ -1004,25 +1041,25 @@ Finalmente, RVEA se sitúa en la última posición. Aunque la cardinalidad de su
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_hypervolume_init_full_31.png"}
-    \caption{Ranking y Equivalencia de Dunn para Hipervolumen (Proporcional): Inicialización}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_hypervolume_init_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Hipervolumen (Proporcional): Inicialización}
     \label{fig:dunn_hv_prop_init}
 \end{figure}
 
 La división por métodos de inicialización (Figura~\ref{fig:dunn_hv_prop_init}) determina diferencias estadísticamente significativas entre la totalidad de las variantes. Bajo este diseño experimental, \textit{Greedy Ting} se posiciona como el enfoque con mayor rendimiento, superando a \textit{Random Dense}. Por su parte, la inicialización \textit{Greedy Multi} se clasifica en última posición con métricas inferiores.
 
-Con respecto al experimento absoluto, \textit{Random Dense} ya no es la inicialización ganadora, sino \textit{Greedy Ting}, sugiriendo que quizá la división de los objetivos $f_3$ y $f_4$ fuera llevada a cabo para mejorar los resultados de la inicialización voraz y así alterar los rankings.
+Con respecto al experimento absoluto, \textit{Random Dense} ya no es la inicialización ganadora, sino \textit{Greedy Ting}. Bajo esta nueva formulación, los paneles grandes de SNPs no se ven tan recompensados como antes, lo que hace que las soluciones iniciales aleatorias sean menos competitivas. Las soluciones iniciales de \textit{Greedy Ting}, por el contrario, se ven beneficiadas por la nueva formulación, ya que están diseñadas para optimizar los objetivos planteados, concretamente los proporcionales.
 
 \subparagraph{Análisis por operador de cruce}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_hypervolume_crossover_full_31.png"}
-    \caption{Ranking y Equivalencia de Dunn para Hipervolumen (Proporcional): Cruce}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_hypervolume_crossover_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Hipervolumen (Proporcional): Cruce}
     \label{fig:dunn_hv_prop_cross}
 \end{figure}
 
-El estudio de los operadores de cruce (Figura~\ref{fig:dunn_hv_prop_cross}) evidencia empíricamente un mayor desempeño de los operadores uniformes, como se lleva observando a lo largo del trabajo. Las configuraciones HUX y UX conforman un grupo estadístico superior, siendo estadísticamente equivalentes entre sí y mostrando mejoras sobre los cruces por n-puntos (2P y 1P).
+El estudio de los operadores de cruce (Figura~\ref{fig:dunn_hv_prop_cross}) evidencia un mayor desempeño de los operadores uniformes, como se lleva observando a lo largo del trabajo. Las configuraciones HUX y UX conforman un grupo estadístico superior, siendo estadísticamente equivalentes entre sí y mostrando mejoras sobre los cruces por n-puntos (2P y 1P).
 
 \paragraph{Distancia Generacional Invertida Plus (IGD+)}
 
@@ -1030,7 +1067,7 @@ El estudio de los operadores de cruce (Figura~\ref{fig:dunn_hv_prop_cross}) evid
 
 El análisis descriptivo de la métrica IGD+ revela que la configuración líder es AGE-MOEA-II empleando la inicialización \textit{Greedy Ting} y el cruce uniforme (AGEMOEA2-greedy\_ting-UX), alcanzando un valor mínimo de $0{,}0207$.
 
-El test estadístico de Dunn-Holm agrupa un conjunto de élite conformado por 26 configuraciones (listadas en el Anexo~\ref{tab:elite_igd_prop}). En este bloque de mayor rendimiento, existe un claro dominio de la inicialización \textit{Greedy Ting}, la cual está presente en la práctica totalidad de las mejores combinaciones.
+El test estadístico de Dunn-Holm agrupa un conjunto de élite conformado por 26 configuraciones (listadas en el Anexo~\ref{tab:elite_igd_prop}). En este bloque de mayor rendimiento, existe un dominio de la inicialización \textit{Greedy Ting}, la cual está presente en la práctica totalidad de las mejores combinaciones.
 
 Es apreciable que los resultados de esta métricas son similares a los del hipervolumen, ya que ambas métricas tienen una naturaleza similar. Por otra parte, los resultados son similares a los obtenidos en el experimento de formulación absoluta.
 
@@ -1038,40 +1075,40 @@ Es apreciable que los resultados de esta métricas son similares a los del hiper
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_igd+_algorithm_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para IGD+ (Proporcional): Algoritmos}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_igd+_algorithm_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para IGD+ (Proporcional): Algoritmos}
     \label{fig:dunn_igd_prop_alg}
 \end{figure}
 
 El análisis individual por algoritmo (Figura~\ref{fig:dunn_igd_prop_alg}) establece tres estratos estadísticos. En el primer nivel conviven de manera estadísticamente equivalente SPEA2, AGE-MOEA-II, NSGA-II, NSGA-III y U-NSGA-III, demostrando un rendimiento competitivo y similar entre todos ellos de cara a minimizar la distancia generacional plus. Por debajo se sitúa SMS-EMOA de forma solitaria en un segundo nivel, y finalmente RVEA ocupa la última posición.
 
-Es apreciable que los resultados de esta métrica difieren con los ofrecidos por la misma en el experimento absoluto. En este experimento, los grupos estadísticos son más grandes, lo que probablemente se deba a una reducción del tamaño de los rangos en esta métrica durante este experimento (TODO poner datos )
+Es apreciable que los resultados de esta métrica difieren con los ofrecidos por la misma en el experimento absoluto. En este experimento, los grupos estadísticos son más grandes, lo que podría deberse a una reducción del tamaño de los diferencias en esta métrica durante este experimento.
 
 \subparagraph{Análisis por inicialización}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_igd+_init_full_31.png"}
-    \caption{Ranking y Equivalencia de Dunn para IGD+ (Proporcional): Inicialización}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_igd+_init_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para IGD+ (Proporcional): Inicialización}
     \label{fig:dunn_igd_prop_init}
 \end{figure}
 
-El estudio de los métodos de generación de la población inicial (Figura~\ref{fig:dunn_igd_prop_init}) confirma el liderazgo absoluto de \textit{Greedy Ting}, la cual se posiciona en el primer nivel estadístico de manera estricta. Le sigue \textit{Random Dense} y, en último lugar, \textit{Greedy Multi}.
+El estudio de los métodos de generación de la población inicial (Figura~\ref{fig:dunn_igd_prop_init}) confirma el liderazgo de \textit{Greedy Ting}, la cual se posiciona en el primer nivel estadístico de manera estricta. Le sigue \textit{Random Dense} y, en último lugar, \textit{Greedy Multi}.
 
-Son los mismos rankings que en el experimento absoluto.
+Son los mismos ranquines que en el experimento absoluto.
 
 \subparagraph{Análisis por operador de cruce}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_igd+_crossover_full_31.png"}
-    \caption{Ranking y Equivalencia de Dunn para IGD+ (Proporcional): Cruce}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_igd+_crossover_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para IGD+ (Proporcional): Cruce}
     \label{fig:dunn_igd_prop_cross}
 \end{figure}
 
 En cuanto a los operadores de recombinación (Figura~\ref{fig:dunn_igd_prop_cross}), los resultados son consistentes con la resolución del problema de selección de etiquetas SNP en la inmensa mayoría de los escenarios estudiados. Los cruces uniformes (UX y HUX) integran el primer bloque estadístico sin diferencias significativas. En el segundo nivel se sitúa de forma aislada el cruce de dos puntos (2P), relegando al cruce de un punto (1P) a la última posición.
 
-Se obtuvo el mismo ranking en el experimento absoluto.
+Se obtuvo el mismo ranquin en el experimento absoluto.
 
 \subsubsection{Métricas geométricas puras}
 
@@ -1083,18 +1120,18 @@ La evaluación de la métrica GD+ muestra que la mejor configuración de forma a
 
 Al aplicar el test estadístico sobre el total de configuraciones, se forma un bloque de élite constituido por 26 combinaciones equivalentes (Anexo~\ref{tab:elite_gd_prop}). En este conjunto dominan \textit{Greedy Multi} y \textit{Random Dense}, y destaca la total ausencia de \textit{Greedy Ting}.
 
-En comparación con el experimento absoluto, es destacable la presencia de \textit{Random Dense} en el grupo de alto rendimiento, inicialización que no aparecía en el grupo de alto rendimiento del experimento anterior. En el experimento absoluto, \textit{Greedy Multi} presenta una media de GD+ de $0{,}0005$ frente a $0{,}0291$ de \textit{Random Dense} (una diferencia de factor $\times58$), lo que hace que su mejor configuración (posición 29ª con $0{,}0013$) quede por encima del umbral del bloque élite ($0{,}00087$). En el experimento proporcional, sin embargo, la normalización de los objetivos comprime esta brecha: la media de \textit{Random Dense} se reduce a $0{,}0101$ y la de \textit{Greedy Multi} sube a $0{,}0048$ (diferencia de factor $\times2$), permitiendo que la mejor configuración \textit{Random Dense} (SMSEMOA-random\_dense-HUX, $0{,}0008$) encabece el ranking y quede por debajo del umbral del bloque élite ($0{,}0041$). En esencia, la proporcionalización de los objetivos reduce la ventaja discriminatoria de la inicialización voraz.
+En comparación con el experimento absoluto, es destacable la presencia de \textit{Random Dense} en el grupo de alto rendimiento, inicialización que no aparecía en el grupo de alto rendimiento del experimento anterior. En el experimento absoluto, \textit{Greedy Multi} presenta una media de GD+ de $0{,}0005$ frente a $0{,}0291$ de \textit{Random Dense} (una diferencia de factor $\times58$), lo que hace que su mejor configuración (posición 29ª con $0{,}0013$) quede por encima del umbral del bloque élite ($0{,}00087$). En el experimento proporcional, sin embargo, la normalización de los objetivos comprime esta brecha: la media de \textit{Random Dense} se reduce a $0{,}0101$ y la de \textit{Greedy Multi} sube a $0{,}0048$ (diferencia de factor $\times2$), permitiendo que la mejor configuración \textit{Random Dense} (SMSEMOA-random\_dense-HUX, $0{,}0008$) encabece el ranquin y quede por debajo del umbral del bloque élite ($0{,}0041$). En esencia, la proporcionalización de los objetivos reduce la ventaja discriminatoria de la inicialización voraz.
 
 \subparagraph{Análisis por algoritmo}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_gd+_algorithm_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para GD+ (Proporcional): Algoritmos}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_gd+_algorithm_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para GD+ (Proporcional): Algoritmos}
     \label{fig:dunn_gd_prop_alg}
 \end{figure}
 
-El desglose por algoritmo (Figura~\ref{fig:dunn_gd_prop_alg}) confirma el dominio absoluto de SMS-EMOA, el cual se aísla en el primer nivel estadístico con los mejores resultados. El segundo estrato es ocupado de forma conjunta por los algoritmos orientados a hiperplanos, U-NSGA-III y NSGA-III, sin diferencias significativas entre ellos. El tercer bloque asocia a AGE-MOEA-II, SPEA2 y NSGA-II con un rendimiento intermedio. Finalmente, RVEA vuelve a posicionarse en último lugar.
+El desglose por algoritmo (Figura~\ref{fig:dunn_gd_prop_alg}) confirma el dominio de SMS-EMOA, el cual se aísla en el primer nivel estadístico con los mejores resultados. El segundo estrato es ocupado de forma conjunta por los algoritmos orientados a hiperplanos, U-NSGA-III y NSGA-III, sin diferencias significativas entre ellos. El tercer bloque asocia a AGE-MOEA-II, SPEA2 y NSGA-II con un rendimiento intermedio. Finalmente, RVEA vuelve a posicionarse en último lugar.
 
 En comparación con el experimento absoluto, destaca la caída en el ranquin de NSGA-II, que pasa de un segundo nivel estadístico a un tercero, evidenciando, como se vio en la métrica del hipervolumen, un descenso de rendimiento de este algoritmo bajo esta nueva formulación de funciones objetivo.
 
@@ -1102,12 +1139,12 @@ En comparación con el experimento absoluto, destaca la caída en el ranquin de 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_gd+_init_full_31.png"}
-    \caption{Ranking y Equivalencia de Dunn para GD+ (Proporcional): Inicialización}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_gd+_init_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para GD+ (Proporcional): Inicialización}
     \label{fig:dunn_gd_prop_init}
 \end{figure}
 
-El estudio de las estrategias de generación inicial (Figura~\ref{fig:dunn_gd_prop_init}) ratifica empíricamente el liderazgo de \textit{Greedy Multi}, que se establece en el primer escalón estadístico, seguida por \textit{Random Dense} y relegando a \textit{Greedy Ting} a la última posición.
+El estudio de las estrategias de generación inicial (Figura~\ref{fig:dunn_gd_prop_init}) ratifica el liderazgo de \textit{Greedy Multi}, que se establece en el primer escalón estadístico, seguida por \textit{Random Dense} y relegando a \textit{Greedy Ting} a la última posición.
 
 Se obtiene el mismo ranquin que en el experimento absoluto.
 
@@ -1115,8 +1152,8 @@ Se obtiene el mismo ranquin que en el experimento absoluto.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_gd+_crossover_full_31.png"}
-    \caption{Ranking y Equivalencia de Dunn para GD+ (Proporcional): Cruce}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_gd+_crossover_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para GD+ (Proporcional): Cruce}
     \label{fig:dunn_gd_prop_cross}
 \end{figure}
 
@@ -1136,21 +1173,21 @@ El análisis de equivalencia de Dunn-Holm agrupa un conjunto de élite de alto r
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_range_algorithm_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para Rango (Proporcional): Algoritmos}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_range_algorithm_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Rango (Proporcional): Algoritmos}
     \label{fig:dunn_range_prop_alg}
 \end{figure}
 
-El estudio del rendimiento aislado de los algoritmos evolutivos (Figura~\ref{fig:dunn_range_prop_alg}) sitúa a NSGA-II como el líder en el primer nivel de significancia estadística. Por debajo de él se conforma un segundo bloque equivalente en el que conviven AGE-MOEA-II, U-NSGA-III, NSGA-III y SPEA2, sin que existan diferencias estadísticas significativas entre el primero y el último de este grupo. En la última posición se encuentra RVEA, el cual, debido a su mecanismo basado en vectores de referencia, experimenta mayores dificultades para mantener una alta diversidad extensional.
+El estudio del rendimiento aislado de los EAs (Figura~\ref{fig:dunn_range_prop_alg}) sitúa a NSGA-II como el líder en el primer nivel de significancia estadística. Por debajo de él se conforma un segundo bloque equivalente en el que conviven AGE-MOEA-II, U-NSGA-III, NSGA-III y SPEA2, sin que existan diferencias estadísticas significativas entre el primero y el último de este grupo. En la última posición se encuentra RVEA, el cual, debido a su mecanismo basado en vectores de referencia, experimenta mayores dificultades para mantener una alta diversidad extensional.
 
-El ránking es práctimente el mismo que el obtenido en el experimento absoluto.
+El ránking es prácticamente el mismo que el obtenido en el experimento absoluto.
 
 \subparagraph{Análisis por inicialización}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_range_init_full_31.png"}
-    \caption{Ranking y Equivalencia de Dunn para Rango (Proporcional): Inicialización}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_range_init_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Rango (Proporcional): Inicialización}
     \label{fig:dunn_range_prop_init}
 \end{figure}
 
@@ -1162,19 +1199,19 @@ El ranquin es el igual al obtenido en el experimento absoluto.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_range_crossover_full_31.png"}
-    \caption{Ranking y Equivalencia de Dunn para Rango (Proporcional): Cruce}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_range_crossover_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Rango (Proporcional): Cruce}
     \label{fig:dunn_range_prop_cross}
 \end{figure}
 
-El comportamiento de los operadores de cruce (Figura~\ref{fig:dunn_range_prop_cross}) sigue un patrón consistente en la resolución del problema de selección de etiquetas SNP. Los cruces con una alta tasa de intercambio genético (HUX y UX) superan significativamente al resto, integrando el primer bloque estadístico de equivalencia. Por el contrario, los cruces de dos y un punto (2P y 1P) forman el estrato inferior, confirmando empíricamente que la recombinación uniforme favorece la exploración y la extensión máxima del conjunto de soluciones no dominadas.
+El comportamiento de los operadores de cruce (Figura~\ref{fig:dunn_range_prop_cross}) sigue un patrón consistente en la resolución del problema de selección de etiquetas SNP. Los cruces con una alta tasa de intercambio genético (HUX y UX) superan significativamente al resto, integrando el primer bloque estadístico de equivalencia. Por el contrario, los cruces de dos y un punto (2P y 1P) forman el estrato inferior, confirmando que la recombinación uniforme favorece la exploración y la extensión máxima del conjunto de soluciones no dominadas.
 
-El ránking es bastante similiar al obtenido en el experimento absoluto.
+El ránking es bastante similar al obtenido en el experimento absoluto.
 
 
 \subsubsection{Métricas de topología local}
 
-\paragraph{Balance Central (MinSum)}
+\paragraph{Mínimo de las Sumas (MínSuma)}
 
 \subparagraph{Análisis por configuración global}
 
@@ -1186,8 +1223,8 @@ El test estadístico de Dunn-Holm define un bloque de élite de 25 configuracion
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_minsum_algorithm_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para MinSum (Proporcional): Algoritmos}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_minsum_algorithm_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para MínSuma (Proporcional): Algoritmos}
     \label{fig:dunn_minsum_prop_algorithm}
 \end{figure}
 
@@ -1199,27 +1236,27 @@ Se observa una jerarquía bastante diferente a la del experimento absoluto. En e
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_minsum_init_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para MinSum (Proporcional): Inicialización}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_minsum_init_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para MínSuma (Proporcional): Inicialización}
     \label{fig:dunn_minsum_prop_init}
 \end{figure}
 
-La evaluación de las estrategias de inicialización establece tres niveles estrictamente ordenados sin solapamiento. \textit{Random Dense} ocupa el primer nivel ($\mu = 1{,}4340$). \textit{Greedy Multi} se sitúa en el segundo ($\mu = 1{,}5156$) y \textit{Greedy Ting} en el tercero ($\mu = 1{,}5164$).
+La evaluación de las estrategias de inicialización establece tres niveles sin solapamiento. \textit{Random Dense} ocupa el primer nivel ($\mu = 1{,}4340$). \textit{Greedy Multi} se sitúa en el segundo ($\mu = 1{,}5156$) y \textit{Greedy Ting} en el tercero ($\mu = 1{,}5164$).
 
-Este resultado es consistente con el experimento absoluto, donde \textit{Random Dense} también lideró MinSum. Sin embargo, como se identificó en el análisis por configuración, \textit{Greedy Multi} está un puesto por encima de \textit{Greedy Ting}, cambiando el puesto que tenía en el experimento previo.
+Este resultado es consistente con el experimento absoluto, donde \textit{Random Dense} también lideró MínSuma. Sin embargo, como se identificó en el análisis por configuración, \textit{Greedy Multi} está un puesto por encima de \textit{Greedy Ting}, cambiando el puesto que tenía en el experimento previo.
 
 \subparagraph{Análisis por cruce}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_minsum_crossover_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para MinSum (Proporcional): Cruce}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_minsum_crossover_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para MínSuma (Proporcional): Cruce}
     \label{fig:dunn_minsum_prop_crossover}
 \end{figure}
 
 El análisis de los operadores de cruce establece que HUX y UX ocupan el primer nivel estadístico sin diferencias entre sí, mientras que 2P y 1P forman un segundo bloque inferior. Este patrón es idéntico al observado en el experimento absoluto y en el resto de métricas analizadas.
 
-\paragraph{Convergencia Marginal (SumMin)}
+\paragraph{Suma de los Mínimos (SumaMín)}
 
 \subparagraph{Análisis por configuración global}
 
@@ -1231,8 +1268,8 @@ El bloque de alto rendimiento comprende 28 configuraciones estadísticamente equ
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_summin_algorithm_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para SumMin (Proporcional): Algoritmos}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_summin_algorithm_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para SumaMín (Proporcional): Algoritmos}
     \label{fig:dunn_summin_prop_algorithm}
 \end{figure}
 
@@ -1244,14 +1281,14 @@ La estructura de niveles estadísticos es similar a la del experimento absoluto,
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_summin_init_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para SumMin (Proporcional): Inicialización}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_summin_init_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para SumaMín (Proporcional): Inicialización}
     \label{fig:dunn_summin_prop_init}
 \end{figure}
 
 El análisis de inicialización confirma la jerarquía del experimento absoluto: \textit{Greedy Ting} lidera en solitario ($\mu = 0{,}914$), seguida de \textit{Random Dense} ($\mu = 1{,}202$) y, en último lugar, \textit{Greedy Multi} ($\mu = 1{,}452$). Los tres niveles son estadísticamente estrictos, sin solapamiento entre ellos.
 
-La asimetría respecto a MinSum es notable: donde MinSum premia a \textit{Random Dense}, SumMin premia a \textit{Greedy Ting}. Esto refleja que ambas métricas miden propiedades geométricamente opuestas del frente de Pareto: el equilibrio central y las soluciones extremas, respectivamente, y cada una requiere un tipo de diversidad inicial diferente.
+La asimetría respecto a MínSuma es notable: donde MínSuma premia a \textit{Random Dense}, SumaMín premia a \textit{Greedy Ting}. Esto refleja que ambas métricas miden propiedades geométricamente opuestas del frente de Pareto: el equilibrio central y las soluciones extremas, respectivamente, y cada una requiere un tipo de diversidad inicial diferente.
 
 Esta métrica ofrece para el análisis de inicializaciones el mismo ranquin para ambos experimentos (absoluto y proporcional). 
 
@@ -1259,8 +1296,8 @@ Esta métrica ofrece para el análisis de inicializaciones el mismo ranquin para
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_summin_crossover_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para SumMin (Proporcional): Cruce}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_summin_crossover_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para SumaMín (Proporcional): Cruce}
     \label{fig:dunn_summin_prop_crossover}
 \end{figure}
 
@@ -1268,7 +1305,7 @@ Los operadores de cruce producen dos bloques estadísticos sin solapamiento: HUX
 
 \subsubsection{Métricas de dominio (Biológicas)}
 
-\paragraph{Tasa de Eficiencia de Tolerancia Media (AvgT)}
+\paragraph{Tasa de Tolerancia Media (Tmed)}
 
 \subparagraph{Análisis por configuración global}
 
@@ -1282,8 +1319,8 @@ En comparación con el experimento absoluto, los resultados en el bloque de alto
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_avgtolerancerate_algorithm_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para AvgT (Proporcional): Algoritmos}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_avgtolerancerate_algorithm_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Tmed (Proporcional): Algoritmos}
     \label{fig:dunn_avgt_prop_algorithm}
 \end{figure}
 
@@ -1295,27 +1332,27 @@ El ranquin es similar al del experimento absoluto, aunque AGE-MOEA-II obtiene me
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_avgtolerancerate_init_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para AvgT (Proporcional): Inicialización}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_avgtolerancerate_init_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Tmed (Proporcional): Inicialización}
     \label{fig:dunn_avgt_prop_init}
 \end{figure}
 
 \textit{Random Dense} lidera el primer nivel de forma estricta ($\mu = 0{,}229$), seguida de \textit{Greedy Ting} en el segundo nivel ($\mu = 0{,}169$) y \textit{Greedy Multi} en el tercero ($\mu = 0{,}164$). Los tres estratos son estadísticamente independientes.
 
-El liderazgo de \textit{Random Dense} es coherente con el del experimento absoluto y se explica por la misma razón: la activación aleatoria del $50\%$ de los SNPs sitúa la población inicial en regiones de alta compacidad relativa, donde la tolerancia media es estructuralmente más elevada. Sin embargo, en este experimento, \textit{Greedy Multi} obtiene peores resultados que en el experimento absoluto, ocupando el último lugar del ranking, siendo superado por \textit{Greedy Ting}.
+El liderazgo de \textit{Random Dense} es coherente con el del experimento absoluto y se explica por la misma razón: la activación aleatoria del $50\%$ de los SNPs sitúa la población inicial en regiones de alta compacidad relativa, donde la tolerancia media es estructuralmente más elevada. Sin embargo, en este experimento, \textit{Greedy Multi} obtiene peores resultados que en el experimento absoluto, ocupando el último lugar del ranquin, siendo superado por \textit{Greedy Ting}.
 
 \subparagraph{Análisis por cruce}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_avgtolerancerate_crossover_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para AvgT (Proporcional): Cruce}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_avgtolerancerate_crossover_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Tmed (Proporcional): Cruce}
     \label{fig:dunn_avgt_prop_crossover}
 \end{figure}
 
 Los operadores de cruce producen el mismo patrón observado en el experimento absoluto y en el resto de métricas: HUX y UX forman el primer nivel estadístico sin diferencias entre sí, mientras que 2P y 1P conforman el segundo nivel.
 
-\paragraph{Tasa de Tolerancia Máxima (MaxToleranceRate)}
+\paragraph{Tasa de Tolerancia Máxima (Tmáx)}
 
 \subparagraph{Análisis por configuración global}
 
@@ -1327,8 +1364,8 @@ El test de Dunn-Holm agrupa un extenso bloque de élite de 32 configuraciones eq
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_maxtolerancerate_algorithm_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para MaxToleranceRate (Proporcional): Algoritmos}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_maxtolerancerate_algorithm_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Tmáx (Proporcional): Algoritmos}
     \label{fig:dunn_maxt_prop_algorithm}
 \end{figure}
 
@@ -1340,12 +1377,12 @@ Esta estructura contrasta con el experimento absoluto, donde SMS-EMOA lideraba e
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_maxtolerancerate_init_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para MaxToleranceRate (Proporcional): Inicialización}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_maxtolerancerate_init_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Tmáx (Proporcional): Inicialización}
     \label{fig:dunn_maxt_prop_init}
 \end{figure}
 
-La evaluación de las estrategias de inicialización establece tres niveles estrictamente ordenados. \textit{Greedy Multi} lidera en solitario ($\mu = 0{,}2663$), seguida de \textit{Random Dense} en el segundo nivel ($\mu = 0{,}2525$) y \textit{Greedy Ting} en el tercero ($\mu = 0{,}2370$).
+La evaluación de las estrategias de inicialización establece tres niveles. \textit{Greedy Multi} lidera en solitario ($\mu = 0{,}2663$), seguida de \textit{Random Dense} en el segundo nivel ($\mu = 0{,}2525$) y \textit{Greedy Ting} en el tercero ($\mu = 0{,}2370$).
 
 El patrón es idéntico al del experimento absoluto. La explicación es la misma: \textit{Greedy Multi} inyecta individuos de compacidad mínima desde el inicio, que es precisamente la característica necesaria para maximizar la tasa de tolerancia.
 
@@ -1353,14 +1390,14 @@ El patrón es idéntico al del experimento absoluto. La explicación es la misma
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_maxtolerancerate_crossover_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para MaxToleranceRate (Proporcional): Cruce}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_maxtolerancerate_crossover_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Tmáx (Proporcional): Cruce}
     \label{fig:dunn_maxt_prop_crossover}
 \end{figure}
 
 Los operadores de cruce producen el patrón habitual: HUX y UX se agrupan en el primer nivel estadístico sin diferencias entre sí, mientras que 2P conforma el segundo nivel y 1P el tercero. El resultado es idéntico al del experimento absoluto.
 
-\paragraph{Distancia de Hamming Promedio (AvgHD)}
+\paragraph{Distancia de Hamming Promedio (Hmed)}
 
 \subparagraph{Análisis por configuración global}
 
@@ -1374,8 +1411,8 @@ En comparación con el experimento absoluto, los resultados son altamente simila
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_avghammingdistance_algorithm_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para AvgHD (Proporcional): Algoritmos}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_avghammingdistance_algorithm_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Hmed (Proporcional): Algoritmos}
     \label{fig:dunn_avghd_prop_algorithm}
 \end{figure}
 
@@ -1387,54 +1424,71 @@ Este resultado contrasta con el experimento absoluto, donde SPEA2 y NSGA-II lide
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_avghammingdistance_init_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para AvgHD (Proporcional): Inicialización}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_avghammingdistance_init_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Hmed (Proporcional): Inicialización}
     \label{fig:dunn_avghd_prop_init}
 \end{figure}
 
-La evaluación de las estrategias de inicialización establece tres niveles estrictamente ordenados. \textit{Random Dense} domina el primer nivel con una media de $103{,}04$, seguida de \textit{Greedy Ting} en el segundo ($43{,}13$) y \textit{Greedy Multi} en el tercero ($10{,}17$).
+La evaluación de las estrategias de inicialización establece tres niveles. \textit{Random Dense} domina el primer nivel con una media de $103{,}04$, seguida de \textit{Greedy Ting} en el segundo ($43{,}13$) y \textit{Greedy Multi} en el tercero ($10{,}17$).
 
 El patrón es idéntico al del experimento absoluto, aunque los resultados del experimento proporcional ofrecen valores numéricos más bajos debido a la compactación de los frentes.
 \subparagraph{Análisis por cruce}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/PROP 20260624T140801/2_comparativa/4_rankings/equivalencia_dunn_avghammingdistance_crossover_full_31.png"}
-    \caption{Ranking y Equivalencia Estadística de Dunn para AvgHD (Proporcional): Cruce}
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/PROP_20260624T140801/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_avghammingdistance_crossover_full_31.png}
+    \caption{Ranquin y Equivalencia Estadística para Hmed (Proporcional): Cruce}
     \label{fig:dunn_avghd_prop_crossover}
 \end{figure}
 
 En el experimento proporcional, los cuatro operadores de cruce (1P, 2P, HUX y UX) forman un único bloque estadístico sin diferencias significativas entre ninguno de ellos. Este resultado difiere levemente del experimento absoluto, donde se establecían dos estratos (UX, HUX, 2P en el primero; 2P y 1P en el segundo). Estos resultados confirman que el operador de cruce es un factor estadísticamente irrelevante para esta métrica en el experimento proporcional, aunque tiene algo más de relevancia en el experimento absoluto.
 
+\section{Análisis de influencia paramétrica (Tamaño del efecto)}
+\label{sec:tamano_efecto}
+
+Tras evaluar de forma aislada las distribuciones y los ranquines estadísticos de los diferentes algoritmos, inicializaciones y operadores a lo largo de todas las métricas, resulta fundamental determinar matemáticamente el peso real que ejerce cada uno de estos factores sobre el rendimiento final de una configuración. 
+
+Para cuantificar esta influencia, tal y como se estableció en la metodología, se ha calculado el tamaño del efecto (Eta-cuadrado de Kruskal-Wallis, $\eta^2_H$) iterando sobre las $2.604$ réplicas independientes de todas las métricas en ambos experimentos (absoluto y proporcional). Al promediar los resultados, se obtienen los siguientes porcentajes globales de varianza explicada por cada factor:
+
+\begin{itemize}
+    \item \textbf{Inicialización poblacional:} $64{,}46\%$
+    \item \textbf{Algoritmo evolutivo:} $16{,}67\%$
+    \item \textbf{Operador de cruce:} $4{,}51\%$
+\end{itemize}
+
+Estos datos demuestran que la estrategia de inicialización es, con diferencia, el parámetro rector en la resolución del problema de selección de etiquetas SNP mediante EAs, explicando por sí sola casi dos tercios de la variabilidad del rendimiento final. El algoritmo actúa como un optimizador secundario, por detrás de la estrategia de inicialización poblacional, mientras que el impacto del operador de cruce es bastante menor (inferior al $5\%$). Este hallazgo resulta coherente con el teorema del \textit{No Free Lunch} \cite{wolpert1997no}, demostrando que la inyección de conocimiento del dominio en la inicialización es más relevante que la elección del motor de búsqueda.
+
 \section{Contraste con el estudio de referencia}
 \label{sec:contraste_moqa}
 
-Esta sección contrasta de forma cualitativa las conclusiones del estudio de referencia, Moqa et al. \cite{moqa2022assessing}, con los resultados obtenidos en el experimento proporcional. La comparativa se restringe a las métricas comunes a ambos estudios ---Range, SumMin, MinSum, MaxT, AvgT y AvgHD--- dado que Moqa et al. no emplean Hipervolumen, IGD+ ni GD+.
+Esta sección contrasta de forma cualitativa las conclusiones del estudio de referencia, Moqa \textit{et al.} \cite{moqa2022assessing}, con los resultados obtenidos en el experimento proporcional. La comparativa se restringe a las métricas comunes a ambos estudios (Rango, SumaMín, MínSuma, Tmáx, Tmed y Hmed) dado que Moqa \textit{et al.} no emplean Hipervolumen, IGD+ ni GD+.
 
-Antes de proceder, se deben señalar las diferencias metodológicas entre ambos estudios que limitan la comparabilidad directa de los valores absolutos. En primer lugar, la transformación de los objetivos de maximización difiere: en este estudio se emplea la negación lineal ($f' = -f$), mientras que Moqa et al. no especifican explícitamente el método, aunque se hipotetiza, a partir de su estudio de referencia Ting et al. \cite{ting2010multi}, que aplican una inversión no lineal ($f' = 1/f$). Esta diferencia distorsiona la topología del espacio de búsqueda y hace que las magnitudes numéricas no sean directamente comparables. En segundo lugar, el tamaño de la población difiere (220 individuos en este estudio frente a 200 en Moqa et al.). Además, en este TFG se ejecutan 31 réplicas independientes por configuración, mientras en que Moqa et. al se ejecutan 5. Por consiguiente, la comparativa se centra exclusivamente en tendencias ordinales y en el análisis de las conclusiones cualitativas del estudio original.
+Antes de proceder, se deben señalar las diferencias metodológicas entre ambos estudios que limitan la comparabilidad directa de los valores absolutos. En primer lugar, la transformación de los objetivos de maximización difiere: en este estudio se emplea la negación lineal ($f' = -f$), mientras que Moqa \textit{et al.} no especifican explícitamente el método, aunque se hipotetiza, a partir de su estudio de referencia Ting \textit{et al.} \cite{ting2010multi}, que aplican una inversión no lineal ($f' = 1/f$).
+
+Esta diferencia distorsiona la topología del espacio de búsqueda y hace que las magnitudes numéricas no sean directamente comparables. En segundo lugar, el tamaño de la población difiere (220 individuos en este estudio frente a 200 en Moqa \textit{et al.}). Además, en este TFG se ejecutan 31 réplicas independientes por configuración, mientras en que Moqa \textit{et al.} se ejecutan 5. Por consiguiente, la comparativa se centra exclusivamente en tendencias ordinales y en el análisis de las conclusiones cualitativas del estudio original.
 
 \subsubsection*{Liderazgo de MOEA/D}
 
-Moqa et al. concluyen que MOEA/D supera al resto de algoritmos en la mayoría de casos. Esta afirmación no puede contrastarse en este trabajo, ya que MOEA/D fue excluido del diseño experimental por incompatibilidad con la gestión nativa de la restricción de factibilidad biológica del problema en la librería \texttt{pymoo}.
+Moqa \textit{et al.} concluyen que MOEA/D supera al resto de algoritmos en la mayoría de casos. Esta afirmación no puede contrastarse en este trabajo, ya que MOEA/D fue excluido del diseño experimental por incompatibilidad con la gestión nativa de la restricción de factibilidad biológica del problema en la librería \texttt{pymoo}.
 
 \subsubsection*{Superioridad de NSGA-III en tolerancia máxima}
 
-Los autores afirman que NSGA-III supera a NSGA-II y SPEA2 en la métrica de tolerancia máxima (MaxT). En el experimento proporcional de este estudio, NSGA-III es estadísticamente igual que SPEA2, si bien es cierto que es empíricamente superior. Por otra parte, NSGA-II se encuentra por debajo de este nivel de significancia. Por lo tanto, la superioridad exclusiva de NSGA-III para esta métrica se reproduce, pero solo parcialmente.
+Los autores afirman que NSGA-III supera a NSGA-II y SPEA2 en la métrica de tolerancia máxima (Tmáx). En el experimento proporcional de este estudio, NSGA-III es estadísticamente igual que SPEA2, si bien es cierto que es superior. Por otra parte, NSGA-II se encuentra por debajo de este nivel de significancia. Por lo tanto, la superioridad exclusiva de NSGA-III para esta métrica se reproduce, pero solo parcialmente.
 
 \subsubsection*{Liderazgo de SPEA2 en distancia media de Hamming}
 
-Moqa et al. afirman que SPEA2 supera a todos los algoritmos en la métrica de distancia media de Hamming (AvgHD). Esta conclusión queda directamente refutada en el experimento proporcional: AGE-MOEA-II ocupa el primer nivel estadístico en solitario, mientras que SPEA2 desciende al último bloque estadístico.
+Moqa \textit{et al.} afirman que SPEA2 supera a todos los algoritmos en la métrica de distancia media de Hamming (Hmed). Esta conclusión queda directamente refutada en el experimento proporcional: AGE-MOEA-II ocupa el primer nivel estadístico en solitario, mientras que SPEA2 desciende al último bloque estadístico.
 
 \subsubsection*{Ventaja de la inicialización \textit{Greedy}}
 
-Los autores concluyen que la inicialización heurística \textit{Greedy} mejora los resultados frente a la aleatoria para NSGA-III, SPEA2 y MOEA/D. Esta tendencia se valida de forma parcial en este estudio: \textit{Greedy Ting} lidera las métricas de extensión del frente (Range, SumMin), mientras que \textit{Random Dense} domina las métricas de tolerancia (AvgT) y de diversidad (AvgHD). La superioridad de la inicialización heurística no es universal, sino dependiente de la métrica de rendimiento que se priorice.
+Los autores concluyen que la inicialización heurística \textit{Greedy} mejora los resultados frente a la aleatoria para NSGA-III, SPEA2 y MOEA/D. Esta tendencia se valida de forma parcial en este estudio: \textit{Greedy Ting} lidera las métricas de extensión del frente (Rango, SumaMín), mientras que \textit{Random Dense} domina las métricas de tolerancia (Tmed) y de diversidad (Hmed). La superioridad de la inicialización heurística no es universal, sino dependiente de la métrica de rendimiento que se priorice.
 
 \subsubsection*{Factor de rendimiento predominante}
 
-En los rankings de Moqa et al., el factor predominante observable es el algoritmo: en la mayoría de métricas, las dos configuraciones del mismo algoritmo (con inicialización aleatoria y heurística) aparecen contiguas en los primeros puestos, lo que indica que el buscador evolutivo determina el nivel de rendimiento y la inicialización lo modula de forma secundaria.
+En los ranquines de Moqa \textit{et al.}, el factor predominante observable es el algoritmo: en la mayoría de métricas, las dos configuraciones del mismo algoritmo (con inicialización aleatoria y heurística) aparecen contiguas en los primeros puestos, lo que indica que el buscador evolutivo determina el nivel de rendimiento y la inicialización lo modula de forma secundaria.
 
-En este estudio se observa el patrón contrario. El análisis de los rankings de configuraciones muestra que la inicialización es el factor que estructura verticalmente el rendimiento: las posiciones más altas están ocupadas por configuraciones con \textit{Greedy Ting} o \textit{Random Dense}, con independencia del algoritmo empleado, mientras que las configuraciones con \textit{Greedy Multi} quedan relegadas de forma sistemática. La elección del algoritmo produce una diferenciación de rendimiento visible entre los candidatos de cada bloque de inicialización, pero no determina por sí sola la posición global en el ranking de configuraciones.
+En este estudio se observa el patrón contrario. El análisis de los ranquines de configuraciones muestra que la inicialización es el factor que estructura verticalmente el rendimiento: las posiciones más altas están ocupadas por configuraciones con \textit{Greedy Ting} o \textit{Random Dense}, con independencia del algoritmo empleado, mientras que las configuraciones con \textit{Greedy Multi} quedan relegadas. La elección del algoritmo produce una diferenciación de rendimiento visible entre los candidatos de cada bloque de inicialización, pero no determina por sí sola la posición global en el ranquin de configuraciones.
 
 \subsubsection*{Limitaciones de la comparativa}
 
-En conclusión, las divergencias identificadas entre los resultados de este trabajo y los reportados por Moqa et al. ponen de manifiesto la sensibilidad del problema a la parametrización, el diseño algorítmico y los métodos de normalización de objetivos. Sin embargo, la imposibilidad de acceder al código fuente original del estudio de referencia impide trazar el origen exacto de estas discrepancias. Las diferencias podrían radicar en detalles de implementación no documentados tales como la lógica interna de la inicialización voraz, los criterios de reparación de individuos infactibles, o incluso errores formales en el registro de los datos. En consecuencia, la validación definitiva de las conclusiones de Moqa et al. requiere de la disponibilidad de su software para realizar una evaluación bajo condiciones experimentales idénticas.
+En conclusión, las divergencias identificadas entre los resultados de este trabajo y los reportados por Moqa \textit{et al.} ponen de manifiesto la sensibilidad del problema a la parametrización, el diseño algorítmico y los métodos de normalización de objetivos. Sin embargo, la imposibilidad de acceder al código fuente original del estudio de referencia impide trazar el origen exacto de estas discrepancias. Las diferencias podrían radicar en detalles de implementación no documentados tales como la lógica interna de la inicialización voraz, los criterios de reparación de individuos infactibles, o incluso errores formales en el registro de los datos. En consecuencia, la validación definitiva de las conclusiones de Moqa \textit{et al.} requiere de la disponibilidad de su software para realizar una evaluación bajo condiciones experimentales idénticas.

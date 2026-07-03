@@ -2,11 +2,11 @@
 
 \section{Especificaciones Hardware y Software}
 
-Para dar contexto a los costes computacionales asociados a los algoritmos, así como al tiempo empleado durante los experimentos, a continuación se detalla el entorno utilizado para las ejecuciones del proyecto.
+Para dar contexto a los costes computacionales asociados a los algoritmos, se detalla el entorno utilizado para las ejecuciones del proyecto.
 
 En cuanto al hardware, el equipo cuenta con un procesador Intel Core i5-12500H de 12\textsuperscript{a} generación y 16 GB de memoria RAM. A nivel de sistema operativo, se ha utilizado una distribución GNU/Linux, concretamente Ubuntu 24.04.4 LTS.
 
-En cuanto al software, el proyecto se ha desarrollado íntegramente en Python \cite{python} (versión 3.13.9). Para la ejecución de los EAs se ha utilizado \texttt{pymoo} \cite{pymoo}, un marco de optimización de código abierto. La elección de \texttt{pymoo} como marco principal de trabajo se justifica por su orientación específica hacia la investigación en MOEAs y MaOEAs, y su arquitectura orientada a objetos. Esta característica ha sido fundamental para el desarrollo del proyecto, ya que ha permitido implementar estrategias de inicialización poblacional como las técnicas voraces y modelar el problema de la selección de etiquetas SNP extendiendo las clases base de la librería.
+En cuanto al software, el proyecto se ha desarrollado íntegramente en Python \cite{python} (versión 3.13.9). Para la ejecución de los EAs se ha utilizado \texttt{pymoo} \cite{pymoo}, un marco de optimización de código abierto. La elección de \texttt{pymoo} como marco principal de desarrollo se justifica por su orientación específica hacia la investigación en MOEAs y MaOEAs, y su arquitectura orientada a objetos. Esta característica ha sido fundamental para el desarrollo del proyecto, ya que ha permitido implementar estrategias de inicialización poblacional como las técnicas voraces y modelar el problema de la selección de etiquetas SNP extendiendo las clases base de la librería.
 
 Por otra parte, para el procesamiento de los datos genéticos y el análisis estadístico, el proyecto se apoya en librerías científicas estándar como \texttt{numpy} \cite{numpy} y \texttt{pandas} \cite{pandas}.
 
@@ -14,10 +14,10 @@ Adicionalmente, la generación de representaciones gráficas, como los diagramas
 
 \section{Definición del problema}
 
-Tal y como se ha expuesto en los capítulos introductorios, la selección de etiquetas SNP plantea un desafío computacional extremo al ser considerado matemáticamente como un problema de optimización combinatoria análogo a la Cobertura de Conjuntos o \textit{Set Cover Problem} \cite{bafna2003haplotypes}. Para abordar este problema mediante EAs, resulta indispensable asentar previamente las bases del entorno de experimentación. A tal efecto, a lo largo de esta sección se define la procedencia del conjunto de datos, se explican conceptos básicos, se formula matemáticamente la lógica de distinguibilidad que rige el problema, se detalla el preprocesamiento de filtrado y, finalmente, se establece la representación cromosómica que codificará a los individuos.
+Tal y como se ha expuesto en los capítulos introductorios, la selección de etiquetas SNP plantea un problema computacional complejo al ser considerado matemáticamente como un problema de optimización combinatoria análogo a la Cobertura de Conjuntos o \textit{Set Cover Problem} \cite{bafna2003haplotypes}. Para abordar este problema mediante EAs, resulta indispensable asentar previamente las bases del entorno de experimentación. A tal efecto, a lo largo de esta sección se define la procedencia del conjunto de datos, se explican conceptos básicos, se formula matemáticamente la lógica de distinguibilidad que rige el problema, se detalla el preprocesamiento de filtrado y, finalmente, se establece la representación cromosómica que codificará a los individuos.
 
-\subsection{Dataset}
-El núcleo de las ejecuciones de este proyecto se fundamenta en el conjunto de datos propuesto por Hinds \textit{et al.} \cite{hinds2005whole}, un referente estándar para el estudio de patrones de variación de ADN a nivel genómico en poblaciones humanas. Este \textit{dataset} cataloga la variación genética de tres poblaciones globales, recopilando secuencias de más de un millón de SNPs \cite{bafna2003haplotypes}. En el contexto de este proyecto, se ha aislado un bloque genómico compuesto originariamente por 1032 SNPs, proporcionando un entorno de prueba real y representativo para evaluar los algoritmos. Cabe destacar que este mismo fragmento genético poblacional fue el empleado en el estudio de Ting \textit{et al.} \cite{ting2010multi}, lo que permite enmarcar el experimento dentro de los estándares de la literatura. 
+\subsection{Conjunto de datos}
+El núcleo de las ejecuciones de este proyecto se fundamenta en el conjunto de datos propuesto por Hinds \textit{et al.} \cite{hinds2005whole}, un referente estándar para el estudio de patrones de variación de ADN a nivel genómico en poblaciones humanas. Este conjunto de datos cataloga la variación genética de tres poblaciones globales, recopilando secuencias de más de un millón de SNPs \cite{bafna2003haplotypes}. En el contexto de este proyecto, se ha aislado un bloque genómico compuesto originariamente por 1032 SNPs, proporcionando un entorno de prueba real y representativo para evaluar los algoritmos. Cabe destacar que este mismo fragmento genético poblacional fue el empleado en el estudio de Ting \textit{et al.} \cite{ting2010multi}, lo que permite enmarcar el experimento dentro de los estándares de la literatura. 
 
 \subsection{Matriz de haplotipos y etiquetas SNP}
 Para ilustrar de forma visual cómo se estructuran estos datos y cómo operan los algoritmos sobre ellos, se expone a continuación una matriz binaria (véase la matriz \ref{eq:matriz_H}). 
@@ -39,12 +39,14 @@ Para ilustrar de forma visual cómo se estructuran estos datos y cómo operan lo
 
 Esta matriz, diseñada con fines didácticos, está formada por 4 secuencias (filas) y 6 SNPs (columnas). En esta estructura matemática, las columnas representan las posiciones concretas en la cadena de ADN, mientras que las filas representan los haplotipos. Biológicamente, un haplotipo se define como una combinación específica de alelos que tienden a heredarse juntos en un único cromosoma \cite{bafna2003haplotypes}.
 
-Por otra parte, un etiqueta SNP se define como un polimorfismo representativo (es decir, una variación específica en la secuencia de ADN) que, al actuar en conjunto con otros etiquetas SNP, permite capturar la variación genética de un bloque de haplotipos sin necesidad de secuenciarlos en su totalidad \cite{bafna2003haplotypes, ting2010multi}. Al seleccionar únicamente estos SNPs representativos, se logra reducir drásticamente la dimensionalidad de los datos originales. 
+Por otra parte, un etiqueta SNP se define como un polimorfismo representativo (es decir, una variación específica en la secuencia de ADN) que, al actuar en conjunto con otros etiquetas SNP, permite capturar la variación genética de un bloque de haplotipos sin necesidad de secuenciarlos en su totalidad \cite{bafna2003haplotypes, ting2010multi}. Al seleccionar estos SNPs representativos, se logra reducir la dimensionalidad de los datos originales. 
 
 \subsection{Distinguibilidad}
 Sin embargo, el concepto matemático central que rige la validez de estas columnas seleccionadas es la \textit{distinguibilidad} \cite{bafna2003haplotypes}. Dos haplotipos de la matriz se consideran distinguibles si difieren en al menos una posición alélica. Por consiguiente, el objetivo de la búsqueda de etiquetas SNP es encontrar un subconjunto de columnas lo más reducido posible que garantice que todos los pares de haplotipos que eran distinguibles en la matriz original sigan siéndolo reduciéndola a la matriz de los etiquetas SNP.
 
-Observando la matriz \ref{eq:matriz_H}, los cuatro haplotipos son únicos y, por tanto, distinguibles entre sí. Si un algoritmo evaluase esta matriz, podría determinar que aislando únicamente las columnas 2 y 4 (es decir, seleccionando $\text{SNP}_2$ y $\text{SNP}_4$), se pueden representar todos los haplotipos. Esto es debido a que el $\text{SNP}_2$ distingue a los pares de haplotipos con alelos opuestos en dicha columna (los pares $(h_1, h_3)$, $(h_1, h_4)$, $(h_2, h_3)$ y $(h_2, h_4)$); sin embargo, no logra distinguir los pares $(h_1, h_2)$ ni $(h_3, h_4)$, por lo que es necesario seleccionar otro SNP complementario. Al seleccionar el $\text{SNP}_4$, se consiguen distinguir esos pares restantes ($(h_1, h_2)$ y $(h_3, h_4)$). De forma aislada, el $\text{SNP}_4$ no es capaz de distinguir los pares $(h_1, h_3)$ ni $(h_2, h_4)$, pero esto deja de ser un problema porque ya lo hacía el $\text{SNP}_2$. De este modo, al combinar ambas columnas, se ha logrado mantener el $100\%$ de la distinguibilidad original utilizando solo 2 de las 6 columnas disponibles. Ese subconjunto óptimo conformaría el conjunto de etiquetas SNP (donde tanto el $\text{SNP}_2$ como el $\text{SNP}_4$ son etiquetas SNP individuales que forman la solución conjunta), generando la submatriz resultante (véase la matriz \ref{eq:matriz_tag}):
+Observando la matriz \ref{eq:matriz_H}, los cuatro haplotipos son únicos y, por tanto, distinguibles entre sí. Si un algoritmo evaluase esta matriz, podría determinar que aislando las columnas 2 y 4 (es decir, seleccionando $\text{SNP}_2$ y $\text{SNP}_4$), se pueden representar todos los haplotipos. Esto es debido a que el $\text{SNP}_2$ distingue a los pares de haplotipos con alelos opuestos en dicha columna (los pares $(h_1, h_3)$, $(h_1, h_4)$, $(h_2, h_3)$ y $(h_2, h_4)$); sin embargo, no logra distinguir los pares $(h_1, h_2)$ ni $(h_3, h_4)$, por lo que es necesario seleccionar otro SNP complementario.
+
+Al seleccionar el $\text{SNP}_4$, se consiguen distinguir esos pares restantes ($(h_1, h_2)$ y $(h_3, h_4)$). De forma aislada, el $\text{SNP}_4$ no es capaz de distinguir los pares $(h_1, h_3)$ ni $(h_2, h_4)$, pero esto deja de ser un problema porque ya lo hacía el $\text{SNP}_2$. De este modo, al combinar ambas columnas, se ha logrado mantener el $100\%$ de la distinguibilidad original utilizando solo 2 de las 6 columnas disponibles. Ese subconjunto óptimo conformaría el conjunto de etiquetas SNP (donde tanto el $\text{SNP}_2$ como el $\text{SNP}_4$ son etiquetas SNP individuales que forman la solución conjunta), generando la submatriz resultante (véase la matriz \ref{eq:matriz_tag}):
 
 \begin{equation}\label{eq:matriz_tag}
 \begin{array}{cc}
@@ -79,7 +81,7 @@ Con el objetivo de delimitar el dominio de los algoritmos y evitar el procesamie
 \end{array}
 \end{equation}
 
-Aplicando este mismo principio de filtrado masivo al bloque completo de 1032 SNPs de Hinds \textit{et al.} \cite{hinds2005whole}, se logró purgar el ruido y reducir la cadena a un total de $n = 772$ SNPs polimórficos efectivos. Este tamaño de entrada determina la longitud de los individuos con los que trabajarán los algoritmos del estudio.
+Aplicando este mismo principio de filtrado al bloque completo de 1032 SNPs de Hinds \textit{et al.} \cite{hinds2005whole}, se logró eliminar el ruido y reducir la cadena a un total de $n = 772$ SNPs polimórficos efectivos. Este tamaño de entrada determina la longitud de los individuos con los que trabajarán los algoritmos del estudio.
 
 \subsection{Representación cromosómica de las soluciones}
 Desde la perspectiva de las estructuras de datos, la representación genética de una posible solución (o individuo) dentro de los algoritmos se ha modelado como un vector binario unidimensional de tamaño fijo, siguiendo la codificación habitual de la literatura para este problema (como hizo Ting \textit{et al.} \cite{ting2010multi} o el estudio base de Moqa \textit{et al.} \cite{moqa2022assessing}):
@@ -90,7 +92,7 @@ x = (x_1, x_2, \dots, x_n) \quad \text{donde} \quad x_i \in \{0, 1\} \text{ y } 
 
 En esta codificación booleana, si la posición $x_i$ toma el valor $1$, significa que el $i$-ésimo SNP de la cadena ha sido seleccionado como parte del subconjunto final (etiqueta SNP); si toma el valor $0$, el SNP es descartado de la solución.
 
-Esta formulación permite definir la magnitud del espacio de búsqueda ($\Omega$). Para el conjunto filtrado, la dimensión del espacio combinatorio sobre el que operarán los algoritmos es exactamente:
+Esta formulación permite definir la magnitud del espacio de búsqueda ($\Omega$). Para el conjunto filtrado, la dimensión del espacio combinatorio sobre el que operarán los algoritmos es:
 \[ 
 |\Omega| = 2^{772} 
 \]
@@ -157,11 +159,11 @@ Con el fin de guiar la convergencia evolutiva y forzar a los algoritmos a descar
 
 Si un individuo genético no logra diferenciar a todos los pares ($f_2(X) = 0$), el valor de la restricción evaluada será $G(X) = 1$, infringiendo la inecuación y desencadenando una penalización algorítmica que degradará fuertemente la aptitud de la solución dentro de la población para evitar su propagación.
 
-Para ilustrar este concepto de penalización sobre la matriz didáctica original (véase la matriz \ref{eq:matriz_H}), supóngase que el algoritmo genera un individuo $x = (0, 1, 0, 0, 0, 0)$ en el que únicamente se ha seleccionado el $\text{SNP}_2$. Tal y como se demostró empíricamente en la sección de distinguibilidad, esta columna aislada es incapaz de diferenciar los pares de haplotipos $(h_1, h_2)$ y $(h_3, h_4)$. En consecuencia, la tolerancia de este individuo será cero ($f_2(X) = 0$), lo que arrojará un valor de restricción $G(X) = 1$. Al ser mayor que cero, el modelo detectará la infracción de la inecuación y clasificará automáticamente a la solución como infactible.
+Para ilustrar este concepto de penalización sobre la matriz didáctica original (véase la matriz \ref{eq:matriz_H}), supóngase que el algoritmo genera un individuo $x = (0, 1, 0, 0, 0, 0)$ en el que únicamente se ha seleccionado el $\text{SNP}_2$. Tal y como se demostró en la sección de distinguibilidad, esta columna aislada es incapaz de diferenciar los pares de haplotipos $(h_1, h_2)$ y $(h_3, h_4)$. En consecuencia, la tolerancia de este individuo será cero ($f_2(X) = 0$), lo que arrojará un valor de restricción $G(X) = 1$. Al ser mayor que cero, el modelo detectará la infracción de la inecuación y clasificará automáticamente a la solución como infactible.
 
-\section{Fundamentos de Optimización Multiobjetivo}
+\section{Fundamentos de Optimización de Muchos Objetivos}
 
-En los problemas de optimización multiobjetivo, como es el caso de la selección de etiquetas SNP, se busca optimizar simultáneamente múltiples funciones que, por norma general, entran en conflicto entre sí. En este contexto matemático, no existe una única solución que sea óptima para todos los objetivos a la vez. Para determinar de forma objetiva qué soluciones son superiores durante la evolución del algoritmo, se recurre a los conceptos de Dominancia de Pareto y Frente de Pareto.
+En los MaOPs, como es el caso de la selección de etiquetas SNP, se busca optimizar simultáneamente múltiples funciones que, por norma general, entran en conflicto entre sí. En este contexto matemático, no existe una única solución que sea óptima para todos los objetivos a la vez. Para determinar de forma objetiva qué soluciones son superiores durante la evolución del algoritmo, se recurre a los conceptos de Dominancia de Pareto y Frente de Pareto.
 
 \subsection{Dominancia de Pareto}
 Dadas dos soluciones factibles $A$ y $B$, se dice que la solución $A$ \textit{domina} a la solución $B$ (denotado formalmente como $A \prec B$) si se cumplen estrictamente dos condiciones \cite{deb2001multiobjective}:
@@ -188,14 +190,14 @@ El propósito fundamental de un MaOEA \cite{ishibuchi2008evolutionary} es descub
 
 \section{Algoritmos evolutivos seleccionados}
 
-Para realizar un estudio comparativo exhaustivo, se ha seleccionado un conjunto diverso de EAs. Dado que el problema de selección de etiquetas SNP presenta una dimensionalidad de cuatro objetivos (catalogándose formalmente como un problema de muchos objetivos), la comparativa incorpora tanto MOEAs como MaOEAs. Concretamente, se han incluido todos los algoritmos evaluados en el estudio de referencia de Moqa \textit{et al.} \cite{moqa2022assessing}, ampliando la lista con otros adicionales para abarcar un espectro algorítmico más amplio. Esta selección final cubre diferentes paradigmas evolutivos, lo que permite analizar cómo operan sus distintas estrategias de búsqueda empleando ambas formulacines de objetivos. Los algoritmos elegidos se agrupan en las siguientes categorías:
+Para realizar un estudio comparativo exhaustivo, se ha seleccionado un conjunto diverso de EAs. Dado que el problema de selección de etiquetas SNP presenta una dimensionalidad de cuatro objetivos (catalogándose formalmente como un MaOP), la comparativa incorpora tanto MOEAs como MaOEAs. Concretamente, se han incluido todos los algoritmos evaluados en el estudio de referencia de Moqa \textit{et al.} \cite{moqa2022assessing}, ampliando la lista con otros adicionales para abarcar un espectro algorítmico más amplio. Esta selección final cubre diferentes paradigmas evolutivos, lo que permite analizar cómo operan sus distintas estrategias de búsqueda empleando ambas formulaciones de objetivos. Los algoritmos elegidos se agrupan en las siguientes categorías:
 
 \subsection{Algoritmos basados en dominancia de Pareto}
-Este paradigma constituye el enfoque clásico, donde la presión de selección recae principalmente sobre la relación de dominancia de Pareto entre las soluciones de la población. Teóricamente, como demostró la revisión de Ishibuchi \textit{et al.} \cite{ishibuchi2008evolutionary}, cuando el problema escala a cuatro o más objetivos, casi todos los individuos de la población pasan a ser no dominados. Esto anula la presión selectiva de la relación de Pareto y obliga al algoritmo a depender de sus métricas de diversidad (como el \textit{crowding distance} de NSGA-II). 
+Este paradigma constituye el enfoque clásico, donde la presión de selección recae principalmente sobre la relación de dominancia de Pareto entre las soluciones de la población. Teóricamente, como demostró la revisión de Ishibuchi \textit{et al.} \cite{ishibuchi2008evolutionary}, cuando el problema escala a cuatro o más objetivos, casi todos los individuos de la población pasan a ser no dominados. Esto anula la presión selectiva de la relación de Pareto y obliga al algoritmo a depender de sus métricas de diversidad (como el distancia de agrupamiento de NSGA-II). 
 
-A pesar de esta conocida limitación teórica, se incluyen algoritmos clásicos como NSGA-II o SPEA2 como elementos de control. Su propósito es doble: establecer un rendimiento base y comprobar si esa pérdida de eficacia matemática se cumple realmente en el problema de selección de etiquetas SNP \cite{ting2010multi, moqa2022assessing}.
+A pesar de esta conocida limitación teórica, se incluyen algoritmos clásicos como NSGA-II o SPEA2 con la intención de reproducir el estudio de referencia \cite{moqa2022assessing}.
 \begin{itemize}
-    \item \textbf{NSGA-II:} El algoritmo \textit{Non-dominated Sorting Genetic Algorithm II} \cite{deb2002fast} clasifica a los individuos en frentes de no dominancia y aplica un operador de distancia de agrupamiento (\textit{crowding distance}) para preservar la diversidad poblacional.
+    \item \textbf{NSGA-II:} El algoritmo \textit{Non-dominated Sorting Genetic Algorithm II} \cite{deb2002fast} clasifica a los individuos en frentes de no dominancia y aplica un operador de distancia de agrupamiento para preservar la diversidad poblacional.
     \item \textbf{SPEA2:} El \textit{Strength Pareto Evolutionary Algorithm 2} \cite{zitzler2001spea2} mantiene un archivo secundario con las mejores soluciones encontradas durante la evolución e incorpora una técnica de estimación de densidad basada en el $k$-ésimo vecino más cercano.
 \end{itemize}
 
@@ -212,7 +214,7 @@ Dado que estos algoritmos están diseñados específicamente para lidiar con ent
 Este paradigma alternativo evalúa la aptitud de la población reduciendo su calidad global (convergencia y diversidad) a un único valor numérico o indicador matemático, el cual guía la presión selectiva.
 \begin{itemize}
     \item \textbf{SMS-EMOA:} El \textit{S-Metric Selection Evolutionary Multi-Objective Algorithm} \cite{beume2007sms} fundamenta su mecanismo de selección ambiental en la contribución marginal de cada individuo a la métrica de hipervolumen (\textit{S-metric}) para maximizar de forma holística el espacio dominado.
-    \item \textbf{AGE-MOEA-II:} El \textit{Approximation-Guided Evolutionary Algorithm II} \cite{panichella2022adaptive} sustituye el hipervolumen por una puntuación de supervivencia basada en aproximación geométrica adaptativa de la topología del frente de Pareto. Ejerce una presión selectiva sumamente competitiva, reduciendo drásticamente el coste computacional.
+    \item \textbf{AGE-MOEA-II:} El \textit{Approximation-Guided Evolutionary Algorithm II} \cite{panichella2022adaptive} sustituye el hipervolumen por una puntuación de supervivencia basada en aproximación geométrica adaptativa de la topología del frente de Pareto. Ejerce una presión selectiva sumamente competitiva, reduciendo el coste computacional.
 \end{itemize}
 
 \section{Estrategias de inicialización}
@@ -243,7 +245,9 @@ Constituye el enfoque aleatorio estándar utilizado por Ting \textit{et al.} \ci
 \end{algorithm}
 
 \textbf{Inicialización voraz de Ting (\textit{greedy\_ting})} \\
-Este mecanismo se fundamenta en el método voraz propuesto originalmente por Ting \textit{et al.} \cite{ting2010multi}. Su estructura es híbrida y opera en tres fases secuenciales. En primer lugar, se inyectan soluciones ancla deterministas (individuos de referencia para asegurar la presencia de los extremos del frente de Pareto en la población inicial, ya que tienen valores óptimos en algunos objetivos): una construida mediante selección voraz por balance alélico hasta cubrir todos los pares, y otra que activa todos los SNPs con perfil de cobertura único. A continuación, se genera una segunda fase inyectando individuos diversificados, alternando entre una selección voraz por grupos de cobertura idéntica (escogiendo un representante aleatorio de cada grupo hasta cubrir todos los pares) y una selección que toma exactamente un SNP por grupo sin exigir cobertura completa. Finalmente, la fracción restante de la población se rellena con individuos puramente aleatorios con probabilidad del $50\%$, aportando diversidad a la población resultante.
+Este mecanismo se fundamenta en el método voraz propuesto originalmente por Ting \textit{et al.} \cite{ting2010multi}. Su estructura es híbrida y opera en tres fases secuenciales. En primer lugar, se inyectan soluciones ancla deterministas (individuos de referencia para asegurar la presencia de los extremos del frente de Pareto en la población inicial, ya que tienen valores óptimos en algunos objetivos): una construida mediante selección voraz por balance alélico hasta cubrir todos los pares, y otra que activa todos los SNPs con perfil de cobertura único.
+
+A continuación, se genera una segunda fase inyectando individuos diversificados, alternando entre una selección voraz por grupos de cobertura idéntica (escogiendo un representante aleatorio de cada grupo hasta cubrir todos los pares) y una selección que toma un SNP por grupo sin exigir cobertura completa. Finalmente, la fracción restante de la población se rellena con individuos puramente aleatorios con probabilidad del $50\%$, aportando diversidad a la población resultante.
 
 \begin{algorithm}[H]
 \caption{Inicialización híbrida de Ting (\textit{greedy\_ting}) (Parte 1)}
@@ -303,7 +307,7 @@ Este mecanismo se fundamenta en el método voraz propuesto originalmente por Tin
 \textbf{Inicialización voraz de multitolerancia (\textit{greedy\_multi})} \\
 Como aportación original de este trabajo, implementa una estrategia voraz diseñada específicamente para potenciar la tolerancia a fallos ($f_2$). Esta inicialización impone distintos niveles de tolerancia ($k$-tolerancia) a los individuos generados, distribuyendo un objetivo progresivo de tolerancia $k$ de forma lineal entre todos los individuos de la población inicial. 
 
-A nivel algorítmico, el proceso de construcción de cada cromosoma se desarrolla iterativamente: en cada paso se calcula una puntuación dinámica para todos los SNPs candidatos, equivalente al número de pares de haplotipos insatisfechos que cada SNP es capaz de distinguir. El SNP que maximiza esta puntuación es seleccionado y los niveles de tolerancia del sistema se actualizan. Este bucle voraz continúa hasta que todos los pares alcanzan el objetivo $k$ asignado al individuo o bien, hasta que se alcanza el límite biológico de tolerancia que tiene el dataset. 
+A nivel algorítmico, el proceso de construcción de cada cromosoma se desarrolla iterativamente: en cada paso se calcula una puntuación dinámica para todos los SNPs candidatos, equivalente al número de pares de haplotipos insatisfechos que cada SNP es capaz de distinguir. El SNP que maximiza esta puntuación es seleccionado y los niveles de tolerancia del sistema se actualizan. Este bucle voraz continúa hasta que todos los pares alcanzan el objetivo $k$ asignado al individuo o bien, hasta que se alcanza el límite biológico de tolerancia que tiene el conjunto de datos. 
 
 Al asignar diferentes niveles de tolerancia a cada individuo, se garantiza que la población arranque con una amplia variedad de soluciones: desde cromosomas muy ligeros ($k=1$) hasta otros con alta compacidad ($f_1$) y tolerancia ($f_2$).
 
@@ -312,7 +316,7 @@ Al asignar diferentes niveles de tolerancia a cada individuo, se garantiza que l
 \begin{algorithmic}[1]
 \Require $K_{max}$: Nivel máximo de tolerancia a fallos exigido
 \Require $M$: Tamaño de la población
-\Require $LimitesBio$: Tolerancia máxima posible del dataset
+\Require $LimitesBio$: Tolerancia máxima posible del conjunto de datos
 \Ensure Población inicial $P$
 \State $P \gets \emptyset$ \Comment{Declara el conjunto poblacional vacío}
 \State $ObjetivosK \gets$ Secuencia lineal desde $1$ hasta $K_{max}$ de longitud $M$
@@ -417,7 +421,7 @@ La fase de cruce constituye el mecanismo principal de búsqueda en los EAs, perm
 \label{fig:crossover_ux}
 \end{figure}
 
-    \item \textbf{Cruce Medio Uniforme (\textit{Half Uniform Crossover} - HUX):} Variante especializada y altamente conservadora del cruce uniforme, propuesta por Eshelman \cite{eshelman1991chc}. Su funcionamiento se fundamenta en identificar primero y de forma exclusiva aquellos genes en los que ambos progenitores difieren. Durante la recombinación, se intercambia exactamente la mitad de estos genes distintos de manera aleatoria. Esta restricción garantiza que los descendientes hereden intacto todo el material genético en el que sus padres ya coincidían, y asegura que estos se sitúen geométricamente a la misma distancia de ambos progenitores. En la Figura \ref{fig:crossover_hux} se detalla este procedimiento, destacando la los genes que difieren en los progenitores.
+    \item \textbf{Cruce Medio Uniforme (\textit{Half Uniform Crossover} - HUX):} Variante especializada y altamente conservadora del cruce uniforme, propuesta por Eshelman \cite{eshelman1991chc}. Su funcionamiento se fundamenta en identificar primero y de forma exclusiva aquellos genes en los que ambos progenitores difieren. Durante la recombinación, se intercambia la mitad de estos genes distintos de manera aleatoria. Esta restricción garantiza que los descendientes hereden intacto todo el material genético en el que sus padres ya coincidían, y asegura que estos se sitúen geométricamente a la misma distancia de ambos progenitores. En la Figura \ref{fig:crossover_hux} se detalla este procedimiento, destacando la los genes que difieren en los progenitores.
 
 \begin{figure}[H]
 \centering
@@ -453,18 +457,18 @@ Para evaluar el rendimiento de los algoritmos seleccionados sobre el problema de
 
 \subsection{Configuración de hiperparámetros comunes}
 
-Los hiperparámetros globales compartidos por todos los algoritmos se han fijado de acuerdo con los valores empíricos habitualmente empleados en la literatura de MOEAs y de MaOEAs, y se detallan a continuación:
+Los hiperparámetros globales compartidos por todos los algoritmos se han fijado de acuerdo con los valores habitualmente empleados en la literatura de MOEAs y de MaOEAs, y se detallan a continuación:
 
 \begin{itemize}
     \item \textbf{Tamaño de población ($N_{pop}$):} 220 individuos.
     \item \textbf{Tamaño de la descendencia ($N_{desc}$):} 220 descendientes por generación.
     \item \textbf{Probabilidad de cruce ($p_c$):} 0,7.
-    \item \textbf{Probabilidad de mutación ($p_m$):} $1/n$, donde $n = 772$ es el número de SNPs polimórficos efectivos del \textit{dataset}; de este modo se espera que se produzca, de media, exactamente una mutación por cromosoma.
+    \item \textbf{Probabilidad de mutación ($p_m$):} $1/n$, donde $n = 772$ es el número de SNPs polimórficos efectivos del conjunto de datos; de este modo se espera que se produzca, de media, una mutación por cromosoma.
     \item \textbf{Número de generaciones:} 500 generaciones por ejecución.
     \item \textbf{Modo de semillas:} Determinista, derivadas secuencialmente de una semilla maestra fija (42) para asegurar la reproducibilidad global de los experimentos.
     \item \textbf{Formulación de objetivos y normalización:} El diseño experimental contempla dos fases independientes para evaluar el impacto de la escala geométrica:
     \begin{enumerate}
-        \item \textbf{Absoluta:} Objetivos evaluados en su escala natural, empleando límites fijos y estáticos derivados empíricamente del conjunto de datos para la normalización.
+        \item \textbf{Absoluta:} Objetivos evaluados en su escala natural, empleando límites fijos y estáticos derivados  del conjunto de datos para la normalización.
         \item \textbf{Proporcional:} Objetivos $f_3$ y $f_4$ divididos por $k$ y $k^2$ respectivamente, empleando límites estáticos proporcionales \cite{ting2010multi}.
     \end{enumerate}
     \item \textbf{Transformación geométrica:} Inversión de maximización a minimización mediante negación matemática ($f' = -f$).
@@ -477,7 +481,7 @@ Además, se han definido los siguientes parámetros específicos para ciertos co
     \item Para el algoritmo MOEA/D \cite{zhang2007moea}, los parámetros de vecindario son: número de vecinos $T = 15$ y probabilidad de cruce intra-vecindario $\delta = 0{,}9$.
 \end{itemize}
 
-El tamaño de población de 220 individuos se ha establecido con el objetivo de replicar de la forma más fiel posible las condiciones experimentales de Moqa \textit{et al.} \cite{moqa2022assessing}, quienes emplearon 200 individuos. Sin embargo, en algoritmos basados en descomposición, como NSGA-III \cite{deb2013evolutionary} y MOEA/D, la población debe coincidir con el número de vectores de referencia para garantizar un muestreo espacial uniforme. Dado que el método de Das y Dennis \cite{das1998normal} no puede generar exactamente 200 vectores simétricos para un problema de 4 objetivos ($M=4$), se seleccionó el resultado más aproximado. Utilizando $p=9$ particiones por eje, se generan exactamente $\binom{4+9-1}{9} = 220$ vectores de referencia, lo que fija, por consiguiente, el tamaño de la población.
+El tamaño de población de 220 individuos se ha establecido con el objetivo de replicar de la forma más fiel posible las condiciones experimentales de Moqa \textit{et al.} \cite{moqa2022assessing}, quienes emplearon 200 individuos. Sin embargo, en algoritmos basados en descomposición, como NSGA-III \cite{deb2013evolutionary} y MOEA/D, la población debe coincidir con el número de vectores de referencia para garantizar un muestreo espacial uniforme. Dado que el método de Das y Dennis \cite{das1998normal} no puede generar 200 vectores simétricos para un problema de 4 objetivos ($M=4$), se seleccionó el resultado más aproximado. Utilizando $p=9$ particiones por eje, se generan $\binom{4+9-1}{9} = 220$ vectores de referencia, lo que fija, por consiguiente, el tamaño de la población.
 
 \subsection{Factores de variación}
 
@@ -495,12 +499,12 @@ Esto da lugar a un total de $8 \times 3 \times 4 = 96$ configuraciones distintas
 
 La optimización de la selección de etiquetas SNP presenta un problema de escala, ya que los diferentes objetivos operan en rangos numéricos distintos. En el experimento de objetivos proporcionales, mientras que la \textit{Compacidad} ($f_1$) varía en un rango teórico de $[1, 772]$, otros objetivos operan en órdenes de magnitud fraccionales, como el \textit{Balance} ($f_4$), cuyo rango queda acotado al intervalo $[0, 0.25]$. Esta divergencia teórica, donde el límite máximo de un objetivo supera por un factor de $3 \times 10^3$ a la dimensión de otro, provoca que normalizar el espacio de búsqueda sea un requisito metodológico obligatorio para poder estandarizar la evaluación estadística posterior.
 
-El cálculo equitativo de las métricas de rendimiento de los algoritmos, como el hipervolumen \cite{zitzler1999multiobjective}, exige un espacio matemático uniforme y acotado. Si los objetivos se evalúan en su escala natural, el cálculo del área geométrica cubierta sesgaría inevitablemente los resultados de las métricas, favoreciendo de forma artificial a aquellas soluciones que despuntan en la dimensión de mayor escala, lo cual invalidaría cualquier comparativa empírica.
+El cálculo equitativo de las métricas de rendimiento de los algoritmos, como el hipervolumen \cite{zitzler1999multiobjective}, exige un espacio matemático uniforme y acotado. Si los objetivos se evalúan en su escala natural, el cálculo del área geométrica cubierta sesgaría inevitablemente los resultados de las métricas, favoreciendo de forma artificial a aquellas soluciones que despuntan en la dimensión de mayor escala, lo cual invalidaría cualquier comparativa.
 
 Para abordar este problema, los frentes se escalan al espacio unitario cerrado $[0, 1]$ utilizando límites fijos precalculados a partir del conjunto de datos. Para cada uno de los experimentos se aplicó una normalización diferente, estructurada de la siguiente forma:
 
 \begin{enumerate}
-    \item \textbf{Normalización absoluta (\texttt{static\_dataset\_limits}):} Bajo este esquema, utilizado en el experimento de objetivos absolutos, los objetivos se evalúan en su escala física natural original. La normalización se realiza calculando los puntos ideal ($Z^*$) y nadir ($Z^{nad}$) teóricos de forma estática a partir de las propiedades estructurales del \textit{dataset} completo, siendo $L$ el número total de SNPs polimórficos. De este modo, los vectores de referencia quedan definidos como:
+    \item \textbf{Normalización absoluta (\texttt{static\_dataset\_limits}):} Bajo este esquema, utilizado en el experimento de objetivos absolutos, los objetivos se evalúan en su escala física natural original. La normalización se realiza calculando los puntos ideal ($Z^*$) y nadir ($Z^{nad}$) teóricos de forma estática a partir de las propiedades estructurales del conjunto de datos completo, siendo $L$ el número total de SNPs polimórficos. De este modo, los vectores de referencia quedan definidos como:
     \begin{itemize}
         \item Punto Ideal ($Z^*$): $\left[1,\ -L,\ -\left(\frac{1}{|P|} \sum_{(h_i, h_j) \in P} d_H(h_i, h_j)\right),\ 0\right]$
         \item Punto Nadir ($Z^{nad}$): $\left[L,\ 0,\ 0,\ \frac{L^2}{4}\right]$
@@ -516,7 +520,9 @@ Para abordar este problema, los frentes se escalan al espacio unitario cerrado $
 
 
 
-En resumen, el uso de estos límites estáticos extraídos del dataset es indispensable para evaluar rigurosamente el rendimiento mediante métricas estadísticas en un estudio que consta de 2 experimentos (uno mediante formulación de objetivos absoluta y otro proporcional). Si la normalización se realizase basándose en los resultados de cada experimento (extrayendo los valores máximos y mínimos descubiertos por toda la batería de algoritmos de un experimento), el tamaño del espacio matemático variaría en cada uno de ellos. Las fluctuaciones estocásticas en las soluciones encontradas desplazarían las fronteras geométricas, lo que invalidaría por completo la comparación de métricas (como el hipervolumen) entre ambos. Al definir vectores de referencia teóricos e inmutables, extraídos del dataset, se asegura que el espacio normalizado sea siempre idéntico, garantizando una comparativa analítica justa bajo las mismas condiciones espaciales.
+En resumen, el uso de estos límites estáticos extraídos del conjunto de datos es indispensable para evaluar rigurosamente el rendimiento mediante métricas estadísticas en un estudio que consta de 2 experimentos (uno mediante formulación de objetivos absoluta y otro proporcional). Si la normalización se realizase basándose en los resultados de cada experimento (extrayendo los valores máximos y mínimos descubiertos por toda la batería de algoritmos de un experimento), el tamaño del espacio matemático variaría en cada uno de ellos.
+
+Las fluctuaciones estocásticas en las soluciones encontradas desplazarían las fronteras geométricas, lo que invalidaría por completo la comparación de métricas (como el hipervolumen) entre ambos. Al definir vectores de referencia teóricos e inmutables, extraídos del conjunto de datos, se asegura que el espacio normalizado sea siempre idéntico, garantizando una comparativa analítica justa bajo las mismas condiciones espaciales.
 
 \subsection{Métricas de evaluación}
 
@@ -536,7 +542,7 @@ Son aquellas que dictan el rendimiento global, evaluando convergencia y diversid
     \label{fig:metric_hypervolume}
 \end{figure}
 
-    \item \textbf{Inverted Generational Distance Plus (IGD+) (a minimizar):} Indicador de convergencia y diversidad relativa al frente de referencia empírico \cite{ishibuchi2015igd}, construido como la unión no dominada de todos los frentes finales del experimento. Para clarificar la distinción teórica de su cálculo geométrico respecto a GD+ (véase la Figura \ref{fig:metric_igd}), la métrica \textbf{IGD+} invierte la perspectiva y mide la distancia \textit{desde} cada punto del frente de referencia empírico \textit{hacia} la solución descubierta más cercana. Este enfoque evalúa de forma conjunta la convergencia y la diversidad: aunque las soluciones del algoritmo sean localmente precisas, si se omiten regiones enteras del espacio de búsqueda, los puntos óptimos inexplorados generarán vectores de distancia largos que empeorarán drásticamente el valor numérico final.
+    \item \textbf{Inverted Generational Distance Plus (IGD+) (a minimizar):} Indicador de convergencia y diversidad relativa al frente de referencia empírico \cite{ishibuchi2015igd}, construido como la unión no dominada de todos los frentes finales del experimento. Para clarificar la distinción teórica de su cálculo geométrico respecto a GD+ (véase la Figura \ref{fig:metric_igd}), la métrica \textbf{IGD+} invierte la perspectiva y mide la distancia \textit{desde} cada punto del frente de referencia empírico \textit{hacia} la solución descubierta más cercana. Este enfoque evalúa de forma conjunta la convergencia y la diversidad: aunque las soluciones del algoritmo sean localmente precisas, si se omiten regiones enteras del espacio de búsqueda, los puntos óptimos inexplorados generarán vectores de distancia largos que empeorarán el valor numérico final.
 
 \begin{figure}[H]
     \centering
@@ -551,7 +557,7 @@ Son aquellas que dictan el rendimiento global, evaluando convergencia y diversid
 Evalúan de forma aislada la convergencia o la diversidad.
 
 \begin{itemize}
-    \item \textbf{Generational Distance Plus (GD+) (a minimizar):} Como complemento al indicador anterior, la métrica \textbf{GD+} mide la distancia analítica \textit{desde} las soluciones descubiertas por el algoritmo \textit{hacia} el frente de referencia empírico. Actúa como un indicador de convergencia estricta: penaliza severamente si alguna solución descubierta es de mala calidad y se ubica lejos del frente de referencia empírico, sin tener en cuenta la dispersión de las mismas.
+    \item \textbf{Generational Distance Plus (GD+) (a minimizar):} Como complemento al indicador anterior, la métrica \textbf{GD+} mide la distancia analítica \textit{desde} las soluciones descubiertas por el algoritmo \textit{hacia} el frente de referencia empírico. Actúa como un indicador de convergencia estricta: penaliza si alguna solución descubierta es de mala calidad y se ubica lejos del frente de referencia empírico, sin tener en cuenta la dispersión de las mismas.
 
 \begin{figure}[H]
     \centering
@@ -560,12 +566,12 @@ Evalúan de forma aislada la convergencia o la diversidad.
     \label{fig:metric_gd}
 \end{figure}
     
-    \item \textbf{Rango (a maximizar):} Suma de los rangos por objetivo del frente normalizado; valora la diversidad geométrica global y puramente la expansión del frente de Pareto en los ejes extremos. Para ilustrar este concepto analítica y visualmente (véase la Figura \ref{fig:metric_range}), se representa un escenario bidimensional. El frente de alta diversidad (círculos azules) distribuye sus soluciones abarcando desde la coordenada $1{,}0$ hasta la $6{,}0$ en ambos ejes. Esto resulta en una amplitud de $5{,}0$ unidades por objetivo, sumando un \textit{Range} global de $10{,}0$. En contraposición, el frente de baja diversidad (cuadrados rojos) presenta soluciones atrapadas en una región estrecha, abarcando únicamente desde $3{,}5$ hasta $4{,}2$ en el eje $f_1$, y desde $3{,}8$ hasta $4{,}5$ en el eje $f_2$. Al colapsar sus proyecciones hacia rangos de tan solo $0{,}7$ unidades por objetivo, su métrica final se desploma a un valor escalar de $1{,}4$, evidenciando matemáticamente la escasez de variedad en las opciones descubiertas.
+    \item \textbf{Rango (a maximizar):} Suma de los rangos por objetivo del frente normalizado; valora la diversidad geométrica global, entendiéndola por la expansión del frente de Pareto en los ejes extremos. Para ilustrar este concepto analítica y visualmente (véase la Figura \ref{fig:metric_range}), se representa un escenario bidimensional. El frente de alta diversidad (círculos azules) distribuye sus soluciones abarcando desde la coordenada $1{,}0$ hasta la $6{,}0$ en ambos ejes. Esto resulta en una amplitud de $5{,}0$ unidades por objetivo, sumando un Rango global de $10{,}0$. En contraposición, el frente de baja diversidad (cuadrados rojos) presenta soluciones concentradas en una región estrecha, abarcando únicamente desde $3{,}5$ hasta $4{,}2$ en el eje $f_1$, y desde $3{,}8$ hasta $4{,}5$ en el eje $f_2$. Al concentrarse sus proyecciones hacia rangos de tan solo $0{,}7$ unidades por objetivo, su métrica final cae a un valor escalar de $1{,}4$, evidenciando matemáticamente la escasez de variedad en las opciones descubiertas.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{../figuras_metricas/range_metric.pdf}
-    \caption[Representación geométrica de la métrica Range]{Representación geométrica bidimensional de la métrica Range. Se contrasta analíticamente la proyección espacial de un frente con alta amplitud (círculos azules) frente a una agrupación de soluciones con baja dispersión (cuadrados rojos).}
+    \caption[Representación geométrica de la métrica Rango]{Representación geométrica bidimensional de la métrica Rango. Se contrasta analíticamente la proyección espacial de un frente con alta amplitud (círculos azules) frente a una agrupación de soluciones con baja dispersión (cuadrados rojos).}
     \label{fig:metric_range}
 \end{figure}
 \end{itemize}
@@ -575,9 +581,9 @@ Evalúan de forma aislada la convergencia o la diversidad.
 Evalúan la calidad de las soluciones individuales clave, independientemente del volumen del conjunto.
 
 \begin{itemize}
-    \item \textbf{Convergencia Marginal (SumMin) (a minimizar):} Suma de los mejores valores alcanzados en cada objetivo; evalúa qué configuración ha encontrado las soluciones más extremas en cada eje de manera marginal.
-    
-    \item \textbf{Balance Central (MinSum) (a minimizar):} Valor mínimo de la suma de objetivos del frente; evalúa qué configuración es capaz de encontrar la solución más equilibrada que contenta a todos los objetivos al mismo tiempo.
+    \item \textbf{Mínimo de las Sumas (MínSuma) (a minimizar):} Valor mínimo de la suma de objetivos del frente; evalúa qué configuración es capaz de encontrar la solución más equilibrada que contenta a todos los objetivos al mismo tiempo.
+
+    \item \textbf{Suma de los Mínimos (SumaMín) (a minimizar):} Suma de los mejores valores alcanzados en cada objetivo; evalúa qué configuración ha encontrado las soluciones más extremas en cada eje de manera marginal.
 
     Para ilustrar analíticamente la diferencia teórica entre ambas métricas de topología (véase la Tabla \ref{tab:metric_sum}), se expone un frente normalizado hipotético compuesto por tres soluciones evaluadas en cuatro objetivos a minimizar.
 
@@ -592,7 +598,7 @@ Evalúan la calidad de las soluciones individuales clave, independientemente del
         $S_3$ & $0{,}9$ & $0{,}5$ & $\mathbf{0{,}1}$ & $0{,}6$ & $2{,}1$ \\
         \hline
     \end{tabular}
-    \caption[Evaluación analítica de SumMin y MinSum]{Ejemplo analítico para la evaluación de SumMin y MinSum. El cálculo de SumMin requiere la extracción de los mínimos marginales (resaltados en negrita en cada columna de los objetivos), resultando en la suma $0{,}1 + 0{,}2 + 0{,}1 + 0{,}3 = 0{,}7$. En contraposición, el cálculo de MinSum requiere identificar la única solución con mejor balance general, lo que equivale a seleccionar el valor mínimo de la última columna ($1{,}6$, correspondiente a $S_2$).}
+    \caption[Evaluación analítica de MínSuma y SumaMín]{Ejemplo analítico para la evaluación de SumaMín y MínSuma. El cálculo de MínSuma requiere identificar la única solución con mejor balance general, lo que equivale a seleccionar el valor mínimo de la última columna ($1{,}6$, correspondiente a $S_2$). El cálculo de SumaMín requiere la extracción de los mínimos marginales (resaltados en negrita en cada columna de los objetivos), resultando en la suma $0{,}1 + 0{,}2 + 0{,}1 + 0{,}3 = 0{,}7$.}
     \label{tab:metric_sum}
 \end{table}
 \end{itemize}
@@ -602,37 +608,90 @@ Evalúan la calidad de las soluciones individuales clave, independientemente del
 Métricas específicas del problema que demuestran la utilidad real de las soluciones encontradas.
 
 \begin{itemize}
-    \item \textbf{Tasas de Eficiencia de Tolerancia (\textit{MaxToleranceRate}, \textit{AvgToleranceRate}) (a maximizar):} Métricas de dominio específico que cuantifican la tolerancia ($f_2$) en proporción a la compacidad ($f_1$). Como se ilustra analíticamente (véase la Figura \ref{fig:metric_tolerance}), estas métricas dividen la tolerancia neta ($f_2$) entre la compacidad ($f_1$) para obtener la eficiencia de la tolerancia. \textit{MaxToleranceRate} captura el pico máximo de eficiencia a lo largo del frente, revelando la configuración algorítmica con mejor rentabilidad coste-seguridad. Por su parte, \textit{AvgToleranceRate} promedia todas las tasas obtenidas, proporcionando una evaluación global sobre la capacidad del algoritmo para mantener soluciones altamente eficientes.
+    \item \textbf{Tasas de Eficiencia de Tolerancia (Tmed, Tmáx) (a maximizar):} Métricas de dominio específico que cuantifican la tolerancia ($f_2$) en proporción a la compacidad ($f_1$). Como se ilustra analíticamente (véase la Figura \ref{fig:metric_tolerance}), estas métricas dividen la tolerancia neta ($f_2$) entre la compacidad ($f_1$) para obtener la eficiencia de la tolerancia. Tmed promedia todas las tasas obtenidas, proporcionando una evaluación global sobre la capacidad del algoritmo para mantener soluciones altamente eficientes. Por su parte, Tmáx captura el pico máximo de eficiencia a lo largo del frente, revelando la configuración algorítmica con mejor rentabilidad coste-seguridad.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{../figuras_metricas/tolerance_rate_metric.pdf}
-    \caption[Cálculo de métricas de eficiencia de tolerancia]{Ejemplo visual y analítico del cálculo de las métricas de eficiencia de la tolerancia. El panel izquierdo ilustra un frente de Pareto evaluando Compacidad ($f_1$) frente a Tolerancia ($f_2$), indicando la Tasa de Tolerancia ($TR$) en cada nodo. El panel derecho muestra la distribución de estas tasas, identificando gráficamente el valor pico (\textit{MaxToleranceRate}) y la media aritmética (\textit{AvgToleranceRate}).}
+    \caption[Cálculo de métricas de eficiencia de tolerancia]{Ejemplo visual y analítico del cálculo de las métricas de eficiencia de la tolerancia. El panel izquierdo ilustra un frente de Pareto evaluando Compacidad ($f_1$) frente a Tolerancia ($f_2$), indicando la Tasa de Tolerancia ($TR$) en cada nodo. El panel derecho muestra la distribución de estas tasas, identificando gráficamente el valor pico (Tmáx) y la media aritmética (Tmed).}
     \label{fig:metric_tolerance}
 \end{figure}
 
-    \item \textbf{Distancia de Hamming Promedio (\textit{AvgHammingDistance}) (a maximizar):} Indicador del rendimiento global del frente de Pareto respecto al tercer objetivo del problema ($f_3$). Sirve para comprobar cómo se comporta la población algorítmica manteniendo la diversidad genotípica promedio de la muestra. Se calcula como la media aritmética del valor del objetivo de disimilitud a través de todas las soluciones que componen el frente.
+    \item \textbf{Distancia de Hamming Promedio (Hmed) (a maximizar):} Indicador del rendimiento global del frente de Pareto respecto al tercer objetivo del problema ($f_3$). Sirve para comprobar cómo se comporta la población algorítmica manteniendo la diversidad genotípica promedio de la muestra. Se calcula como la media aritmética del valor del objetivo de disimilitud a través de todas las soluciones que componen el frente.
     \begin{equation}
-        AvgHammingDistance = \frac{1}{|P|} \sum_{s \in P} f_3(s)
+        H_{med} = \frac{1}{|P|} \sum_{s \in P} f_3(s)
     \end{equation}
     donde $|P|$ representa la cardinalidad del frente de Pareto y $f_3(s)$ es el valor de la distancia media de Hamming evaluada para la solución $s$.
 \end{itemize}
 
 \subsection{Análisis estadístico}
 
-Dado el carácter estocástico de los algoritmos evolutivos, los resultados de las 31 réplicas independientes \cite{granado2020multiobjective} de cada configuración se someten a un análisis estadístico inferencial no paramétrico para validar empíricamente las diferencias de rendimiento. Para evaluar el desempeño en cada uno de los indicadores aislados, se aplica la prueba ómnibus de Kruskal-Wallis \cite{kruskal1952use}. En caso de detectarse diferencias significativas globales, se emplea el test \textit{post-hoc} de Dunn \cite{dunn1964multiple} para identificar la significancia estadística entre pares específicos de configuraciones.
+Dado el carácter estocástico de los EAs, los resultados de las 31 réplicas independientes \cite{granado2020multiobjective} de cada configuración se someten a un análisis estadístico inferencial no paramétrico para validar las diferencias de rendimiento. En todas las pruebas inferenciales de este estudio se establece un nivel de significancia estricto de $\alpha = 0{,}05$.
 
-En todas las pruebas inferenciales de este estudio se establece un nivel de significancia estricto de $\alpha = 0{,}05$.
+\subsubsection{Pruebas de significancia}
+
+Para evaluar el desempeño en cada uno de los indicadores aislados, se aplica la prueba ómnibus de Kruskal-Wallis \cite{kruskal1952use}. En caso de detectarse diferencias significativas globales, se emplea el test \textit{post-hoc} de Dunn \cite{dunn1964multiple} para identificar la significancia estadística entre pares específicos de configuraciones.
+
+\subsubsection{Grupos de equivalencia}
+
+Con el fin de facilitar la interpretación visual tanto de los resultados de los ránquines como de los resultados del test de Dunn, se emplean gráficas de ranquin y equivalencia estadística. En estos diagramas (ilustrados mediante el ejemplo adelantado de la Figura \ref{fig:ejemplo_ranquin}), los elementos evaluados (ya sean algoritmos, estrategias de inicialización u operadores de cruce) se representan mediante nodos rojos y se ordenan en el eje vertical según su rendimiento medio, posicionando las mejores opciones en la parte superior y las peores en la parte inferior. 
+
+La característica fundamental de estos diagramas son las líneas de conexión que agrupan a diferentes elementos. Cuando una línea continua enlaza a un conjunto de elementos, indica que \textbf{no existe una diferencia estadística significativa} entre ellos según el nivel $\alpha$ estipulado; es decir, conforman un \textit{grupo de equivalencia}. Por el contrario, la ausencia de una línea compartida entre dos elementos demuestra que uno supera significativamente al otro. En aquellos casos donde un elemento pertenece simultáneamente a varias líneas superpuestas, significa que actúa como puente estadístico entre distintos grupos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/diagramas_equivalencia/equivalencia_dunn_hypervolume_algorithm_full_31.png}
+    \caption[Interpretación de gráfica de ranquin y equivalencia estadística]{Ejemplo ilustrativo de una gráfica de ranquin y equivalencia estadística real extraída de los resultados.}
+    \label{fig:ejemplo_ranquin}
+\end{figure}
+
+\subsubsection{Matrices de significancia estadística}
+
+De forma complementaria a las gráficas de ranquin, en el Anexo \ref{anexo:significancia_abs} se emplean matrices de significancia estadística. Estas representaciones bidimensionales permiten visualizar exhaustivamente el resultado cruzado del test \textit{post-hoc} de Dunn para todas las combinaciones posibles de elementos evaluados.
+
+Para interpretar correctamente estas matrices, deben cruzarse las filas y columnas correspondientes a los dos elementos que se desean comparar. La intensidad y tonalidad de las celdas dictaminan el nivel de significancia del contraste de hipótesis:
+
+\begin{itemize}
+    \item \textbf{Verde oscuro (\textit{Alta Sig.}):} Indica de forma empírica una diferencia estadística altamente significativa entre ambos elementos ($p < 0{,}01$).
+    \item \textbf{Verde claro (\textit{Sig.}):} Denota una diferencia estadísticamente significativa estándar ($0{,}01 \le p < 0{,}05$).
+    \item \textbf{Rosa pálido (\textit{No Sig.}):} Concluye que no existe evidencia estadística suficiente ($p \ge 0{,}05$) para afirmar que un elemento sea superior al otro, declarándose como estadísticamente equivalentes.
+\end{itemize}
+
+La Figura \ref{fig:ejemplo_heatmap} ilustra un ejemplo didáctico de estas matrices aplicado a la comparación aislada de algoritmos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/4_rankings/heatmap_dunn_igd+_algorithm_full_31.png}
+    \caption[Interpretación de matriz de significancia estadística]{Ejemplo ilustrativo de una matriz de significancia estadística entre algoritmos. Las celdas en tonos verdes denotan diferencias significativas ($p < 0{,}05$) entre el algoritmo de la fila y el de la columna correspondientes, segmentadas por intensidad según su grado de certidumbre. Las celdas de color rosa representan una equivalencia estadística empírica entre ellos.}
+    \label{fig:ejemplo_heatmap}
+\end{figure}
+
+\subsubsection{Tamaño del efecto}
+
+Adicionalmente, para determinar la magnitud de la influencia de cada factor de variación (algoritmo, inicialización y cruce) sobre el rendimiento final, el análisis de Kruskal-Wallis se complementó con el cálculo del tamaño del efecto mediante el índice Eta-cuadrado ($\eta^2_H$) \cite{tomczak2014need}. Esta métrica, acotada entre $0$ y $1$, permite cuantificar matemáticamente qué porcentaje de la varianza total observada en los resultados es atribuible de forma aislada a cada uno de los parámetros de configuración.
 
 \subsection{Representación de frentes de Pareto}
 
-Para el análisis visual de los frentes de Pareto obtenidos por cada algoritmo evolutivo, se emplea un proceso de agregación de resultados. Debido al carácter estocástico de estas técnicas, la representación gráfica se construye uniendo la réplica con el valor mediano en la métrica de hipervolumen \cite{knowles2006tutorial} de todas las configuraciones evaluadas para un mismo algoritmo (tres estrategias de inicialización poblacional y cuatro operadores de cruce), resultando de este modo en un total de 8 gráficas.
+Para el análisis visual de los frentes de Pareto obtenidos por cada EA, se emplea un proceso de agregación de resultados. Debido al carácter estocástico de estas técnicas, la representación gráfica se construye uniendo la réplica con el valor mediano en la métrica de hipervolumen \cite{granado2020multiobjective} de todas las configuraciones evaluadas para un mismo algoritmo (tres estrategias de inicialización poblacional y cuatro operadores de cruce), resultando de este modo en un total de 8 gráficas.
 
 Dado que el problema de selección de etiquetas SNP consta de cuatro objetivos, su representación directa resulta inviable. Por consiguiente, se utilizan proyecciones bidimensionales cruzadas para facilitar la interpretación geométrica del espacio de soluciones. Concretamente, la figura asociada a cada algoritmo se desglosa en seis gráficas bidimensionales (como se ilustra de manera ejemplificada en la Figura \ref{fig:pareto_front_example}), correspondientes a todas las combinaciones pareadas posibles de los objetivos. Adicionalmente, se superponen curvas de regresión local \textit{LOWESS} (\textit{Locally Weighted Scatterplot Smoothing}) \cite{cleveland1979robust} sobre los datos proyectados. Estas curvas abstraen la tendencia del comportamiento del algoritmo, mitigando el impacto visual de la dispersión de las soluciones.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{"../../exp/full_31/ABS 20260625T071958/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_nsga2_full_31.png"}
+    \includegraphics[width=\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/1_frentes/frentes_pareto/frentes_pareto_agregados_nsga2_full_31.png}
     \caption[Disposición gráfica de los frentes de Pareto]{Ejemplo ilustrativo de la disposición geométrica para el análisis de resultados. Se muestra una matriz de seis proyecciones bidimensionales correspondientes a todas las combinaciones pareadas de los cuatro objetivos, acompañadas por sus respectivas curvas de tendencia LOWESS. Los datos numéricos y algorítmicos concretos de este ejemplo no son objeto de análisis en esta sección metodológica.}
     \label{fig:pareto_front_example}
+\end{figure}
+
+\subsection{Análisis de la dinámica de convergencia}
+
+Para analizar cómo evoluciona la convergencia de la población a lo largo de las 500 generaciones estipuladas por el diseño experimental, se estudia gráficamente la trayectoria generacional de la métrica de Hipervolumen. El hipervolumen se consolida como el indicador idóneo para analizar el progreso de la búsqueda debido a su naturaleza integral: al penalizar simultáneamente tanto la lejanía respecto al frente óptimo (falta de convergencia) como la concentración de soluciones (falta de diversidad), el crecimiento continuo de esta métrica es una garantía matemática de que el algoritmo está descubriendo mejores compromisos biológicos.
+
+Para garantizar que las curvas de convergencia resultantes constituyan una representación fidedigna del comportamiento algorítmico típico, mitigando los sesgos del ruido estocástico intrínseco a los EAs, se ha aplicado el mismo proceso de selección representativa: de las 31 ejecuciones independientes generadas por configuración, se selecciona y se traza exclusivamente la trayectoria de la réplica con el valor mediano en la métrica de hipervolumen final. En la Figura \ref{fig:conv_hv_metodologia} se ilustra el resultado visual de este proceso.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../exp/full_31/ABS_20260625T071958/2_comparativa/2_metricas_convergencia/convergencia_hv_nsga2_full_31.png}
+    \caption[Representación de la dinámica de convergencia]{Ejemplo ilustrativo de la representación gráfica empleada para analizar la dinámica de convergencia. El eje de abscisas detalla la evolución temporal (generaciones), mientras que el eje de ordenadas cuantifica el crecimiento escalar del hipervolumen (HV).}
+    \label{fig:conv_hv_metodologia}
 \end{figure}

@@ -1,0 +1,72 @@
+Resultados de Correlación de Spearman entre Objetivos (TFG)
+===========================================================
+
+Muestras analizadas:
+- Experimento Absoluto (ABS):  n = 347,545 soluciones del frente de Pareto final.
+- Experimento Proporcional (PROP): n = 380,264 soluciones del frente de Pareto final.
+- Total acumulado (Global): n = 727,809 soluciones.
+
+-----------------------------------------------------------
+1. Experimento Absoluto (ABS)
+-----------------------------------------------------------
+Par                       ρ Spearman       p-valor   Significativo
+--------------------------------------------------------------
+  f1 ↔ f2                     +0.9606      0.00e+00            ***
+  f1 ↔ f3                     +0.9936      0.00e+00            ***
+  f1 ↔ f4                     +0.9664      0.00e+00            ***
+  f2 ↔ f3                     +0.9637      0.00e+00            ***
+  f2 ↔ f4                     +0.9047      0.00e+00            ***
+  f3 ↔ f4                     +0.9738      0.00e+00            ***
+
+  * Conclusión ABS: Sinergia casi perfecta (ρ ≥ 0.90) entre todos los objetivos.
+    La compacidad (f1) y el balance (f4) se optimizan de forma paralela.
+
+-----------------------------------------------------------
+2. Experimento Proporcional (PROP) — Con variables normalizadas
+-----------------------------------------------------------
+(Métricas f3 y f4 normalizadas dividiéndolas por f1 y f1^2 respectivamente)
+
+Par                       ρ Spearman       p-valor   Significativo
+--------------------------------------------------------------
+  f1 ↔ f2                     +0.9798      0.00e+00            ***
+  f1 ↔ f3                     -0.6603      0.00e+00            ***
+  f1 ↔ f4                     -0.8684      0.00e+00            ***
+  f2 ↔ f3                     -0.5723      0.00e+00            ***
+  f2 ↔ f4                     -0.8531      0.00e+00            ***
+  f3 ↔ f4                     +0.7301      0.00e+00            ***
+
+  * Conclusión PROP (Normalizado): La normalización introduce relaciones inversas.
+    La magnitud de la correlación se reduce de forma notable en comparación
+    con el experimento absoluto (por ejemplo, f2 ↔ f3 cae a -0.57). Esto rompe
+    la redundancia casi total y aumenta la dimensionalidad real del frente.
+
+-----------------------------------------------------------
+3. Experimento Proporcional (PROP) — Reconstruyendo variables absolutas
+-----------------------------------------------------------
+(Deshaciendo la división por f1 y f1^2 para analizar los valores reales subyacentes)
+
+Par                       ρ Spearman       p-valor   Significativo
+--------------------------------------------------------------
+  Compacidad ↔ Tolerancia            +0.9798      0.00e+00  ***
+  Compacidad ↔ Disimilitud           +0.9925      0.00e+00  ***
+  Compacidad ↔ Balance               +0.9822      0.00e+00  ***
+  Tolerancia ↔ Disimilitud           +0.9879      0.00e+00  ***
+  Tolerancia ↔ Balance               +0.9669      0.00e+00  ***
+  Disimilitud ↔ Balance              +0.9891      0.00e+00  ***
+
+  * Conclusión PROP (Absoluto): Los valores brutos subyacentes en el problema
+    genético siguen teniendo una correlación altísima (ρ ≥ 0.96). La pérdida
+    de correlación y la aparición de conflicto es puramente un efecto
+    matemático de la formulación proporcional.
+
+-----------------------------------------------------------
+4. Global (ABS + PROP acumulados)
+-----------------------------------------------------------
+Par                       ρ Spearman       p-valor   Significativo
+--------------------------------------------------------------
+  f1 ↔ f2                     +0.9736      0.00e+00            ***
+  f1 ↔ f3                     +0.3246      0.00e+00            ***
+  f1 ↔ f4                     +0.2701      0.00e+00            ***
+  f2 ↔ f3                     +0.2858      0.00e+00            ***
+  f2 ↔ f4                     +0.2039      0.00e+00            ***
+  f3 ↔ f4                     +0.9587      0.00e+00            ***

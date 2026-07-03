@@ -4,741 +4,858 @@ Este anexo detalla las configuraciones algorítmicas que conforman los bloques d
 
 \section{Experimento Absoluto}
 
-\subsection{Hipervolumen}\label{anexo:elite_hv}
+\subsection{Hipervolumen (Absoluto)}\label{anexo:elite_hv}
 
 La siguiente tabla detalla las 26 configuraciones algorítmicas que conforman el bloque de élite para la métrica de hipervolumen. Todas estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (NSGA2-random\_dense-HUX).
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{llc}
-        \toprule
-        \textbf{Ranking} & \textbf{Configuración} & \textbf{Hipervolumen Medio} \\
-        \midrule
-        1 & NSGA2-random\_dense-HUX & 0.5324 \\
-        2 & NSGA2-random\_dense-UX & 0.5304 \\
-        3 & NSGA2-greedy\_ting-HUX & 0.4996 \\
-        4 & NSGA2-greedy\_ting-UX & 0.4990 \\
-        5 & UNSGA3-random\_dense-UX & 0.4775 \\
-        6 & AGEMOEA2-random\_dense-HUX & 0.4774 \\
-        7 & NSGA3-random\_dense-HUX & 0.4774 \\
-        8 & UNSGA3-random\_dense-HUX & 0.4756 \\
-        9 & NSGA3-random\_dense-UX & 0.4750 \\
-        10 & AGEMOEA2-random\_dense-UX & 0.4740 \\
-        11 & NSGA2-greedy\_ting-2P & 0.4648 \\
-        12 & AGEMOEA2-greedy\_ting-2P & 0.4604 \\
-        13 & NSGA2-random\_dense-2P & 0.4533 \\
-        14 & NSGA2-greedy\_ting-1P & 0.4482 \\
-        15 & AGEMOEA2-greedy\_ting-1P & 0.4466 \\
-        16 & AGEMOEA2-random\_dense-2P & 0.4419 \\
-        17 & SPEA2-random\_dense-HUX & 0.4309 \\
-        18 & SPEA2-random\_dense-UX & 0.4277 \\
-        19 & AGEMOEA2-greedy\_ting-HUX & 0.4254 \\
-        20 & AGEMOEA2-greedy\_ting-UX & 0.4253 \\
-        21 & NSGA2-random\_dense-1P & 0.4245 \\
-        22 & UNSGA3-greedy\_ting-2P & 0.4227 \\
-        23 & SMSEMOA-greedy\_ting-2P & 0.4207 \\
-        24 & UNSGA3-random\_dense-2P & 0.4201 \\
-        25 & NSGA3-random\_dense-2P & 0.4200 \\
-        26 & NSGA3-greedy\_ting-UX & 0.4195 \\
-        \bottomrule
-    \end{tabular}
-    \caption[Bloque de élite de Hipervolumen]{Las 26 configuraciones que conforman el bloque de élite de hipervolumen.}
-    \label{tab:elite_hv}
-\end{table}
+\begin{longtable}{lc}
+    \caption{Grupo de Equivalencia de alto rendimiento para Hipervolumen (Absoluto)}
+    \label{tab:elite_hv} \\
+    \toprule
+    \textbf{Configuración} & \textbf{Media} \\
+    \midrule
+    \endfirsthead
+    \multicolumn{2}{c}{{\bfseries \tablename\ \thetable{} -- continúa desde la página anterior}} \\
+    \toprule
+    \textbf{Configuración} & \textbf{Media} \\
+    \midrule
+    \endhead
+    \midrule \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    NSGA2-random\_dense-HUX & 0.5324 \\
+NSGA2-random\_dense-UX & 0.5304 \\
+NSGA2-greedy\_ting-HUX & 0.4996 \\
+NSGA2-greedy\_ting-UX & 0.4990 \\
+UNSGA3-random\_dense-UX & 0.4775 \\
+AGEMOEA2-random\_dense-HUX & 0.4774 \\
+NSGA3-random\_dense-HUX & 0.4774 \\
+UNSGA3-random\_dense-HUX & 0.4756 \\
+NSGA3-random\_dense-UX & 0.4750 \\
+AGEMOEA2-random\_dense-UX & 0.4740 \\
+NSGA2-greedy\_ting-2P & 0.4648 \\
+AGEMOEA2-greedy\_ting-2P & 0.4604 \\
+NSGA2-random\_dense-2P & 0.4533 \\
+NSGA2-greedy\_ting-1P & 0.4482 \\
+AGEMOEA2-greedy\_ting-1P & 0.4466 \\
+AGEMOEA2-random\_dense-2P & 0.4419 \\
+SPEA2-random\_dense-HUX & 0.4309 \\
+SPEA2-random\_dense-UX & 0.4277 \\
+AGEMOEA2-greedy\_ting-HUX & 0.4254 \\
+AGEMOEA2-greedy\_ting-UX & 0.4253 \\
+NSGA2-random\_dense-1P & 0.4245 \\
+UNSGA3-greedy\_ting-2P & 0.4227 \\
+SMSEMOA-greedy\_ting-2P & 0.4207 \\
+UNSGA3-random\_dense-2P & 0.4201 \\
+NSGA3-random\_dense-2P & 0.4200 \\
+NSGA3-greedy\_ting-UX & 0.4195 \\
+\end{longtable}
 
-\subsection{Distancia Generacional Invertida Plus (IGD+)}\label{anexo:elite_igd}
+\subsection{Distancia Generacional Invertida Plus (IGD+) (Absoluto)}\label{anexo:elite_igd}
 
 La siguiente tabla detalla las configuraciones algorítmicas que conforman el bloque de élite para la métrica IGD+. Estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (NSGA2-greedy\_ting-UX).
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lccc}
-        \toprule
-        \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{IGD+ Medio} \\
-        \midrule
-        NSGA2 & greedy\_ting & UX & 0.0273 \\
-        NSGA2 & greedy\_ting & HUX & 0.0275 \\
-        SMSEMOA & greedy\_ting & 2P & 0.0426 \\
-        UNSGA3 & greedy\_ting & HUX & 0.0440 \\
-        NSGA3 & greedy\_ting & HUX & 0.0449 \\
-        UNSGA3 & greedy\_ting & UX & 0.0456 \\
-        NSGA3 & greedy\_ting & UX & 0.0458 \\
-        AGEMOEA2 & greedy\_ting & 2P & 0.0471 \\
-        AGEMOEA2 & greedy\_ting & HUX & 0.0479 \\
-        AGEMOEA2 & greedy\_ting & 1P & 0.0483 \\
-        AGEMOEA2 & greedy\_ting & UX & 0.0494 \\
-        NSGA2 & greedy\_ting & 2P & 0.0497 \\
-        SMSEMOA & greedy\_ting & 1P & 0.0536 \\
-        SMSEMOA & greedy\_ting & HUX & 0.0539 \\
-        NSGA2 & greedy\_ting & 1P & 0.0549 \\
-        SMSEMOA & greedy\_ting & UX & 0.0555 \\
-        UNSGA3 & greedy\_ting & 2P & 0.0566 \\
-        NSGA3 & greedy\_ting & 2P & 0.0577 \\
-        SPEA2 & greedy\_ting & HUX & 0.0609 \\
-        UNSGA3 & greedy\_ting & 1P & 0.0618 \\
-        SPEA2 & greedy\_ting & UX & 0.0622 \\
-        NSGA3 & greedy\_ting & 1P & 0.0639 \\
-        SPEA2 & greedy\_ting & 1P & 0.0737 \\
-        SPEA2 & greedy\_ting & 2P & 0.0914 \\
-        NSGA2 & random\_dense & UX & 0.1044 \\
-        NSGA2 & random\_dense & HUX & 0.1061 \\
-        \bottomrule
-    \end{tabular}
-    \caption[Bloque de élite de IGD+]{Configuraciones algorítmicas que conforman el bloque de élite para la métrica IGD+.}
-    \label{tab:elite_igd}
-\end{table}
+\begin{longtable}{lccc}
+    \caption{Grupo de Equivalencia de alto rendimiento para IGD+ (Absoluto)}
+    \label{tab:elite_igd} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endfirsthead
+    \multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- continúa desde la página anterior}} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endhead
+    \midrule \multicolumn{4}{r}{{Continúa en la siguiente página...}} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    NSGA2 & greedy\_ting & UX & 0.0273 \\
+NSGA2 & greedy\_ting & HUX & 0.0275 \\
+SMSEMOA & greedy\_ting & 2P & 0.0426 \\
+UNSGA3 & greedy\_ting & HUX & 0.0440 \\
+NSGA3 & greedy\_ting & HUX & 0.0449 \\
+UNSGA3 & greedy\_ting & UX & 0.0456 \\
+NSGA3 & greedy\_ting & UX & 0.0458 \\
+AGEMOEA2 & greedy\_ting & 2P & 0.0471 \\
+AGEMOEA2 & greedy\_ting & HUX & 0.0479 \\
+AGEMOEA2 & greedy\_ting & 1P & 0.0483 \\
+AGEMOEA2 & greedy\_ting & UX & 0.0494 \\
+NSGA2 & greedy\_ting & 2P & 0.0497 \\
+SMSEMOA & greedy\_ting & 1P & 0.0536 \\
+SMSEMOA & greedy\_ting & HUX & 0.0539 \\
+NSGA2 & greedy\_ting & 1P & 0.0549 \\
+SMSEMOA & greedy\_ting & UX & 0.0555 \\
+UNSGA3 & greedy\_ting & 2P & 0.0566 \\
+NSGA3 & greedy\_ting & 2P & 0.0577 \\
+SPEA2 & greedy\_ting & HUX & 0.0609 \\
+UNSGA3 & greedy\_ting & 1P & 0.0618 \\
+SPEA2 & greedy\_ting & UX & 0.0622 \\
+NSGA3 & greedy\_ting & 1P & 0.0639 \\
+SPEA2 & greedy\_ting & 1P & 0.0737 \\
+SPEA2 & greedy\_ting & 2P & 0.0914 \\
+NSGA2 & random\_dense & UX & 0.1044 \\
+NSGA2 & random\_dense & HUX & 0.1061 \\
+\end{longtable}
 
-\subsection{Distancia Generacional Plus (GD+)}\label{anexo:elite_gd}
+\subsection{Distancia Generacional Plus (GD+) (Absoluto)}\label{anexo:elite_gd}
 
 La siguiente tabla detalla las configuraciones algorítmicas que conforman el bloque de élite para la métrica GD+. Estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (SMSEMOA-greedy\_multi-UX).
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lccc}
-        \toprule
-        \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{GD+ Medio} \\
-        \midrule
-        SMSEMOA & greedy\_multi & UX & 0.0001 \\
-        SMSEMOA & greedy\_multi & HUX & 0.0001 \\
-        SMSEMOA & greedy\_multi & 2P & 0.0002 \\
-        NSGA3 & greedy\_multi & UX & 0.0002 \\
-        UNSGA3 & greedy\_multi & UX & 0.0003 \\
-        SMSEMOA & greedy\_multi & 1P & 0.0003 \\
-        NSGA3 & greedy\_multi & HUX & 0.0003 \\
-        UNSGA3 & greedy\_multi & HUX & 0.0003 \\
-        SPEA2 & greedy\_multi & 1P & 0.0004 \\
-        NSGA3 & greedy\_multi & 1P & 0.0004 \\
-        SPEA2 & greedy\_multi & 2P & 0.0004 \\
-        NSGA3 & greedy\_multi & 2P & 0.0005 \\
-        UNSGA3 & greedy\_multi & 1P & 0.0005 \\
-        UNSGA3 & greedy\_multi & 2P & 0.0005 \\
-        NSGA2 & greedy\_multi & HUX & 0.0006 \\
-        AGEMOEA2 & greedy\_multi & 1P & 0.0006 \\
-        NSGA2 & greedy\_multi & UX & 0.0006 \\
-        SPEA2 & greedy\_multi & UX & 0.0006 \\
-        NSGA2 & greedy\_multi & 2P & 0.0006 \\
-        AGEMOEA2 & greedy\_multi & 2P & 0.0006 \\
-        NSGA2 & greedy\_multi & 1P & 0.0007 \\
-        AGEMOEA2 & greedy\_multi & UX & 0.0007 \\
-        AGEMOEA2 & greedy\_multi & HUX & 0.0007 \\
-        SPEA2 & greedy\_multi & HUX & 0.0008 \\
-        RVEA & greedy\_multi & 1P & 0.0008 \\
-        RVEA & greedy\_multi & 2P & 0.0009 \\
-        \bottomrule
-    \end{tabular}
-    \caption[Bloque de élite de GD+]{Configuraciones algorítmicas que conforman el bloque de élite para la métrica GD+.}
-    \label{tab:elite_gd}
-\end{table}
+\begin{longtable}{lccc}
+    \caption{Grupo de Equivalencia de alto rendimiento para GD+ (Absoluto)}
+    \label{tab:elite_gd} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endfirsthead
+    \multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- continúa desde la página anterior}} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endhead
+    \midrule \multicolumn{4}{r}{{Continúa en la siguiente página...}} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    SMSEMOA & greedy\_multi & UX & 0.0001 \\
+SMSEMOA & greedy\_multi & HUX & 0.0001 \\
+SMSEMOA & greedy\_multi & 2P & 0.0002 \\
+NSGA3 & greedy\_multi & UX & 0.0002 \\
+UNSGA3 & greedy\_multi & UX & 0.0003 \\
+SMSEMOA & greedy\_multi & 1P & 0.0003 \\
+NSGA3 & greedy\_multi & HUX & 0.0003 \\
+UNSGA3 & greedy\_multi & HUX & 0.0003 \\
+SPEA2 & greedy\_multi & 1P & 0.0004 \\
+NSGA3 & greedy\_multi & 1P & 0.0004 \\
+SPEA2 & greedy\_multi & 2P & 0.0004 \\
+NSGA3 & greedy\_multi & 2P & 0.0005 \\
+UNSGA3 & greedy\_multi & 1P & 0.0005 \\
+UNSGA3 & greedy\_multi & 2P & 0.0005 \\
+NSGA2 & greedy\_multi & HUX & 0.0006 \\
+AGEMOEA2 & greedy\_multi & 1P & 0.0006 \\
+NSGA2 & greedy\_multi & UX & 0.0006 \\
+SPEA2 & greedy\_multi & UX & 0.0006 \\
+NSGA2 & greedy\_multi & 2P & 0.0006 \\
+AGEMOEA2 & greedy\_multi & 2P & 0.0006 \\
+NSGA2 & greedy\_multi & 1P & 0.0007 \\
+AGEMOEA2 & greedy\_multi & UX & 0.0007 \\
+AGEMOEA2 & greedy\_multi & HUX & 0.0007 \\
+SPEA2 & greedy\_multi & HUX & 0.0008 \\
+RVEA & greedy\_multi & 1P & 0.0008 \\
+RVEA & greedy\_multi & 2P & 0.0009 \\
+\end{longtable}
 
-\subsection{Balance Central (MinSum)}\label{anexo:elite_minsum}
+\subsection{Mínimo de las Sumas (MínSuma) (Absoluto)}\label{anexo:elite_minsum}
 
-La siguiente tabla detalla las configuraciones algorítmicas que conforman el bloque de élite para la métrica MinSum. Estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (SMSEMOA-random\_dense-UX).
+La siguiente tabla detalla las configuraciones algorítmicas que conforman el bloque de élite para la métrica MínSuma. Estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (SMSEMOA-random\_dense-UX).
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lccc}
-        \toprule
-        \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{MinSum Medio} \\
-        \midrule
-        SMSEMOA & random\_dense & UX & 1.3838 \\
-        SMSEMOA & random\_dense & HUX & 1.3839 \\
-        UNSGA3 & random\_dense & UX & 1.4211 \\
-        UNSGA3 & random\_dense & HUX & 1.4222 \\
-        NSGA3 & random\_dense & HUX & 1.4228 \\
-        NSGA3 & random\_dense & UX & 1.4228 \\
-        SMSEMOA & random\_dense & 2P & 1.4250 \\
-        AGEMOEA2 & random\_dense & HUX & 1.4319 \\
-        AGEMOEA2 & random\_dense & UX & 1.4360 \\
-        NSGA2 & random\_dense & UX & 1.4443 \\
-        NSGA2 & random\_dense & HUX & 1.4452 \\
-        SMSEMOA & random\_dense & 1P & 1.4480 \\
-        NSGA2 & greedy\_ting & HUX & 1.4614 \\
-        NSGA2 & greedy\_ting & UX & 1.4637 \\
-        NSGA3 & greedy\_ting & HUX & 1.4691 \\
-        UNSGA3 & random\_dense & 2P & 1.4698 \\
-        UNSGA3 & greedy\_ting & UX & 1.4719 \\
-        NSGA3 & random\_dense & 2P & 1.4743 \\
-        NSGA3 & greedy\_ting & UX & 1.4757 \\
-        UNSGA3 & greedy\_ting & HUX & 1.4767 \\
-        SPEA2 & random\_dense & HUX & 1.4788 \\
-        SPEA2 & random\_dense & UX & 1.4804 \\
-        AGEMOEA2 & random\_dense & 2P & 1.4808 \\
-        NSGA3 & random\_dense & 1P & 1.4909 \\
-        UNSGA3 & greedy\_ting & 2P & 1.4927 \\
-        \bottomrule
-    \end{tabular}
-    \caption[Bloque de élite de MinSum]{Configuraciones algorítmicas que conforman el bloque de élite para la métrica MinSum.}
-    \label{tab:elite_minsum}
-\end{table}
+\begin{longtable}{lccc}
+    \caption{Grupo de Equivalencia de alto rendimiento para MínSuma (Absoluto)}
+    \label{tab:elite_minsum} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endfirsthead
+    \multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- continúa desde la página anterior}} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endhead
+    \midrule \multicolumn{4}{r}{{Continúa en la siguiente página...}} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    SMSEMOA & random\_dense & UX & 1.3838 \\
+SMSEMOA & random\_dense & HUX & 1.3839 \\
+UNSGA3 & random\_dense & UX & 1.4211 \\
+UNSGA3 & random\_dense & HUX & 1.4222 \\
+NSGA3 & random\_dense & HUX & 1.4228 \\
+NSGA3 & random\_dense & UX & 1.4228 \\
+SMSEMOA & random\_dense & 2P & 1.4250 \\
+AGEMOEA2 & random\_dense & HUX & 1.4319 \\
+AGEMOEA2 & random\_dense & UX & 1.4360 \\
+NSGA2 & random\_dense & UX & 1.4443 \\
+NSGA2 & random\_dense & HUX & 1.4452 \\
+SMSEMOA & random\_dense & 1P & 1.4480 \\
+NSGA2 & greedy\_ting & HUX & 1.4614 \\
+NSGA2 & greedy\_ting & UX & 1.4637 \\
+NSGA3 & greedy\_ting & HUX & 1.4691 \\
+UNSGA3 & random\_dense & 2P & 1.4698 \\
+UNSGA3 & greedy\_ting & UX & 1.4719 \\
+NSGA3 & random\_dense & 2P & 1.4743 \\
+NSGA3 & greedy\_ting & UX & 1.4757 \\
+UNSGA3 & greedy\_ting & HUX & 1.4767 \\
+SPEA2 & random\_dense & HUX & 1.4788 \\
+SPEA2 & random\_dense & UX & 1.4804 \\
+AGEMOEA2 & random\_dense & 2P & 1.4808 \\
+NSGA3 & random\_dense & 1P & 1.4909 \\
+UNSGA3 & greedy\_ting & 2P & 1.4927 \\
+\end{longtable}
 
-\subsection{Convergencia Marginal (SumMin)}\label{anexo:elite_summin}
+\subsection{Suma de los Mínimos (SumaMín) (Absoluto)}\label{anexo:elite_summin}
 
-La siguiente tabla detalla las configuraciones algorítmicas que conforman el bloque de élite para la métrica SumMin. Estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (NSGA2-greedy\_ting-UX).
+La siguiente tabla detalla las configuraciones algorítmicas que conforman el bloque de élite para la métrica SumaMín. Estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (NSGA2-greedy\_ting-UX).
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lccc}
-        \toprule
-        \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{SumMin Medio} \\
-        \midrule
-        NSGA2 & greedy\_ting & UX & 0.5326 \\
-        NSGA2 & greedy\_ting & HUX & 0.5344 \\
-        NSGA2 & greedy\_ting & 2P & 0.5809 \\
-        NSGA2 & greedy\_ting & 1P & 0.6153 \\
-        NSGA2 & random\_dense & HUX & 0.6324 \\
-        NSGA2 & random\_dense & UX & 0.6372 \\
-        AGEMOEA2 & greedy\_ting & 2P & 0.6657 \\
-        AGEMOEA2 & greedy\_ting & 1P & 0.6820 \\
-        UNSGA3 & greedy\_ting & 2P & 0.7059 \\
-        NSGA3 & greedy\_ting & 2P & 0.7223 \\
-        UNSGA3 & greedy\_ting & 1P & 0.7360 \\
-        NSGA3 & greedy\_ting & 1P & 0.7372 \\
-        SMSEMOA & greedy\_ting & 2P & 0.7390 \\
-        NSGA3 & greedy\_ting & UX & 0.7479 \\
-        SMSEMOA & greedy\_ting & 1P & 0.7485 \\
-        UNSGA3 & greedy\_ting & UX & 0.7494 \\
-        UNSGA3 & greedy\_ting & HUX & 0.7517 \\
-        NSGA3 & greedy\_ting & HUX & 0.7550 \\
-        SMSEMOA & greedy\_ting & UX & 0.7943 \\
-        SMSEMOA & greedy\_ting & HUX & 0.7960 \\
-        SPEA2 & greedy\_ting & HUX & 0.8180 \\
-        AGEMOEA2 & greedy\_ting & HUX & 0.8411 \\
-        SPEA2 & greedy\_ting & UX & 0.8495 \\
-        AGEMOEA2 & greedy\_ting & UX & 0.8565 \\
-        SPEA2 & greedy\_ting & 1P & 0.8740 \\
-        NSGA3 & random\_dense & HUX & 0.8795 \\
-        UNSGA3 & random\_dense & UX & 0.8813 \\
-        NSGA3 & random\_dense & UX & 0.8878 \\
-        \bottomrule
-    \end{tabular}
-    \caption[Bloque de élite de SumMin]{Configuraciones algorítmicas que conforman el bloque de élite para la métrica SumMin.}
-    \label{tab:elite_summin}
-\end{table}
+\begin{longtable}{lccc}
+    \caption{Grupo de Equivalencia de alto rendimiento para SumaMín (Absoluto)}
+    \label{tab:elite_summin} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endfirsthead
+    \multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- continúa desde la página anterior}} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endhead
+    \midrule \multicolumn{4}{r}{{Continúa en la siguiente página...}} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    NSGA2 & greedy\_ting & UX & 0.5326 \\
+NSGA2 & greedy\_ting & HUX & 0.5344 \\
+NSGA2 & greedy\_ting & 2P & 0.5809 \\
+NSGA2 & greedy\_ting & 1P & 0.6153 \\
+NSGA2 & random\_dense & HUX & 0.6324 \\
+NSGA2 & random\_dense & UX & 0.6372 \\
+AGEMOEA2 & greedy\_ting & 2P & 0.6657 \\
+AGEMOEA2 & greedy\_ting & 1P & 0.6820 \\
+UNSGA3 & greedy\_ting & 2P & 0.7059 \\
+NSGA3 & greedy\_ting & 2P & 0.7223 \\
+UNSGA3 & greedy\_ting & 1P & 0.7360 \\
+NSGA3 & greedy\_ting & 1P & 0.7372 \\
+SMSEMOA & greedy\_ting & 2P & 0.7390 \\
+NSGA3 & greedy\_ting & UX & 0.7479 \\
+SMSEMOA & greedy\_ting & 1P & 0.7485 \\
+UNSGA3 & greedy\_ting & UX & 0.7494 \\
+UNSGA3 & greedy\_ting & HUX & 0.7517 \\
+NSGA3 & greedy\_ting & HUX & 0.7550 \\
+SMSEMOA & greedy\_ting & UX & 0.7943 \\
+SMSEMOA & greedy\_ting & HUX & 0.7960 \\
+SPEA2 & greedy\_ting & HUX & 0.8180 \\
+AGEMOEA2 & greedy\_ting & HUX & 0.8411 \\
+SPEA2 & greedy\_ting & UX & 0.8495 \\
+AGEMOEA2 & greedy\_ting & UX & 0.8565 \\
+SPEA2 & greedy\_ting & 1P & 0.8740 \\
+NSGA3 & random\_dense & HUX & 0.8795 \\
+UNSGA3 & random\_dense & UX & 0.8813 \\
+NSGA3 & random\_dense & UX & 0.8878 \\
+\end{longtable}
 
-\subsection{Tasa de Eficiencia de Tolerancia Media (AvgT)}\label{anexo:elite_avgt}
+\subsection{Tasa de Tolerancia Media (Tmed) (Absoluto)}\label{anexo:elite_avgt}
 
-La siguiente tabla detalla las configuraciones algorítmicas que conforman el bloque de élite para la métrica AvgT. Estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (SMSEMOA-greedy\_ting-HUX).
+La siguiente tabla detalla las configuraciones algorítmicas que conforman el bloque de élite para la métrica Tmed. Estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (SMSEMOA-greedy\_ting-HUX).
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lccc}
-        \toprule
-        \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{AvgT Medio} \\
-        \midrule
-        SMSEMOA & greedy\_ting & HUX & 0.2484 \\
-        SMSEMOA & greedy\_ting & UX & 0.2472 \\
-        SMSEMOA & random\_dense & UX & 0.2435 \\
-        SMSEMOA & random\_dense & HUX & 0.2422 \\
-        SMSEMOA & random\_dense & 2P & 0.2328 \\
-        SMSEMOA & random\_dense & 1P & 0.2281 \\
-        RVEA & random\_dense & HUX & 0.2279 \\
-        RVEA & random\_dense & UX & 0.2274 \\
-        SMSEMOA & greedy\_ting & 2P & 0.2249 \\
-        UNSGA3 & random\_dense & UX & 0.2246 \\
-        NSGA3 & random\_dense & HUX & 0.2242 \\
-        NSGA3 & random\_dense & UX & 0.2241 \\
-        UNSGA3 & random\_dense & HUX & 0.2241 \\
-        NSGA2 & random\_dense & HUX & 0.2187 \\
-        NSGA2 & random\_dense & UX & 0.2177 \\
-        SMSEMOA & greedy\_ting & 1P & 0.2152 \\
-        NSGA2 & greedy\_multi & HUX & 0.2131 \\
-        NSGA2 & greedy\_multi & UX & 0.2118 \\
-        NSGA2 & greedy\_ting & HUX & 0.2113 \\
-        NSGA2 & greedy\_ting & UX & 0.2100 \\
-        AGEMOEA2 & random\_dense & HUX & 0.2098 \\
-        NSGA2 & random\_dense & 2P & 0.2097 \\
-        NSGA2 & greedy\_multi & 1P & 0.2094 \\
-        AGEMOEA2 & random\_dense & UX & 0.2089 \\
-        NSGA2 & greedy\_multi & 2P & 0.2085 \\
-        \bottomrule
-    \end{tabular}
-    \caption[Bloque de élite de AvgT]{Configuraciones algorítmicas que conforman el bloque de élite para la Tasa de Eficiencia de Tolerancia Media (AvgT).}
-    \label{tab:elite_avgt}
-\end{table}
+\begin{longtable}{lccc}
+    \caption{Grupo de Equivalencia de alto rendimiento para Tmed (Absoluto)}
+    \label{tab:elite_avgt} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endfirsthead
+    \multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- continúa desde la página anterior}} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endhead
+    \midrule \multicolumn{4}{r}{{Continúa en la siguiente página...}} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    SMSEMOA & greedy\_ting & HUX & 0.2484 \\
+SMSEMOA & greedy\_ting & UX & 0.2472 \\
+SMSEMOA & random\_dense & UX & 0.2435 \\
+SMSEMOA & random\_dense & HUX & 0.2422 \\
+SMSEMOA & random\_dense & 2P & 0.2328 \\
+SMSEMOA & random\_dense & 1P & 0.2281 \\
+RVEA & random\_dense & HUX & 0.2279 \\
+RVEA & random\_dense & UX & 0.2274 \\
+SMSEMOA & greedy\_ting & 2P & 0.2249 \\
+UNSGA3 & random\_dense & UX & 0.2246 \\
+NSGA3 & random\_dense & HUX & 0.2242 \\
+NSGA3 & random\_dense & UX & 0.2241 \\
+UNSGA3 & random\_dense & HUX & 0.2241 \\
+NSGA2 & random\_dense & HUX & 0.2187 \\
+NSGA2 & random\_dense & UX & 0.2177 \\
+SMSEMOA & greedy\_ting & 1P & 0.2152 \\
+NSGA2 & greedy\_multi & HUX & 0.2131 \\
+NSGA2 & greedy\_multi & UX & 0.2118 \\
+NSGA2 & greedy\_ting & HUX & 0.2113 \\
+NSGA2 & greedy\_ting & UX & 0.2100 \\
+AGEMOEA2 & random\_dense & HUX & 0.2098 \\
+NSGA2 & random\_dense & 2P & 0.2097 \\
+NSGA2 & greedy\_multi & 1P & 0.2094 \\
+AGEMOEA2 & random\_dense & UX & 0.2089 \\
+NSGA2 & greedy\_multi & 2P & 0.2085 \\
+\end{longtable}
 
-\subsection{Rango}\label{anexo:elite_range}
+\subsection{Rango (Absoluto)}\label{anexo:elite_range}
 
-La siguiente tabla detalla las configuraciones algorítmicas que conforman el bloque de élite para la métrica Range. Estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (NSGA2-greedy\_ting-UX).
+La siguiente tabla detalla las configuraciones algorítmicas que conforman el bloque de élite para la métrica Rango. Estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (NSGA2-greedy\_ting-UX).
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lccc}
-        \toprule
-        \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Range Medio} \\
-        \midrule
-        NSGA2 & greedy\_ting & UX & 2.4229 \\
-        NSGA2 & greedy\_ting & HUX & 2.4181 \\
-        NSGA2 & greedy\_ting & 2P & 2.4152 \\
-        NSGA2 & greedy\_ting & 1P & 2.3449 \\
-        AGEMOEA2 & greedy\_ting & 1P & 2.2363 \\
-        AGEMOEA2 & greedy\_ting & 2P & 2.2358 \\
-        UNSGA3 & greedy\_ting & 2P & 2.1450 \\
-        NSGA3 & greedy\_ting & 2P & 2.1169 \\
-        \bottomrule
-    \end{tabular}
-    \caption[Bloque de élite de Range]{Configuraciones algorítmicas que conforman el bloque de élite para la métrica Range.}
-    \label{tab:range_ranking}
-\end{table}
+\begin{longtable}{lccc}
+    \caption{Grupo de Equivalencia de alto rendimiento para Rango (Absoluto)}
+    \label{tab:range_ranking} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endfirsthead
+    \multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- continúa desde la página anterior}} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endhead
+    \midrule \multicolumn{4}{r}{{Continúa en la siguiente página...}} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    NSGA2 & greedy\_ting & UX & 2.4229 \\
+NSGA2 & greedy\_ting & HUX & 2.4181 \\
+NSGA2 & greedy\_ting & 2P & 2.4152 \\
+NSGA2 & greedy\_ting & 1P & 2.3449 \\
+AGEMOEA2 & greedy\_ting & 1P & 2.2363 \\
+AGEMOEA2 & greedy\_ting & 2P & 2.2358 \\
+UNSGA3 & greedy\_ting & 2P & 2.1450 \\
+NSGA3 & greedy\_ting & 2P & 2.1169 \\
+\end{longtable}
 
-\subsection{Tasa de Tolerancia Máxima (MaxToleranceRate)}\label{anexo:elite_maxt_abs}
+\subsection{Tasa de Tolerancia Máxima (Tmáx) (Absoluto)}\label{anexo:elite_maxt_abs}
 
-La siguiente tabla detalla las 25 configuraciones algorítmicas que conforman el bloque de élite para la métrica MaxToleranceRate en el experimento absoluto. Todas estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (AGE-MOEA-II-Greedy Multi-UX) según el test de Dunn-Holm ($p > 0.05$).
+La siguiente tabla detalla las 25 configuraciones algorítmicas que conforman el bloque de élite para la métrica Tmáx en el experimento absoluto. Todas estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (AGE-MOEA-II-Greedy Multi-UX) según el test de Dunn-Holm ($p > 0.05$).
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lllc}
-        \toprule
-        \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{MaxToleranceRate} \\
-        \midrule
-        AGE-MOEA-II & \textit{Greedy Multi} & UX & $0{,}2917$ \\
-        AGE-MOEA-II & \textit{Greedy Multi} & HUX & $0{,}2904$ \\
-        SPEA2 & \textit{Greedy Multi} & HUX & $0{,}2874$ \\
-        SPEA2 & \textit{Greedy Multi} & 1P & $0{,}2871$ \\
-        AGE-MOEA-II & \textit{Greedy Multi} & 2P & $0{,}2858$ \\
-        SPEA2 & \textit{Greedy Multi} & UX & $0{,}2851$ \\
-        SPEA2 & \textit{Greedy Multi} & 2P & $0{,}2846$ \\
-        AGE-MOEA-II & \textit{Greedy Multi} & 1P & $0{,}2832$ \\
-        NSGA-II & \textit{Greedy Multi} & 2P & $0{,}2788$ \\
-        NSGA-II & \textit{Greedy Multi} & UX & $0{,}2780$ \\
-        U-NSGA-III & \textit{Greedy Multi} & UX & $0{,}2776$ \\
-        NSGA-II & \textit{Greedy Multi} & HUX & $0{,}2773$ \\
-        NSGA-II & \textit{Greedy Multi} & 1P & $0{,}2773$ \\
-        SMS-EMOA & \textit{Greedy Ting} & HUX & $0{,}2768$ \\
-        NSGA-III & \textit{Greedy Multi} & HUX & $0{,}2767$ \\
-        SMS-EMOA & \textit{Greedy Ting} & UX & $0{,}2766$ \\
-        U-NSGA-III & \textit{Greedy Multi} & HUX & $0{,}2751$ \\
-        NSGA-III & \textit{Greedy Multi} & 2P & $0{,}2750$ \\
-        NSGA-III & \textit{Greedy Multi} & 1P & $0{,}2741$ \\
-        U-NSGA-III & \textit{Greedy Multi} & 2P & $0{,}2739$ \\
-        NSGA-III & \textit{Greedy Multi} & UX & $0{,}2727$ \\
-        U-NSGA-III & \textit{Greedy Multi} & 1P & $0{,}2692$ \\
-        SMS-EMOA & \textit{Greedy Ting} & 2P & $0{,}2626$ \\
-        SMS-EMOA & \textit{Greedy Multi} & 1P & $0{,}2624$ \\
-        SMS-EMOA & \textit{Greedy Multi} & 2P & $0{,}2597$ \\
-        \bottomrule
-    \end{tabular}
-    \caption{Grupo de equivalencia de alto rendimiento de Dunn-Holm para MaxToleranceRate (Absoluto).}
-    \label{tab:elite_maxt_abs}
-\end{table}
+\begin{longtable}{lllc}
+    \caption{Grupo de Equivalencia de alto rendimiento para Tmáx (Absoluto)}
+    \label{tab:elite_maxt_abs} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endfirsthead
+    \multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- continúa desde la página anterior}} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endhead
+    \midrule \multicolumn{4}{r}{{Continúa en la siguiente página...}} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    AGE-MOEA-II & \textit{Greedy Multi} & UX & $0{,}2917$ \\
+AGE-MOEA-II & \textit{Greedy Multi} & HUX & $0{,}2904$ \\
+SPEA2 & \textit{Greedy Multi} & HUX & $0{,}2874$ \\
+SPEA2 & \textit{Greedy Multi} & 1P & $0{,}2871$ \\
+AGE-MOEA-II & \textit{Greedy Multi} & 2P & $0{,}2858$ \\
+SPEA2 & \textit{Greedy Multi} & UX & $0{,}2851$ \\
+SPEA2 & \textit{Greedy Multi} & 2P & $0{,}2846$ \\
+AGE-MOEA-II & \textit{Greedy Multi} & 1P & $0{,}2832$ \\
+NSGA-II & \textit{Greedy Multi} & 2P & $0{,}2788$ \\
+NSGA-II & \textit{Greedy Multi} & UX & $0{,}2780$ \\
+U-NSGA-III & \textit{Greedy Multi} & UX & $0{,}2776$ \\
+NSGA-II & \textit{Greedy Multi} & HUX & $0{,}2773$ \\
+NSGA-II & \textit{Greedy Multi} & 1P & $0{,}2773$ \\
+SMS-EMOA & \textit{Greedy Ting} & HUX & $0{,}2768$ \\
+NSGA-III & \textit{Greedy Multi} & HUX & $0{,}2767$ \\
+SMS-EMOA & \textit{Greedy Ting} & UX & $0{,}2766$ \\
+U-NSGA-III & \textit{Greedy Multi} & HUX & $0{,}2751$ \\
+NSGA-III & \textit{Greedy Multi} & 2P & $0{,}2750$ \\
+NSGA-III & \textit{Greedy Multi} & 1P & $0{,}2741$ \\
+U-NSGA-III & \textit{Greedy Multi} & 2P & $0{,}2739$ \\
+NSGA-III & \textit{Greedy Multi} & UX & $0{,}2727$ \\
+U-NSGA-III & \textit{Greedy Multi} & 1P & $0{,}2692$ \\
+SMS-EMOA & \textit{Greedy Ting} & 2P & $0{,}2626$ \\
+SMS-EMOA & \textit{Greedy Multi} & 1P & $0{,}2624$ \\
+SMS-EMOA & \textit{Greedy Multi} & 2P & $0{,}2597$ \\
+\end{longtable}
 
-\subsection{Distancia de Hamming Promedio (AvgHD)}\label{anexo:elite_avghd_abs}
+\subsection{Distancia de Hamming Promedio (Hmed) (Absoluto)}\label{anexo:elite_avghd_abs}
 
-La siguiente tabla detalla las 22 configuraciones algorítmicas que conforman el bloque de élite para la métrica AvgHD en el experimento absoluto. Todas estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (SPEA2-random\_dense-HUX) según el test de Dunn-Holm ($p > 0.05$).
+La siguiente tabla detalla las 22 configuraciones algorítmicas que conforman el bloque de élite para la métrica Hmed en el experimento absoluto. Todas estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (SPEA2-random\_dense-HUX) según el test de Dunn-Holm ($p > 0.05$).
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lllc}
-        \toprule
-        \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{AvgHD} \\
-        \midrule
-        SPEA2 & \textit{Random Dense} & HUX & $152{,}5332$ \\
-        SPEA2 & \textit{Random Dense} & UX & $151{,}4892$ \\
-        SMS-EMOA & \textit{Random Dense} & HUX & $143{,}7604$ \\
-        SMS-EMOA & \textit{Random Dense} & UX & $142{,}9051$ \\
-        NSGA-III & \textit{Random Dense} & UX & $141{,}4280$ \\
-        NSGA-III & \textit{Random Dense} & HUX & $140{,}8741$ \\
-        U-NSGA-III & \textit{Random Dense} & UX & $138{,}8040$ \\
-        NSGA-II & \textit{Random Dense} & HUX & $136{,}0671$ \\
-        U-NSGA-III & \textit{Random Dense} & HUX & $135{,}4905$ \\
-        NSGA-II & \textit{Random Dense} & UX & $134{,}4427$ \\
-        SPEA2 & \textit{Random Dense} & 2P & $128{,}1673$ \\
-        AGE-MOEA-II & \textit{Random Dense} & HUX & $120{,}5148$ \\
-        AGE-MOEA-II & \textit{Random Dense} & UX & $119{,}7003$ \\
-        NSGA-III & \textit{Random Dense} & 2P & $116{,}0219$ \\
-        U-NSGA-III & \textit{Random Dense} & 2P & $114{,}2226$ \\
-        SMS-EMOA & \textit{Random Dense} & 2P & $111{,}2219$ \\
-        NSGA-II & \textit{Random Dense} & 2P & $110{,}6948$ \\
-        SPEA2 & \textit{Greedy Ting} & 2P & $104{,}3479$ \\
-        AGE-MOEA-II & \textit{Random Dense} & 2P & $103{,}3551$ \\
-        SPEA2 & \textit{Greedy Ting} & HUX & $99{,}5745$ \\
-        SPEA2 & \textit{Greedy Ting} & UX & $98{,}7682$ \\
-        SPEA2 & \textit{Greedy Ting} & 2P & $104{,}3479$ \\
-        \bottomrule
-    \end{tabular}
-    \caption{Grupo de equivalencia de alto rendimiento de Dunn-Holm para AvgHD (Absoluto).}
-    \label{tab:elite_avghd_abs}
-\end{table}
+\begin{longtable}{lllc}
+    \caption{Grupo de Equivalencia de alto rendimiento para Hmed (Absoluto)}
+    \label{tab:elite_avghd_abs} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endfirsthead
+    \multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- continúa desde la página anterior}} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endhead
+    \midrule \multicolumn{4}{r}{{Continúa en la siguiente página...}} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    SPEA2 & \textit{Random Dense} & HUX & $152{,}5332$ \\
+SPEA2 & \textit{Random Dense} & UX & $151{,}4892$ \\
+SMS-EMOA & \textit{Random Dense} & HUX & $143{,}7604$ \\
+SMS-EMOA & \textit{Random Dense} & UX & $142{,}9051$ \\
+NSGA-III & \textit{Random Dense} & UX & $141{,}4280$ \\
+NSGA-III & \textit{Random Dense} & HUX & $140{,}8741$ \\
+U-NSGA-III & \textit{Random Dense} & UX & $138{,}8040$ \\
+NSGA-II & \textit{Random Dense} & HUX & $136{,}0671$ \\
+U-NSGA-III & \textit{Random Dense} & HUX & $135{,}4905$ \\
+NSGA-II & \textit{Random Dense} & UX & $134{,}4427$ \\
+SPEA2 & \textit{Random Dense} & 2P & $128{,}1673$ \\
+AGE-MOEA-II & \textit{Random Dense} & HUX & $120{,}5148$ \\
+AGE-MOEA-II & \textit{Random Dense} & UX & $119{,}7003$ \\
+NSGA-III & \textit{Random Dense} & 2P & $116{,}0219$ \\
+U-NSGA-III & \textit{Random Dense} & 2P & $114{,}2226$ \\
+SMS-EMOA & \textit{Random Dense} & 2P & $111{,}2219$ \\
+NSGA-II & \textit{Random Dense} & 2P & $110{,}6948$ \\
+SPEA2 & \textit{Greedy Ting} & 2P & $104{,}3479$ \\
+AGE-MOEA-II & \textit{Random Dense} & 2P & $103{,}3551$ \\
+SPEA2 & \textit{Greedy Ting} & HUX & $99{,}5745$ \\
+SPEA2 & \textit{Greedy Ting} & UX & $98{,}7682$ \\
+SPEA2 & \textit{Greedy Ting} & 2P & $104{,}3479$ \\
+\end{longtable}
 
 \section{Experimento Proporcional}
 
-\subsection{Hipervolumen}\label{anexo:elite_hv_prop}
+\subsection{Hipervolumen (Proporcional)}\label{anexo:elite_hv_prop}
 
 La siguiente tabla detalla las 27 configuraciones algorítmicas que conforman el bloque de élite para la métrica de hipervolumen en el experimento proporcional. Todas estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (AGE-MOEA-II-Greedy Ting-UX) según el test de Dunn-Holm ($p > 0.05$).
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{llc}
-        \toprule
-        \textbf{Ranking} & \textbf{Configuración} & \textbf{Hipervolumen Medio} \\
-        \midrule
-        1 & AGEMOEA2-greedy\_ting-UX & 0.4070 \\
-        2 & AGEMOEA2-greedy\_ting-HUX & 0.4066 \\
-        3 & NSGA2-random\_dense-HUX & 0.4013 \\
-        4 & NSGA2-random\_dense-UX & 0.3998 \\
-        5 & AGEMOEA2-greedy\_ting-2P & 0.3988 \\
-        6 & AGEMOEA2-greedy\_ting-1P & 0.3862 \\
-        7 & NSGA2-greedy\_ting-2P & 0.3816 \\
-        8 & AGEMOEA2-random\_dense-HUX & 0.3813 \\
-        9 & NSGA2-greedy\_ting-1P & 0.3808 \\
-        10 & AGEMOEA2-random\_dense-UX & 0.3803 \\
-        11 & NSGA3-random\_dense-HUX & 0.3764 \\
-        12 & UNSGA3-random\_dense-HUX & 0.3764 \\
-        13 & UNSGA3-random\_dense-UX & 0.3762 \\
-        14 & NSGA2-greedy\_ting-HUX & 0.3761 \\
-        15 & NSGA2-greedy\_ting-UX & 0.3752 \\
-        16 & NSGA3-random\_dense-UX & 0.3751 \\
-        17 & SMSEMOA-greedy\_ting-2P & 0.3715 \\
-        18 & SPEA2-random\_dense-HUX & 0.3666 \\
-        19 & SPEA2-random\_dense-UX & 0.3658 \\
-        20 & NSGA3-greedy\_ting-2P & 0.3619 \\
-        21 & UNSGA3-greedy\_ting-HUX & 0.3618 \\
-        22 & UNSGA3-greedy\_ting-2P & 0.3612 \\
-        23 & SMSEMOA-greedy\_ting-1P & 0.3599 \\
-        24 & NSGA3-greedy\_ting-UX & 0.3587 \\
-        25 & NSGA3-greedy\_ting-HUX & 0.3586 \\
-        26 & UNSGA3-greedy\_ting-UX & 0.3584 \\
-        27 & SMSEMOA-greedy\_ting-HUX & 0.3579 \\
-        \bottomrule
-    \end{tabular}
-    \caption[Bloque de élite de Hipervolumen (Proporcional)]{Las 27 configuraciones que conforman el bloque de élite de hipervolumen en el experimento proporcional.}
-    \label{tab:elite_hv_prop}
-\end{table}
+\begin{longtable}{lc}
+    \caption{Grupo de Equivalencia de alto rendimiento para Hipervolumen (Proporcional)}
+    \label{tab:elite_hv_prop} \\
+    \toprule
+    \textbf{Configuración} & \textbf{Media} \\
+    \midrule
+    \endfirsthead
+    \multicolumn{2}{c}{{\bfseries \tablename\ \thetable{} -- continúa desde la página anterior}} \\
+    \toprule
+    \textbf{Configuración} & \textbf{Media} \\
+    \midrule
+    \endhead
+    \midrule \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    AGEMOEA2-greedy\_ting-UX & 0.4070 \\
+AGEMOEA2-greedy\_ting-HUX & 0.4066 \\
+NSGA2-random\_dense-HUX & 0.4013 \\
+NSGA2-random\_dense-UX & 0.3998 \\
+AGEMOEA2-greedy\_ting-2P & 0.3988 \\
+AGEMOEA2-greedy\_ting-1P & 0.3862 \\
+NSGA2-greedy\_ting-2P & 0.3816 \\
+AGEMOEA2-random\_dense-HUX & 0.3813 \\
+NSGA2-greedy\_ting-1P & 0.3808 \\
+AGEMOEA2-random\_dense-UX & 0.3803 \\
+NSGA3-random\_dense-HUX & 0.3764 \\
+UNSGA3-random\_dense-HUX & 0.3764 \\
+UNSGA3-random\_dense-UX & 0.3762 \\
+NSGA2-greedy\_ting-HUX & 0.3761 \\
+NSGA2-greedy\_ting-UX & 0.3752 \\
+NSGA3-random\_dense-UX & 0.3751 \\
+SMSEMOA-greedy\_ting-2P & 0.3715 \\
+SPEA2-random\_dense-HUX & 0.3666 \\
+SPEA2-random\_dense-UX & 0.3658 \\
+NSGA3-greedy\_ting-2P & 0.3619 \\
+UNSGA3-greedy\_ting-HUX & 0.3618 \\
+UNSGA3-greedy\_ting-2P & 0.3612 \\
+SMSEMOA-greedy\_ting-1P & 0.3599 \\
+NSGA3-greedy\_ting-UX & 0.3587 \\
+NSGA3-greedy\_ting-HUX & 0.3586 \\
+UNSGA3-greedy\_ting-UX & 0.3584 \\
+SMSEMOA-greedy\_ting-HUX & 0.3579 \\
+\end{longtable}
 
-\section{Distancia Generacional Invertida Plus (Experimento Proporcional)}\label{anexo:elite_igd_prop}
+\subsection{Distancia Generacional Invertida Plus (IGD+) (Proporcional)}\label{anexo:elite_igd_prop}
 
 La siguiente tabla detalla las 33 configuraciones algorítmicas que conforman el bloque de élite para la métrica IGD+ en el experimento proporcional. Todas estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (NSGA-II-Greedy Multi-HUX) según el test de Dunn-Holm ($p > 0.05$).
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lllc}
-        \toprule
-        \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{IGD+} \\
-        \midrule
-        AGE-MOEA-II & \textit{Greedy Ting} & UX & $0{,}0207$ \\
-        AGE-MOEA-II & \textit{Greedy Ting} & HUX & $0{,}0218$ \\
-        AGE-MOEA-II & \textit{Greedy Ting} & 2P & $0{,}0336$ \\
-        U-NSGA-III & \textit{Greedy Ting} & UX & $0{,}0349$ \\
-        NSGA-III & \textit{Greedy Ting} & HUX & $0{,}0359$ \\
-        U-NSGA-III & \textit{Greedy Ting} & HUX & $0{,}0370$ \\
-        SMS-EMOA & \textit{Greedy Ting} & 2P & $0{,}0385$ \\
-        AGE-MOEA-II & \textit{Greedy Ting} & 1P & $0{,}0404$ \\
-        NSGA-III & \textit{Greedy Ting} & UX & $0{,}0404$ \\
-        SPEA2 & \textit{Greedy Ting} & HUX & $0{,}0428$ \\
-        NSGA-III & \textit{Greedy Ting} & 2P & $0{,}0436$ \\
-        SPEA2 & \textit{Greedy Ting} & UX & $0{,}0443$ \\
-        U-NSGA-III & \textit{Greedy Ting} & 2P & $0{,}0452$ \\
-        NSGA-II & \textit{Greedy Ting} & 2P & $0{,}0485$ \\
-        NSGA-II & \textit{Greedy Ting} & 1P & $0{,}0517$ \\
-        SMS-EMOA & \textit{Greedy Ting} & UX & $0{,}0521$ \\
-        SPEA2 & \textit{Greedy Ting} & 1P & $0{,}0525$ \\
-        SMS-EMOA & \textit{Greedy Ting} & HUX & $0{,}0527$ \\
-        NSGA-II & \textit{Greedy Ting} & HUX & $0{,}0538$ \\
-        SMS-EMOA & \textit{Greedy Ting} & 1P & $0{,}0547$ \\
-        NSGA-III & \textit{Greedy Ting} & 1P & $0{,}0550$ \\
-        NSGA-II & \textit{Greedy Ting} & UX & $0{,}0563$ \\
-        U-NSGA-III & \textit{Greedy Ting} & 1P & $0{,}0573$ \\
-        SPEA2 & \textit{Greedy Ting} & 2P & $0{,}0580$ \\
-        NSGA-II & \textit{Random Dense} & HUX & $0{,}0951$ \\
-        NSGA-II & \textit{Random Dense} & UX & $0{,}0985$ \\
-        \bottomrule
-    \end{tabular}
-    \caption{Grupo de equivalencia de alto rendimiento de Dunn-Holm para IGD+ (Proporcional).}
-    \label{tab:elite_igd_prop}
-\end{table}
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lllc}
-        \toprule
-        \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{GD+} \\
-        \midrule
-        SMS-EMOA & \textit{Random Dense} & HUX & $0{,}0008$ \\
-        SMS-EMOA & \textit{Random Dense} & UX & $0{,}0009$ \\
-        SMS-EMOA & \textit{Greedy Multi} & 1P & $0{,}0019$ \\
-        SMS-EMOA & \textit{Greedy Multi} & 2P & $0{,}0019$ \\
-        SMS-EMOA & \textit{Greedy Multi} & HUX & $0{,}0022$ \\
-        SMS-EMOA & \textit{Greedy Multi} & UX & $0{,}0024$ \\
-        NSGA-III & \textit{Greedy Multi} & 1P & $0{,}0028$ \\
-        U-NSGA-III & \textit{Greedy Multi} & 2P & $0{,}0028$ \\
-        NSGA-III & \textit{Greedy Multi} & HUX & $0{,}0028$ \\
-        U-NSGA-III & \textit{Greedy Multi} & UX & $0{,}0028$ \\
-        U-NSGA-III & \textit{Greedy Multi} & HUX & $0{,}0029$ \\
-        NSGA-III & \textit{Greedy Multi} & UX & $0{,}0030$ \\
-        U-NSGA-III & \textit{Greedy Multi} & 1P & $0{,}0030$ \\
-        NSGA-II & \textit{Greedy Multi} & 1P & $0{,}0030$ \\
-        NSGA-III & \textit{Greedy Multi} & 2P & $0{,}0030$ \\
-        NSGA-II & \textit{Greedy Multi} & 2P & $0{,}0033$ \\
-        NSGA-III & \textit{Random Dense} & UX & $0{,}0033$ \\
-        AGE-MOEA-II & \textit{Greedy Multi} & 1P & $0{,}0034$ \\
-        U-NSGA-III & \textit{Random Dense} & HUX & $0{,}0035$ \\
-        U-NSGA-III & \textit{Random Dense} & UX & $0{,}0035$ \\
-        NSGA-III & \textit{Random Dense} & HUX & $0{,}0037$ \\
-        AGE-MOEA-II & \textit{Greedy Multi} & 2P & $0{,}0038$ \\
-        NSGA-II & \textit{Greedy Multi} & HUX & $0{,}0039$ \\
-        NSGA-II & \textit{Greedy Multi} & UX & $0{,}0039$ \\
-        AGE-MOEA-II & \textit{Greedy Multi} & UX & $0{,}0041$ \\
-        AGE-MOEA-II & \textit{Greedy Multi} & HUX & $0{,}0041$ \\
-        \bottomrule
-    \end{tabular}
-    \caption{Grupo de equivalencia de alto rendimiento de Dunn-Holm para GD+ (Proporcional).}
-    \label{tab:elite_gd_prop}
-\end{table}
+\begin{longtable}{lllc}
+    \caption{Grupo de Equivalencia de alto rendimiento para IGD+ (Proporcional)}
+    \label{tab:elite_igd_prop} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endfirsthead
+    \multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- continúa desde la página anterior}} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endhead
+    \midrule \multicolumn{4}{r}{{Continúa en la siguiente página...}} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    AGE-MOEA-II & \textit{Greedy Ting} & UX & $0{,}0207$ \\
+AGE-MOEA-II & \textit{Greedy Ting} & HUX & $0{,}0218$ \\
+AGE-MOEA-II & \textit{Greedy Ting} & 2P & $0{,}0336$ \\
+U-NSGA-III & \textit{Greedy Ting} & UX & $0{,}0349$ \\
+NSGA-III & \textit{Greedy Ting} & HUX & $0{,}0359$ \\
+U-NSGA-III & \textit{Greedy Ting} & HUX & $0{,}0370$ \\
+SMS-EMOA & \textit{Greedy Ting} & 2P & $0{,}0385$ \\
+AGE-MOEA-II & \textit{Greedy Ting} & 1P & $0{,}0404$ \\
+NSGA-III & \textit{Greedy Ting} & UX & $0{,}0404$ \\
+SPEA2 & \textit{Greedy Ting} & HUX & $0{,}0428$ \\
+NSGA-III & \textit{Greedy Ting} & 2P & $0{,}0436$ \\
+SPEA2 & \textit{Greedy Ting} & UX & $0{,}0443$ \\
+U-NSGA-III & \textit{Greedy Ting} & 2P & $0{,}0452$ \\
+NSGA-II & \textit{Greedy Ting} & 2P & $0{,}0485$ \\
+NSGA-II & \textit{Greedy Ting} & 1P & $0{,}0517$ \\
+SMS-EMOA & \textit{Greedy Ting} & UX & $0{,}0521$ \\
+SPEA2 & \textit{Greedy Ting} & 1P & $0{,}0525$ \\
+SMS-EMOA & \textit{Greedy Ting} & HUX & $0{,}0527$ \\
+NSGA-II & \textit{Greedy Ting} & HUX & $0{,}0538$ \\
+SMS-EMOA & \textit{Greedy Ting} & 1P & $0{,}0547$ \\
+NSGA-III & \textit{Greedy Ting} & 1P & $0{,}0550$ \\
+NSGA-II & \textit{Greedy Ting} & UX & $0{,}0563$ \\
+U-NSGA-III & \textit{Greedy Ting} & 1P & $0{,}0573$ \\
+SPEA2 & \textit{Greedy Ting} & 2P & $0{,}0580$ \\
+NSGA-II & \textit{Random Dense} & HUX & $0{,}0951$ \\
+NSGA-II & \textit{Random Dense} & UX & $0{,}0985$ \\
+\end{longtable}
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{llc}
-        \toprule
-        \textbf{Posición} & \textbf{Configuración} & \textbf{Rango (Media)} \\
-        \midrule
-        1 & NSGA2-greedy\_ting-UX & $1{,}6259$ \\
-        2 & NSGA2-greedy\_ting-HUX & $1{,}6198$ \\
-        3 & NSGA2-greedy\_ting-2P & $1{,}5935$ \\
-        4 & NSGA2-greedy\_ting-1P & $1{,}5815$ \\
-        5 & AGEMOEA2-greedy\_ting-1P & $1{,}5698$ \\
-        6 & AGEMOEA2-greedy\_ting-2P & $1{,}5544$ \\
-        7 & AGEMOEA2-greedy\_ting-UX & $1{,}5502$ \\
-        8 & AGEMOEA2-greedy\_ting-HUX & $1{,}5472$ \\
-        9 & SMSEMOA-greedy\_ting-1P & $1{,}4603$ \\
-        10 & SMSEMOA-greedy\_ting-2P & $1{,}4354$ \\
-        11 & SMSEMOA-greedy\_ting-HUX & $1{,}4347$ \\
-        12 & NSGA3-greedy\_ting-1P & $1{,}4343$ \\
-        13 & SMSEMOA-greedy\_ting-UX & $1{,}4340$ \\
-        14 & UNSGA3-greedy\_ting-1P & $1{,}4241$ \\
-        15 & UNSGA3-greedy\_ting-2P & $1{,}4112$ \\
-        16 & NSGA3-greedy\_ting-2P & $1{,}4069$ \\
-        17 & SPEA2-greedy\_ting-UX & $1{,}4019$ \\
-        18 & SPEA2-greedy\_ting-HUX & $1{,}4009$ \\
-        19 & NSGA3-greedy\_ting-UX & $1{,}3991$ \\
-        20 & NSGA3-greedy\_ting-HUX & $1{,}3931$ \\
-        21 & UNSGA3-greedy\_ting-HUX & $1{,}3927$ \\
-        22 & UNSGA3-greedy\_ting-UX & $1{,}3805$ \\
-        23 & RVEA-greedy\_ting-1P & $1{,}3685$ \\
-        24 & RVEA-greedy\_ting-2P & $1{,}3062$ \\
-        25 & RVEA-greedy\_ting-HUX & $1{,}2287$ \\
-        26 & RVEA-greedy\_ting-UX & $1{,}2092$ \\
-        27 & SPEA2-greedy\_ting-1P & $1{,}1976$ \\
-        \bottomrule
-    \end{tabular}
-    \caption{Configuraciones élite sin diferencias estadísticas (Rango Proporcional)}
-    \label{tab:elite_range_prop}
-\end{table}
+\subsection{Distancia Generacional Plus (GD+) (Proporcional)}\label{anexo:elite_gd_prop}
 
-\subsection{Balance Central (Experimento Proporcional)}\label{anexo:elite_minsum_prop}
+La siguiente tabla detalla las configuraciones algorítmicas que conforman el bloque de élite para la métrica GD+ en el experimento proporcional. Todas estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder según el test de Dunn-Holm ($p > 0.05$).
 
-La siguiente tabla detalla las 25 configuraciones algorítmicas que conforman el bloque de élite para la métrica MinSum en el experimento proporcional. Todas estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (U-NSGA-III-Random Dense-HUX) según el test de Dunn-Holm ($p > 0.05$).
+\begin{longtable}{lllc}
+    \caption{Grupo de Equivalencia de alto rendimiento para GD+ (Proporcional)}
+    \label{tab:elite_gd_prop} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endfirsthead
+    \multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- continúa desde la página anterior}} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endhead
+    \midrule \multicolumn{4}{r}{{Continúa en la siguiente página...}} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    SMS-EMOA & \textit{Random Dense} & HUX & $0{,}0008$ \\
+SMS-EMOA & \textit{Random Dense} & UX & $0{,}0009$ \\
+SMS-EMOA & \textit{Greedy Multi} & 1P & $0{,}0019$ \\
+SMS-EMOA & \textit{Greedy Multi} & 2P & $0{,}0019$ \\
+SMS-EMOA & \textit{Greedy Multi} & HUX & $0{,}0022$ \\
+SMS-EMOA & \textit{Greedy Multi} & UX & $0{,}0024$ \\
+NSGA-III & \textit{Greedy Multi} & 1P & $0{,}0028$ \\
+U-NSGA-III & \textit{Greedy Multi} & 2P & $0{,}0028$ \\
+NSGA-III & \textit{Greedy Multi} & HUX & $0{,}0028$ \\
+U-NSGA-III & \textit{Greedy Multi} & UX & $0{,}0028$ \\
+U-NSGA-III & \textit{Greedy Multi} & HUX & $0{,}0029$ \\
+NSGA-III & \textit{Greedy Multi} & UX & $0{,}0030$ \\
+U-NSGA-III & \textit{Greedy Multi} & 1P & $0{,}0030$ \\
+NSGA-II & \textit{Greedy Multi} & 1P & $0{,}0030$ \\
+NSGA-III & \textit{Greedy Multi} & 2P & $0{,}0030$ \\
+NSGA-II & \textit{Greedy Multi} & 2P & $0{,}0033$ \\
+NSGA-III & \textit{Random Dense} & UX & $0{,}0033$ \\
+AGE-MOEA-II & \textit{Greedy Multi} & 1P & $0{,}0034$ \\
+U-NSGA-III & \textit{Random Dense} & HUX & $0{,}0035$ \\
+U-NSGA-III & \textit{Random Dense} & UX & $0{,}0035$ \\
+NSGA-III & \textit{Random Dense} & HUX & $0{,}0037$ \\
+AGE-MOEA-II & \textit{Greedy Multi} & 2P & $0{,}0038$ \\
+NSGA-II & \textit{Greedy Multi} & HUX & $0{,}0039$ \\
+NSGA-II & \textit{Greedy Multi} & UX & $0{,}0039$ \\
+AGE-MOEA-II & \textit{Greedy Multi} & UX & $0{,}0041$ \\
+AGE-MOEA-II & \textit{Greedy Multi} & HUX & $0{,}0041$ \\
+\end{longtable}
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lllc}
-        \toprule
-        \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{MinSum} \\
-        \midrule
-        U-NSGA-III & \textit{Random Dense} & HUX & $1{,}3712$ \\
-        NSGA-III & \textit{Random Dense} & HUX & $1{,}3717$ \\
-        NSGA-III & \textit{Random Dense} & UX & $1{,}3737$ \\
-        AGE-MOEA-II & \textit{Random Dense} & UX & $1{,}3743$ \\
-        AGE-MOEA-II & \textit{Random Dense} & HUX & $1{,}3747$ \\
-        U-NSGA-III & \textit{Random Dense} & UX & $1{,}3772$ \\
-        SPEA2 & \textit{Random Dense} & UX & $1{,}4015$ \\
-        SPEA2 & \textit{Random Dense} & HUX & $1{,}4053$ \\
-        U-NSGA-III & \textit{Random Dense} & 2P & $1{,}4216$ \\
-        AGE-MOEA-II & \textit{Random Dense} & 2P & $1{,}4219$ \\
-        SMS-EMOA & \textit{Random Dense} & HUX & $1{,}4233$ \\
-        NSGA-III & \textit{Random Dense} & 2P & $1{,}4239$ \\
-        SMS-EMOA & \textit{Random Dense} & UX & $1{,}4249$ \\
-        SPEA2 & \textit{Random Dense} & 2P & $1{,}4308$ \\
-        NSGA-II & \textit{Random Dense} & UX & $1{,}4335$ \\
-        AGE-MOEA-II & \textit{Greedy Ting} & HUX & $1{,}4350$ \\
-        AGE-MOEA-II & \textit{Greedy Ting} & UX & $1{,}4364$ \\
-        SMS-EMOA & \textit{Random Dense} & 2P & $1{,}4418$ \\
-        NSGA-II & \textit{Random Dense} & HUX & $1{,}4436$ \\
-        AGE-MOEA-II & \textit{Random Dense} & 1P & $1{,}4450$ \\
-        U-NSGA-III & \textit{Random Dense} & 1P & $1{,}4477$ \\
-        NSGA-III & \textit{Random Dense} & 1P & $1{,}4511$ \\
-        SPEA2 & \textit{Random Dense} & 1P & $1{,}4523$ \\
-        SMS-EMOA & \textit{Random Dense} & 1P & $1{,}4595$ \\
-        NSGA-II & \textit{Random Dense} & 2P & $1{,}4756$ \\
-        \bottomrule
-    \end{tabular}
-    \caption{Grupo de equivalencia de alto rendimiento de Dunn-Holm para MinSum (Proporcional).}
-    \label{tab:elite_minsum_prop}
-\end{table}
+\subsection{Rango (Proporcional)}\label{anexo:elite_range_prop}
 
-\subsection{Convergencia Marginal (Experimento Proporcional)}\label{anexo:elite_summin_prop}
+La siguiente tabla detalla las configuraciones algorítmicas que conforman el bloque de élite para la métrica Rango en el experimento proporcional. Todas estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder según el test de Dunn-Holm ($p > 0.05$).
 
-La siguiente tabla detalla las 28 configuraciones algorítmicas que conforman el bloque de élite para la métrica SumMin en el experimento proporcional. Todas estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (NSGA-II-Greedy Ting-UX) según el test de Dunn-Holm ($p > 0.05$).
+\begin{longtable}{lccc}
+    \caption{Grupo de Equivalencia de alto rendimiento para Rango (Proporcional)}
+    \label{tab:elite_range_prop} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endfirsthead
+    \multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- continúa desde la página anterior}} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endhead
+    \midrule \multicolumn{4}{r}{{Continúa en la siguiente página...}} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    NSGA-II & \textit{Greedy Ting} & UX & $1{,}6259$ \\
+NSGA-II & \textit{Greedy Ting} & HUX & $1{,}6198$ \\
+NSGA-II & \textit{Greedy Ting} & 2P & $1{,}5935$ \\
+NSGA-II & \textit{Greedy Ting} & 1P & $1{,}5815$ \\
+AGE-MOEA-II & \textit{Greedy Ting} & 1P & $1{,}5698$ \\
+AGE-MOEA-II & \textit{Greedy Ting} & 2P & $1{,}5544$ \\
+AGE-MOEA-II & \textit{Greedy Ting} & UX & $1{,}5502$ \\
+AGE-MOEA-II & \textit{Greedy Ting} & HUX & $1{,}5472$ \\
+SMS-EMOA & \textit{Greedy Ting} & 1P & $1{,}4603$ \\
+SMS-EMOA & \textit{Greedy Ting} & 2P & $1{,}4354$ \\
+SMS-EMOA & \textit{Greedy Ting} & HUX & $1{,}4347$ \\
+NSGA-III & \textit{Greedy Ting} & 1P & $1{,}4343$ \\
+SMS-EMOA & \textit{Greedy Ting} & UX & $1{,}4340$ \\
+U-NSGA-III & \textit{Greedy Ting} & 1P & $1{,}4241$ \\
+U-NSGA-III & \textit{Greedy Ting} & 2P & $1{,}4112$ \\
+NSGA-III & \textit{Greedy Ting} & 2P & $1{,}4069$ \\
+SPEA2 & \textit{Greedy Ting} & UX & $1{,}4019$ \\
+SPEA2 & \textit{Greedy Ting} & HUX & $1{,}4009$ \\
+NSGA-III & \textit{Greedy Ting} & UX & $1{,}3991$ \\
+NSGA-III & \textit{Greedy Ting} & HUX & $1{,}3931$ \\
+U-NSGA-III & \textit{Greedy Ting} & HUX & $1{,}3927$ \\
+U-NSGA-III & \textit{Greedy Ting} & UX & $1{,}3805$ \\
+RVEA & \textit{Greedy Ting} & 1P & $1{,}3685$ \\
+RVEA & \textit{Greedy Ting} & 2P & $1{,}3062$ \\
+RVEA & \textit{Greedy Ting} & HUX & $1{,}2287$ \\
+RVEA & \textit{Greedy Ting} & UX & $1{,}2092$ \\
+SPEA2 & \textit{Greedy Ting} & 1P & $1{,}1976$ \\
+\end{longtable}
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lllc}
-        \toprule
-        \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{SumMin} \\
-        \midrule
-        NSGA-II & \textit{Greedy Ting} & UX & $0{,}8282$ \\
-        NSGA-II & \textit{Greedy Ting} & HUX & $0{,}8304$ \\
-        NSGA-II & \textit{Greedy Ting} & 2P & $0{,}8377$ \\
-        NSGA-II & \textit{Greedy Ting} & 1P & $0{,}8384$ \\
-        AGE-MOEA-II & \textit{Greedy Ting} & 2P & $0{,}8428$ \\
-        AGE-MOEA-II & \textit{Greedy Ting} & 1P & $0{,}8486$ \\
-        SMS-EMOA & \textit{Greedy Ting} & 2P & $0{,}8575$ \\
-        AGE-MOEA-II & \textit{Greedy Ting} & UX & $0{,}8603$ \\
-        AGE-MOEA-II & \textit{Greedy Ting} & HUX & $0{,}8612$ \\
-        SMS-EMOA & \textit{Greedy Ting} & 1P & $0{,}8642$ \\
-        SMS-EMOA & \textit{Greedy Ting} & HUX & $0{,}8796$ \\
-        NSGA-III & \textit{Greedy Ting} & 1P & $0{,}8817$ \\
-        SMS-EMOA & \textit{Greedy Ting} & UX & $0{,}8823$ \\
-        NSGA-III & \textit{Greedy Ting} & 2P & $0{,}8856$ \\
-        U-NSGA-III & \textit{Greedy Ting} & 2P & $0{,}8868$ \\
-        U-NSGA-III & \textit{Greedy Ting} & 1P & $0{,}8917$ \\
-        U-NSGA-III & \textit{Greedy Ting} & HUX & $0{,}8964$ \\
-        NSGA-III & \textit{Greedy Ting} & UX & $0{,}8981$ \\
-        NSGA-III & \textit{Greedy Ting} & HUX & $0{,}8992$ \\
-        U-NSGA-III & \textit{Greedy Ting} & UX & $0{,}9044$ \\
-        SPEA2 & \textit{Greedy Ting} & HUX & $0{,}9431$ \\
-        SPEA2 & \textit{Greedy Ting} & UX & $0{,}9458$ \\
-        NSGA-II & \textit{Random Dense} & HUX & $0{,}9639$ \\
-        NSGA-II & \textit{Random Dense} & UX & $0{,}9758$ \\
-        RVEA & \textit{Greedy Ting} & 1P & $1{,}0227$ \\
-        RVEA & \textit{Greedy Ting} & 2P & $1{,}0421$ \\
-        SPEA2 & \textit{Greedy Ting} & 1P & $1{,}0426$ \\
-        RVEA & \textit{Greedy Ting} & HUX & $1{,}0614$ \\
-        \bottomrule
-    \end{tabular}
-    \caption{Grupo de equivalencia de alto rendimiento de Dunn-Holm para SumMin (Proporcional).}
-    \label{tab:elite_summin_prop}
-\end{table}
+\subsection{Mínimo de las Sumas (MínSuma) (Proporcional)}\label{anexo:elite_minsum_prop}
 
-\subsection{Tasa de Eficiencia de Tolerancia Media (Experimento Proporcional)}\label{anexo:elite_avgt_prop}
+La siguiente tabla detalla las 25 configuraciones algorítmicas que conforman el bloque de élite para la métrica MínSuma en el experimento proporcional. Todas estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (U-NSGA-III-Random Dense-HUX) según el test de Dunn-Holm ($p > 0.05$).
 
-La siguiente tabla detalla las 28 configuraciones algorítmicas que conforman el bloque de élite para la métrica AvgT en el experimento proporcional. Todas estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (SMS-EMOA-Random Dense-HUX) según el test de Dunn-Holm ($p > 0.05$).
+\begin{longtable}{lllc}
+    \caption{Grupo de Equivalencia de alto rendimiento para MínSuma (Proporcional)}
+    \label{tab:elite_minsum_prop} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endfirsthead
+    \multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- continúa desde la página anterior}} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endhead
+    \midrule \multicolumn{4}{r}{{Continúa en la siguiente página...}} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    U-NSGA-III & \textit{Random Dense} & HUX & $1{,}3712$ \\
+NSGA-III & \textit{Random Dense} & HUX & $1{,}3717$ \\
+NSGA-III & \textit{Random Dense} & UX & $1{,}3737$ \\
+AGE-MOEA-II & \textit{Random Dense} & UX & $1{,}3743$ \\
+AGE-MOEA-II & \textit{Random Dense} & HUX & $1{,}3747$ \\
+U-NSGA-III & \textit{Random Dense} & UX & $1{,}3772$ \\
+SPEA2 & \textit{Random Dense} & UX & $1{,}4015$ \\
+SPEA2 & \textit{Random Dense} & HUX & $1{,}4053$ \\
+U-NSGA-III & \textit{Random Dense} & 2P & $1{,}4216$ \\
+AGE-MOEA-II & \textit{Random Dense} & 2P & $1{,}4219$ \\
+SMS-EMOA & \textit{Random Dense} & HUX & $1{,}4233$ \\
+NSGA-III & \textit{Random Dense} & 2P & $1{,}4239$ \\
+SMS-EMOA & \textit{Random Dense} & UX & $1{,}4249$ \\
+SPEA2 & \textit{Random Dense} & 2P & $1{,}4308$ \\
+NSGA-II & \textit{Random Dense} & UX & $1{,}4335$ \\
+AGE-MOEA-II & \textit{Greedy Ting} & HUX & $1{,}4350$ \\
+AGE-MOEA-II & \textit{Greedy Ting} & UX & $1{,}4364$ \\
+SMS-EMOA & \textit{Random Dense} & 2P & $1{,}4418$ \\
+NSGA-II & \textit{Random Dense} & HUX & $1{,}4436$ \\
+AGE-MOEA-II & \textit{Random Dense} & 1P & $1{,}4450$ \\
+U-NSGA-III & \textit{Random Dense} & 1P & $1{,}4477$ \\
+NSGA-III & \textit{Random Dense} & 1P & $1{,}4511$ \\
+SPEA2 & \textit{Random Dense} & 1P & $1{,}4523$ \\
+SMS-EMOA & \textit{Random Dense} & 1P & $1{,}4595$ \\
+NSGA-II & \textit{Random Dense} & 2P & $1{,}4756$ \\
+\end{longtable}
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lllc}
-        \toprule
-        \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{AvgT} \\
-        \midrule
-        SMS-EMOA & \textit{Random Dense} & HUX & $0{,}2661$ \\
-        SMS-EMOA & \textit{Random Dense} & UX & $0{,}2657$ \\
-        NSGA-III & \textit{Random Dense} & HUX & $0{,}2503$ \\
-        NSGA-III & \textit{Random Dense} & UX & $0{,}2502$ \\
-        U-NSGA-III & \textit{Random Dense} & HUX & $0{,}2499$ \\
-        U-NSGA-III & \textit{Random Dense} & UX & $0{,}2487$ \\
-        SMS-EMOA & \textit{Greedy Ting} & HUX & $0{,}2476$ \\
-        SMS-EMOA & \textit{Greedy Ting} & UX & $0{,}2450$ \\
-        SMS-EMOA & \textit{Random Dense} & 2P & $0{,}2423$ \\
-        AGE-MOEA-II & \textit{Random Dense} & UX & $0{,}2376$ \\
-        AGE-MOEA-II & \textit{Random Dense} & HUX & $0{,}2349$ \\
-        SMS-EMOA & \textit{Random Dense} & 1P & $0{,}2345$ \\
-        SPEA2 & \textit{Random Dense} & HUX & $0{,}2287$ \\
-        SPEA2 & \textit{Random Dense} & UX & $0{,}2286$ \\
-        SMS-EMOA & \textit{Greedy Ting} & 2P & $0{,}2274$ \\
-        U-NSGA-III & \textit{Random Dense} & 2P & $0{,}2256$ \\
-        NSGA-III & \textit{Random Dense} & 2P & $0{,}2255$ \\
-        NSGA-II & \textit{Random Dense} & UX & $0{,}2244$ \\
-        RVEA & \textit{Random Dense} & HUX & $0{,}2237$ \\
-        NSGA-II & \textit{Random Dense} & HUX & $0{,}2236$ \\
-        RVEA & \textit{Random Dense} & UX & $0{,}2229$ \\
-        SPEA2 & \textit{Random Dense} & 2P & $0{,}2216$ \\
-        AGE-MOEA-II & \textit{Random Dense} & 2P & $0{,}2215$ \\
-        SMS-EMOA & \textit{Greedy Ting} & 1P & $0{,}2211$ \\
-        AGE-MOEA-II & \textit{Random Dense} & 1P & $0{,}2181$ \\
-        U-NSGA-III & \textit{Random Dense} & 1P & $0{,}2175$ \\
-        NSGA-III & \textit{Random Dense} & 1P & $0{,}2160$ \\
-        SPEA2 & \textit{Random Dense} & 1P & $0{,}2117$ \\
-        \bottomrule
-    \end{tabular}
-    \caption{Grupo de equivalencia de alto rendimiento de Dunn-Holm para AvgT (Proporcional).}
-    \label{tab:elite_avgt_prop}
-\end{table}
+\subsection{Suma de los Mínimos (SumaMín) (Proporcional)}\label{anexo:elite_summin_prop}
 
-\subsection{Tasa de Eficiencia de Tolerancia Máxima (Experimento Proporcional)}\label{anexo:elite_maxt_prop}
+La siguiente tabla detalla las 28 configuraciones algorítmicas que conforman el bloque de élite para la métrica SumaMín en el experimento proporcional. Todas estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (NSGA-II-Greedy Ting-UX) según el test de Dunn-Holm ($p > 0.05$).
 
-La siguiente tabla detalla las 32 configuraciones algorítmicas que conforman el bloque de élite para la métrica MaxToleranceRate en el experimento proporcional. Todas estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (AGE-MOEA-II-Greedy Multi-UX) según el test de Dunn-Holm ($p > 0.05$).
+\begin{longtable}{lllc}
+    \caption{Grupo de Equivalencia de alto rendimiento para SumaMín (Proporcional)}
+    \label{tab:elite_summin_prop} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endfirsthead
+    \multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- continúa desde la página anterior}} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endhead
+    \midrule \multicolumn{4}{r}{{Continúa en la siguiente página...}} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    NSGA-II & \textit{Greedy Ting} & UX & $0{,}8282$ \\
+NSGA-II & \textit{Greedy Ting} & HUX & $0{,}8304$ \\
+NSGA-II & \textit{Greedy Ting} & 2P & $0{,}8377$ \\
+NSGA-II & \textit{Greedy Ting} & 1P & $0{,}8384$ \\
+AGE-MOEA-II & \textit{Greedy Ting} & 2P & $0{,}8428$ \\
+AGE-MOEA-II & \textit{Greedy Ting} & 1P & $0{,}8486$ \\
+SMS-EMOA & \textit{Greedy Ting} & 2P & $0{,}8575$ \\
+AGE-MOEA-II & \textit{Greedy Ting} & UX & $0{,}8603$ \\
+AGE-MOEA-II & \textit{Greedy Ting} & HUX & $0{,}8612$ \\
+SMS-EMOA & \textit{Greedy Ting} & 1P & $0{,}8642$ \\
+SMS-EMOA & \textit{Greedy Ting} & HUX & $0{,}8796$ \\
+NSGA-III & \textit{Greedy Ting} & 1P & $0{,}8817$ \\
+SMS-EMOA & \textit{Greedy Ting} & UX & $0{,}8823$ \\
+NSGA-III & \textit{Greedy Ting} & 2P & $0{,}8856$ \\
+U-NSGA-III & \textit{Greedy Ting} & 2P & $0{,}8868$ \\
+U-NSGA-III & \textit{Greedy Ting} & 1P & $0{,}8917$ \\
+U-NSGA-III & \textit{Greedy Ting} & HUX & $0{,}8964$ \\
+NSGA-III & \textit{Greedy Ting} & UX & $0{,}8981$ \\
+NSGA-III & \textit{Greedy Ting} & HUX & $0{,}8992$ \\
+U-NSGA-III & \textit{Greedy Ting} & UX & $0{,}9044$ \\
+SPEA2 & \textit{Greedy Ting} & HUX & $0{,}9431$ \\
+SPEA2 & \textit{Greedy Ting} & UX & $0{,}9458$ \\
+NSGA-II & \textit{Random Dense} & HUX & $0{,}9639$ \\
+NSGA-II & \textit{Random Dense} & UX & $0{,}9758$ \\
+RVEA & \textit{Greedy Ting} & 1P & $1{,}0227$ \\
+RVEA & \textit{Greedy Ting} & 2P & $1{,}0421$ \\
+SPEA2 & \textit{Greedy Ting} & 1P & $1{,}0426$ \\
+RVEA & \textit{Greedy Ting} & HUX & $1{,}0614$ \\
+\end{longtable}
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lllc}
-        \toprule
-        \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{MaxToleranceRate} \\
-        \midrule
-        AGE-MOEA-II & \textit{Greedy Multi} & UX & $0{,}2866$ \\
-        AGE-MOEA-II & \textit{Greedy Multi} & HUX & $0{,}2866$ \\
-        SMS-EMOA & \textit{Greedy Ting} & HUX & $0{,}2864$ \\
-        AGE-MOEA-II & \textit{Greedy Multi} & 2P & $0{,}2843$ \\
-        SMS-EMOA & \textit{Greedy Ting} & UX & $0{,}2841$ \\
-        AGE-MOEA-II & \textit{Greedy Multi} & 1P & $0{,}2825$ \\
-        U-NSGA-III & \textit{Greedy Multi} & HUX & $0{,}2820$ \\
-        NSGA-III & \textit{Greedy Multi} & UX & $0{,}2808$ \\
-        U-NSGA-III & \textit{Greedy Multi} & UX & $0{,}2804$ \\
-        NSGA-III & \textit{Greedy Multi} & HUX & $0{,}2802$ \\
-        U-NSGA-III & \textit{Greedy Multi} & 2P & $0{,}2794$ \\
-        SMS-EMOA & \textit{Random Dense} & HUX & $0{,}2788$ \\
-        NSGA-III & \textit{Greedy Multi} & 2P & $0{,}2787$ \\
-        SMS-EMOA & \textit{Random Dense} & UX & $0{,}2785$ \\
-        NSGA-III & \textit{Random Dense} & HUX & $0{,}2770$ \\
-        NSGA-III & \textit{Random Dense} & UX & $0{,}2764$ \\
-        U-NSGA-III & \textit{Random Dense} & HUX & $0{,}2764$ \\
-        U-NSGA-III & \textit{Random Dense} & UX & $0{,}2763$ \\
-        NSGA-III & \textit{Greedy Multi} & 1P & $0{,}2761$ \\
-        SPEA2 & \textit{Greedy Multi} & UX & $0{,}2755$ \\
-        SPEA2 & \textit{Greedy Multi} & HUX & $0{,}2752$ \\
-        AGE-MOEA-II & \textit{Random Dense} & UX & $0{,}2731$ \\
-        U-NSGA-III & \textit{Greedy Multi} & 1P & $0{,}2723$ \\
-        AGE-MOEA-II & \textit{Random Dense} & HUX & $0{,}2719$ \\
-        SMS-EMOA & \textit{Greedy Ting} & 2P & $0{,}2718$ \\
-        SMS-EMOA & \textit{Greedy Ting} & 1P & $0{,}2676$ \\
-        AGE-MOEA-II & \textit{Greedy Ting} & HUX & $0{,}2676$ \\
-        AGE-MOEA-II & \textit{Greedy Ting} & UX & $0{,}2671$ \\
-        SPEA2 & \textit{Greedy Multi} & 1P & $0{,}2670$ \\
-        SPEA2 & \textit{Random Dense} & UX & $0{,}2663$ \\
-        SPEA2 & \textit{Greedy Multi} & 2P & $0{,}2651$ \\
-        SPEA2 & \textit{Random Dense} & HUX & $0{,}2645$ \\
-        \bottomrule
-    \end{tabular}
-    \caption{Grupo de equivalencia de alto rendimiento de Dunn-Holm para MaxToleranceRate (Proporcional).}
-    \label{tab:elite_maxt_prop}
-\end{table}
+\subsection{Tasa de Tolerancia Media (Tmed) (Proporcional)}\label{anexo:elite_avgt_prop}
 
-\subsection{Distancia Media de Hamming (Experimento Proporcional)}\label{anexo:elite_avghd_prop}
+La siguiente tabla detalla las 28 configuraciones algorítmicas que conforman el bloque de élite para la métrica Tmed en el experimento proporcional. Todas estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (SMS-EMOA-Random Dense-HUX) según el test de Dunn-Holm ($p > 0.05$).
 
-La siguiente tabla detalla las 28 configuraciones algorítmicas que conforman el bloque de élite para la métrica AvgHD en el experimento proporcional. Todas estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (AGE-MOEA-II-Random Dense-1P) según el test de Dunn-Holm ($p > 0.05$).
+\begin{longtable}{lllc}
+    \caption{Grupo de Equivalencia de alto rendimiento para Tmed (Proporcional)}
+    \label{tab:elite_avgt_prop} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endfirsthead
+    \multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- continúa desde la página anterior}} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endhead
+    \midrule \multicolumn{4}{r}{{Continúa en la siguiente página...}} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    SMS-EMOA & \textit{Random Dense} & HUX & $0{,}2661$ \\
+SMS-EMOA & \textit{Random Dense} & UX & $0{,}2657$ \\
+NSGA-III & \textit{Random Dense} & HUX & $0{,}2503$ \\
+NSGA-III & \textit{Random Dense} & UX & $0{,}2502$ \\
+U-NSGA-III & \textit{Random Dense} & HUX & $0{,}2499$ \\
+U-NSGA-III & \textit{Random Dense} & UX & $0{,}2487$ \\
+SMS-EMOA & \textit{Greedy Ting} & HUX & $0{,}2476$ \\
+SMS-EMOA & \textit{Greedy Ting} & UX & $0{,}2450$ \\
+SMS-EMOA & \textit{Random Dense} & 2P & $0{,}2423$ \\
+AGE-MOEA-II & \textit{Random Dense} & UX & $0{,}2376$ \\
+AGE-MOEA-II & \textit{Random Dense} & HUX & $0{,}2349$ \\
+SMS-EMOA & \textit{Random Dense} & 1P & $0{,}2345$ \\
+SPEA2 & \textit{Random Dense} & HUX & $0{,}2287$ \\
+SPEA2 & \textit{Random Dense} & UX & $0{,}2286$ \\
+SMS-EMOA & \textit{Greedy Ting} & 2P & $0{,}2274$ \\
+U-NSGA-III & \textit{Random Dense} & 2P & $0{,}2256$ \\
+NSGA-III & \textit{Random Dense} & 2P & $0{,}2255$ \\
+NSGA-II & \textit{Random Dense} & UX & $0{,}2244$ \\
+RVEA & \textit{Random Dense} & HUX & $0{,}2237$ \\
+NSGA-II & \textit{Random Dense} & HUX & $0{,}2236$ \\
+RVEA & \textit{Random Dense} & UX & $0{,}2229$ \\
+SPEA2 & \textit{Random Dense} & 2P & $0{,}2216$ \\
+AGE-MOEA-II & \textit{Random Dense} & 2P & $0{,}2215$ \\
+SMS-EMOA & \textit{Greedy Ting} & 1P & $0{,}2211$ \\
+AGE-MOEA-II & \textit{Random Dense} & 1P & $0{,}2181$ \\
+U-NSGA-III & \textit{Random Dense} & 1P & $0{,}2175$ \\
+NSGA-III & \textit{Random Dense} & 1P & $0{,}2160$ \\
+SPEA2 & \textit{Random Dense} & 1P & $0{,}2117$ \\
+\end{longtable}
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lllc}
-        \toprule
-        \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{AvgHD} \\
-        \midrule
-        AGE-MOEA-II & \textit{Random Dense} & 1P & $115{,}1683$ \\
-        NSGA-II & \textit{Random Dense} & 1P & $114{,}8092$ \\
-        NSGA-III & \textit{Random Dense} & 1P & $114{,}0881$ \\
-        U-NSGA-III & \textit{Random Dense} & 1P & $113{,}7958$ \\
-        AGE-MOEA-II & \textit{Random Dense} & 2P & $112{,}4528$ \\
-        NSGA-II & \textit{Random Dense} & 2P & $112{,}4084$ \\
-        NSGA-III & \textit{Random Dense} & 2P & $111{,}6235$ \\
-        U-NSGA-III & \textit{Random Dense} & 2P & $111{,}5793$ \\
-        RVEA & \textit{Random Dense} & 1P & $110{,}9318$ \\
-        RVEA & \textit{Random Dense} & 2P & $107{,}1223$ \\
-        SPEA2 & \textit{Random Dense} & 1P & $105{,}6153$ \\
-        AGE-MOEA-II & \textit{Random Dense} & HUX & $104{,}2337$ \\
-        AGE-MOEA-II & \textit{Random Dense} & UX & $103{,}6849$ \\
-        SMS-EMOA & \textit{Random Dense} & 1P & $103{,}5416$ \\
-        SPEA2 & \textit{Random Dense} & 2P & $102{,}4909$ \\
-        NSGA-II & \textit{Random Dense} & HUX & $100{,}5440$ \\
-        RVEA & \textit{Random Dense} & HUX & $100{,}3416$ \\
-        NSGA-II & \textit{Random Dense} & UX & $99{,}9981$ \\
-        SMS-EMOA & \textit{Random Dense} & 2P & $99{,}8569$ \\
-        RVEA & \textit{Random Dense} & UX & $99{,}4826$ \\
-        U-NSGA-III & \textit{Random Dense} & HUX & $99{,}3118$ \\
-        NSGA-III & \textit{Random Dense} & UX & $99{,}0783$ \\
-        NSGA-III & \textit{Random Dense} & HUX & $99{,}0557$ \\
-        U-NSGA-III & \textit{Random Dense} & UX & $98{,}9259$ \\
-        SPEA2 & \textit{Random Dense} & HUX & $91{,}3873$ \\
-        SPEA2 & \textit{Random Dense} & UX & $90{,}7754$ \\
-        SMS-EMOA & \textit{Random Dense} & HUX & $81{,}4247$ \\
-        SMS-EMOA & \textit{Random Dense} & UX & $81{,}3566$ \\
-        \bottomrule
-    \end{tabular}
-    \caption{Grupo de equivalencia de alto rendimiento de Dunn-Holm para AvgHD (Proporcional).}
-    \label{tab:elite_avghd_prop}
-\end{table}
+\subsection{Tasa de Tolerancia Máxima (Tmáx) (Proporcional)}\label{anexo:elite_maxt_prop}
+
+La siguiente tabla detalla las 32 configuraciones algorítmicas que conforman el bloque de élite para la métrica Tmáx en el experimento proporcional. Todas estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (AGE-MOEA-II-Greedy Multi-UX) según el test de Dunn-Holm ($p > 0.05$).
+
+\begin{longtable}{lllc}
+    \caption{Grupo de Equivalencia de alto rendimiento para Tmáx (Proporcional)}
+    \label{tab:elite_maxt_prop} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endfirsthead
+    \multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- continúa desde la página anterior}} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endhead
+    \midrule \multicolumn{4}{r}{{Continúa en la siguiente página...}} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    AGE-MOEA-II & \textit{Greedy Multi} & UX & $0{,}2866$ \\
+AGE-MOEA-II & \textit{Greedy Multi} & HUX & $0{,}2866$ \\
+SMS-EMOA & \textit{Greedy Ting} & HUX & $0{,}2864$ \\
+AGE-MOEA-II & \textit{Greedy Multi} & 2P & $0{,}2843$ \\
+SMS-EMOA & \textit{Greedy Ting} & UX & $0{,}2841$ \\
+AGE-MOEA-II & \textit{Greedy Multi} & 1P & $0{,}2825$ \\
+U-NSGA-III & \textit{Greedy Multi} & HUX & $0{,}2820$ \\
+NSGA-III & \textit{Greedy Multi} & UX & $0{,}2808$ \\
+U-NSGA-III & \textit{Greedy Multi} & UX & $0{,}2804$ \\
+NSGA-III & \textit{Greedy Multi} & HUX & $0{,}2802$ \\
+U-NSGA-III & \textit{Greedy Multi} & 2P & $0{,}2794$ \\
+SMS-EMOA & \textit{Random Dense} & HUX & $0{,}2788$ \\
+NSGA-III & \textit{Greedy Multi} & 2P & $0{,}2787$ \\
+SMS-EMOA & \textit{Random Dense} & UX & $0{,}2785$ \\
+NSGA-III & \textit{Random Dense} & HUX & $0{,}2770$ \\
+NSGA-III & \textit{Random Dense} & UX & $0{,}2764$ \\
+U-NSGA-III & \textit{Random Dense} & HUX & $0{,}2764$ \\
+U-NSGA-III & \textit{Random Dense} & UX & $0{,}2763$ \\
+NSGA-III & \textit{Greedy Multi} & 1P & $0{,}2761$ \\
+SPEA2 & \textit{Greedy Multi} & UX & $0{,}2755$ \\
+SPEA2 & \textit{Greedy Multi} & HUX & $0{,}2752$ \\
+AGE-MOEA-II & \textit{Random Dense} & UX & $0{,}2731$ \\
+U-NSGA-III & \textit{Greedy Multi} & 1P & $0{,}2723$ \\
+AGE-MOEA-II & \textit{Random Dense} & HUX & $0{,}2719$ \\
+SMS-EMOA & \textit{Greedy Ting} & 2P & $0{,}2718$ \\
+SMS-EMOA & \textit{Greedy Ting} & 1P & $0{,}2676$ \\
+AGE-MOEA-II & \textit{Greedy Ting} & HUX & $0{,}2676$ \\
+AGE-MOEA-II & \textit{Greedy Ting} & UX & $0{,}2671$ \\
+SPEA2 & \textit{Greedy Multi} & 1P & $0{,}2670$ \\
+SPEA2 & \textit{Random Dense} & UX & $0{,}2663$ \\
+SPEA2 & \textit{Greedy Multi} & 2P & $0{,}2651$ \\
+SPEA2 & \textit{Random Dense} & HUX & $0{,}2645$ \\
+\end{longtable}
+
+\subsection{Distancia de Hamming Promedio (Hmed) (Proporcional)}\label{anexo:elite_avghd_prop}
+
+La siguiente tabla detalla las 28 configuraciones algorítmicas que conforman el bloque de élite para la métrica Hmed en el experimento proporcional. Todas estas variantes carecen de diferencias estadísticas significativas respecto a la configuración líder (AGE-MOEA-II-Random Dense-1P) según el test de Dunn-Holm ($p > 0.05$).
+
+\begin{longtable}{lllc}
+    \caption{Grupo de Equivalencia de alto rendimiento para Hmed (Proporcional)}
+    \label{tab:elite_avghd_prop} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endfirsthead
+    \multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- continúa desde la página anterior}} \\
+    \toprule
+    \textbf{Algoritmo} & \textbf{Inicialización} & \textbf{Cruce} & \textbf{Media} \\
+    \midrule
+    \endhead
+    \midrule \multicolumn{4}{r}{{Continúa en la siguiente página...}} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    AGE-MOEA-II & \textit{Random Dense} & 1P & $115{,}1683$ \\
+NSGA-II & \textit{Random Dense} & 1P & $114{,}8092$ \\
+NSGA-III & \textit{Random Dense} & 1P & $114{,}0881$ \\
+U-NSGA-III & \textit{Random Dense} & 1P & $113{,}7958$ \\
+AGE-MOEA-II & \textit{Random Dense} & 2P & $112{,}4528$ \\
+NSGA-II & \textit{Random Dense} & 2P & $112{,}4084$ \\
+NSGA-III & \textit{Random Dense} & 2P & $111{,}6235$ \\
+U-NSGA-III & \textit{Random Dense} & 2P & $111{,}5793$ \\
+RVEA & \textit{Random Dense} & 1P & $110{,}9318$ \\
+RVEA & \textit{Random Dense} & 2P & $107{,}1223$ \\
+SPEA2 & \textit{Random Dense} & 1P & $105{,}6153$ \\
+AGE-MOEA-II & \textit{Random Dense} & HUX & $104{,}2337$ \\
+AGE-MOEA-II & \textit{Random Dense} & UX & $103{,}6849$ \\
+SMS-EMOA & \textit{Random Dense} & 1P & $103{,}5416$ \\
+SPEA2 & \textit{Random Dense} & 2P & $102{,}4909$ \\
+NSGA-II & \textit{Random Dense} & HUX & $100{,}5440$ \\
+RVEA & \textit{Random Dense} & HUX & $100{,}3416$ \\
+NSGA-II & \textit{Random Dense} & UX & $99{,}9981$ \\
+SMS-EMOA & \textit{Random Dense} & 2P & $99{,}8569$ \\
+RVEA & \textit{Random Dense} & UX & $99{,}4826$ \\
+U-NSGA-III & \textit{Random Dense} & HUX & $99{,}3118$ \\
+NSGA-III & \textit{Random Dense} & UX & $99{,}0783$ \\
+NSGA-III & \textit{Random Dense} & HUX & $99{,}0557$ \\
+U-NSGA-III & \textit{Random Dense} & UX & $98{,}9259$ \\
+SPEA2 & \textit{Random Dense} & HUX & $91{,}3873$ \\
+SPEA2 & \textit{Random Dense} & UX & $90{,}7754$ \\
+SMS-EMOA & \textit{Random Dense} & HUX & $81{,}4247$ \\
+SMS-EMOA & \textit{Random Dense} & UX & $81{,}3566$ \\
+\end{longtable}

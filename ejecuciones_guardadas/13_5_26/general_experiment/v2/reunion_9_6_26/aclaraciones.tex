@@ -175,7 +175,7 @@ Los datos empíricos extraídos de las ejecuciones en \textbf{Modo Proporcional}
 \begin{itemize}
     \item Con $k < 20$, la eficiencia es de $f_3/k = \mathbf{0.46}$
     \item Con $k \approx 100$, la eficiencia cae a $f_3/k = \mathbf{0.40}$
-    \item Con $k \approx 440$, la eficiencia se desploma a $f_3/k = \mathbf{0.35}$
+    \item Con $k \approx 440$, la eficiencia cae a $f_3/k = \mathbf{0.35}$
 \end{itemize}
 
 Al dividir entre $k$, la ganancia ya no está asegurada. Al contrario, la eficiencia \textbf{disminuye estrictamente} a medida que se satura el panel. Esto genera un auténtico conflicto multiobjetivo: el algoritmo ya no puede crecer impunemente porque cada SNP ineficiente que añade hunde su puntuación en $f_3$. Como resultado, la división por $k$ actúa como una guillotina que purga los paneles hinchados, premiando únicamente a los subconjuntos pequeños y altamente informativos, cosa que en el modo absoluto no ocurría. Ahora, $f_3$ en vez de premiar la robustez (muchos SNPs) premia la compacidad.

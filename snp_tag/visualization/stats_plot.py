@@ -73,7 +73,7 @@ def dibujar_diagrama_equivalencia_ax(ax: plt.Axes, groups: list, means: list, ma
             
     y_coords = np.arange(n, 0, -1)
     
-    ax.scatter([0]*n, y_coords, color='#C41E3A', zorder=5, label='Valor medio', 
+    ax.scatter([0]*n, y_coords, color='#F1C40F', zorder=5, label='Valor medio', 
                edgecolors='white', linewidths=1.5, s=100)
     
     for idx, (g, m, y) in enumerate(zip(groups, means, y_coords)):
@@ -88,10 +88,10 @@ def dibujar_diagrama_equivalencia_ax(ax: plt.Axes, groups: list, means: list, ma
         y_start = y_coords[i]
         y_end = y_coords[j]
         label = 'Equivalencia estadística (p ≥ 0.05)' if line_idx == 0 else None
-        ax.plot([x_line, x_line], [y_start, y_end], color='#4682B4', linewidth=4, solid_capstyle='round', label=label)
+        ax.plot([x_line, x_line], [y_start, y_end], color='#222222', linewidth=4, solid_capstyle='round', label=label)
         
         for k in range(i, j+1):
-            ax.plot([0, x_line], [y_coords[k], y_coords[k]], color='#4682B4', linestyle='-', linewidth=1.5, alpha=0.3)
+            ax.plot([0, x_line], [y_coords[k], y_coords[k]], color='#58585A', linestyle='-', linewidth=1.5, alpha=0.3)
             
         cliques_data.append(f"Equivalence_Line_{line_idx+1}: {groups[i]} to {groups[j]}")
 
@@ -234,7 +234,7 @@ def graficar_rendimiento_tiempo(df_runs: pd.DataFrame, dir_salida: str, etiqueta
     
     # 2. Media +- Std (Barplot)
     plt.figure(figsize=(ancho_dinamico, 6))
-    sns.barplot(data=df_plot, x='config', y='time_seg', hue='config', palette='muted', legend=False, errorbar='sd', capsize=.2)
+    sns.barplot(data=df_plot, x='config', y='time_seg', hue='config', legend=False, errorbar='sd', capsize=.2)
     plt.title('Media ± Desviación Estándar del Tiempo de Ejecución')
     plt.xticks(rotation=35, ha='right', rotation_mode='anchor')
     plt.tight_layout()
@@ -345,7 +345,7 @@ def graficar_violin_metricas(df_runs: pd.DataFrame, dir_salida: str, etiqueta_mo
     # 2. Individuales
     for m in disponibles:
         plt.figure(figsize=(ancho_dinamico, 6))
-        sns.violinplot(data=df_plot, x='config', y=m, inner="quart", hue='config', palette="Pastel1", legend=False)
+        sns.violinplot(data=df_plot, x='config', y=m, inner="quart", hue='config', legend=False)
         sns.stripplot(data=df_plot, x='config', y=m, color="black", alpha=0.3, size=3)
         plt.title(f'Distribución Detallada: {m} (Violin Plot)')
         plt.xticks(rotation=35, ha='right', rotation_mode='anchor')
@@ -395,7 +395,7 @@ def graficar_media_std_metricas(df_runs: pd.DataFrame, dir_salida: str, etiqueta
     # 2. Individuales (Barplots)
     for m in disponibles:
         plt.figure(figsize=(ancho_dinamico, 6))
-        sns.barplot(data=df_plot, x='config', y=m, hue='config', palette='muted', legend=False, errorbar='sd', capsize=.2)
+        sns.barplot(data=df_plot, x='config', y=m, hue='config', legend=False, errorbar='sd', capsize=.2)
         plt.title(f'Media ± Desviación Estándar de {m}')
         plt.xticks(rotation=35, ha='right', rotation_mode='anchor')
         plt.tight_layout()
@@ -445,7 +445,7 @@ def graficar_boxplot_metricas(df_runs: pd.DataFrame, dir_salida: str, etiqueta_m
     # 2. Individuales
     for m in disponibles:
         plt.figure(figsize=(max(10.0, n_configs * 0.35), 6))
-        sns.boxplot(data=df_plot, x='config', y=m, palette='Set3', hue='config', legend=False)
+        sns.boxplot(data=df_plot, x='config', y=m, hue='config', legend=False)
         plt.title(f'Distribución de {m} (Boxplot)')
         plt.xticks(rotation=35, ha='right', rotation_mode='anchor')
         plt.tight_layout()
@@ -515,7 +515,7 @@ def graficar_analisis_kruskal_dunn(df_runs: pd.DataFrame, dir_salida: str, metri
         tamano_hm = max(14.0, n_configs * 0.4)
         plt.figure(figsize=(tamano_hm, tamano_hm))
         mask = np.triu(np.ones_like(p_dunn, dtype=bool))
-        cmap = ListedColormap(['#228B22', '#90EE90', '#FFC1C1'])
+        cmap = ListedColormap(['#F1C40F', '#F9E79F', '#58585A'])
         norm = BoundaryNorm([0, 0.01, 0.05, 1.0], cmap.N)
         
         ax = sns.heatmap(p_dunn, mask=mask, annot=False, cmap=cmap, norm=norm, 

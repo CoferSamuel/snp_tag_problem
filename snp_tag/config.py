@@ -283,6 +283,7 @@ class ConfiguracionExperimento:
     n_ejecuciones: int
     
     # Parámetros con valores por defecto (deben ir al final)
+    visual_theme: str = 'default'
     INIT_PERMITIDAS: List[str] = field(default_factory=lambda: [
         'random_sparse', 'random_dense',
         'greedy_multi',

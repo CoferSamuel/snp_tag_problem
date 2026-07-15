@@ -186,10 +186,11 @@ def graficar_frentes_pareto(df_datos: pd.DataFrame, nombre_algoritmo: str,
     unidades_init = [nombre_init] if nombre_init else sorted(df_algo[init_col].dropna().unique())
 
     colores_init = {
-        'random_sparse': '#ff7f0e',
-        'random_dense': '#9467bd',
-        'greedy_multi': '#2ca02c',
-        'greedy_holistic': '#1f77b4',
+        'greedy_multi': '#008B3E',
+        'greedy_ting': '#F1C40F',
+        'random_dense': '#222222',
+        'random_sparse': '#58585A',
+        'greedy_holistic': '#999999'
     }
 
     is_prop = str(modo_evaluacion).strip().lower() == 'proportional'
@@ -237,8 +238,8 @@ def graficar_frentes_pareto(df_datos: pd.DataFrame, nombre_algoritmo: str,
             lowess_col = mapping_lowess.get((x_col, y_col))
             if lowess_col and lowess_col in df.columns:
                 datos_ord = df[[x_col, lowess_col]].dropna().sort_values(by=x_col)
-                if not datos_ord.empty:
-                    ax.plot(datos_ord[x_col], datos_ord[lowess_col], color='#e41a1c', linewidth=2.5, alpha=0.8, zorder=5)
+                if not datos_ord.empty and len(datos_ord) > 2:
+                    ax.plot(datos_ord[x_col], datos_ord[lowess_col], color='black', linewidth=2.5, alpha=0.8, zorder=5)
 
             # Aplicar límites estandarizados si están disponibles
             if limites_ejes:
@@ -398,12 +399,12 @@ def graficar_coordenadas_paralelas_pareto(df_total: pd.DataFrame, seed: int, car
         'greedy_holistic': '-',
     }
     color_map = {
-        'random_sparse': '#ff7f0e',
-        'random_dense': '#9467bd',
-        'greedy_multi': '#2ca02c',
-        'greedy_holistic': '#1f77b4',
+        'greedy_multi': '#008B3E',
+        'greedy_ting': '#F1C40F',
+        'random_dense': '#222222',
+        'random_sparse': '#58585A',
+        'greedy_holistic': '#999999'
     }
-
     algorithms = sorted(df_norm[algo_col].dropna().astype(str).unique().tolist())
     init_values = sorted(df_norm[init_col].dropna().astype(str).unique().tolist())
     artefactos = []
@@ -524,26 +525,22 @@ def graficar_frentes_pareto_agregados(df_datos: pd.DataFrame, titulo_gen: str,
         (axes[1, 2], 'Disimilitud', 'Balance', '(f) Disimilitud ($f_3$) vs. Balance ($f_4$)')
     ]
 
-    # Determinar paleta según el número de categorías
-    n_colors = df[hue_col].nunique()
-    palette = 'tab10' if n_colors <= 10 else 'husl'
-
     with warnings.catch_warnings():
         warnings.filterwarnings('ignore', category=UserWarning)
         for ax, x_col, y_col, titulo in proyecciones:
             if style_col is not None:
                 sns.scatterplot(data=df, x=x_col, y=y_col, ax=ax, hue=hue_col, style=style_col,
-                                s=40, alpha=0.4, palette=palette, edgecolor='none', markers=MARCADORES_CRUCE)
+                                s=40, alpha=0.4, edgecolor='none', markers=MARCADORES_CRUCE)
             else:
                 sns.scatterplot(data=df, x=x_col, y=y_col, ax=ax, hue=hue_col, style=style_col,
-                                s=40, alpha=0.4, palette=palette, edgecolor='none')
+                                s=40, alpha=0.4, edgecolor='none')
             
             # Línea de tendencia suavizada global (LOWESS)
             datos_ord = df[[x_col, y_col]].dropna().sort_values(by=x_col)
             if not datos_ord.empty and len(datos_ord) > 2:
                 # Se utiliza frac=0.66 e it=3 para mantener consistencia con los frentes individuales
                 lowess_res = sm.nonparametric.lowess(datos_ord[y_col], datos_ord[x_col], frac=0.66, it=3, return_sorted=False)
-                ax.plot(datos_ord[x_col], lowess_res, color='#e41a1c', linewidth=3.0, alpha=0.9, zorder=5)
+                ax.plot(datos_ord[x_col], lowess_res, color='black', linewidth=3.0, alpha=0.9, zorder=5)
             
             # Aplicar límites estandarizados si están disponibles
             if limites_ejes:

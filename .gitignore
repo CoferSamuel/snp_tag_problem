@@ -60,6 +60,8 @@ snp_tag/scratch/
  
 # Imágenes generadas dentro de los resultados guardados
 ejecuciones_guardadas/**/*.png
+ejecuciones_guardadas/
+presentacion/
 
 # LaTeX auxiliary files
 *.aux

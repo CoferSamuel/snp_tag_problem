@@ -25,11 +25,10 @@ Este repositorio contiene la implementación de un pipeline modular basado en al
    * Motor de Paralelización y Gestión de Recursos.
    * Gestión de Escalas y Normalización.
 5. **[Validación Estadística Rigurosa](#sección-5-validación-estadística-rigurosa)**
-   * Test de Friedman y Kruskal-Wallis.
-   * Análisis Post-hoc (Nemenyi y Dunn).
-6. **[Diccionario de Métricas Técnicas y Supra-métricas](#sección-6-diccionario-de-métricas-técnicas-y-supra-métricas)**
+   * Test de Kruskal-Wallis.
+   * Análisis Post-hoc (Dunn).
+6. **[Diccionario de Métricas Técnicas](#sección-6-diccionario-de-métricas-técnicas)**
    * Métricas de Rendimiento Analizadas
-   * La Supra-métrica Analítica: Average Rank.
 7. **[Multi-Criteria Decision Making (MCDM)](#sección-7-multi-criteria-decision-making-mcdm)**
    * Criterios de Selección Técnica
    * Visualización de Decisiones
@@ -370,7 +369,7 @@ pip install -r requirements.txt
 El sistema se ejecuta como un paquete modular a través de su punto de entrada unificado. La ejecución se puede personalizar mediante argumentos de línea de comandos:
 
 ```bash
-python -m snp_tag --mode [MODO] --data-source [FUENTE] [--report-only-csv]
+python -m snp_tag --mode [MODO] --data-source [FUENTE]
 ```
 
 **Argumentos Disponibles:**
@@ -382,10 +381,10 @@ python -m snp_tag --mode [MODO] --data-source [FUENTE] [--report-only-csv]
   * `full`: Búsqueda exhaustiva de alta precisión para el frente de Pareto.
   * `full_20`: Búsqueda exhaustiva con 20 réplicas por configuración para robustez estadística.
   * `full_30`: Búsqueda exhaustiva con 30 réplicas independientes para validación de datos.
+  * `post_processing`: Modo exclusivo para procesar y analizar resultados de ejecuciones anteriores.
 * `--data-source` (`-d`): Especifica el dataset objetivo.
   * `hinds2005`: Utiliza el dataset biológico real de Hinds et al. (1032 SNPs).
   * `synthetic`: Genera un dataset sintético basado en los parámetros de simulación.
-* `--report-only-csv`: Activa el modo de generación exclusiva de reportes a partir de archivos CSV existentes en el directorio `snp_tag/input/`.
 * **Interfaz de Línea de Comandos (CLI)**: El sistema ofrece un dashboard dinámico en terminal que reporta el progreso en tiempo real. Además, utiliza secuencias **OSC 8** para generar hipervínculos clicables directamente en la terminal, permitiendo abrir los reportes CSV y figuras PDF de forma instantánea al finalizar el experimento.
 
 ### Estructura del Código
@@ -403,10 +402,9 @@ El paquete `snp_tag` está organizado de forma modular para facilitar su manteni
 * **`constants.py`**: Centralización de constantes estructurales y variables del proyecto.
 * **`config.py`**: Parámetros globales y estados del entorno de simulación.
 
-Fuera del paquete principal, el repositorio gestiona la automatización y la persistencia de resultados históricos:
+Fuera del paquete principal, el repositorio gestiona la automatización:
 
 * **`automation/`**: Scripts y configuraciones para la ejecución desatendida y remota de experimentos de larga duración.
-* **`ejecuciones_guardadas/`**: Almacén jerárquico de experimentos. Se organiza por fechas y contiene los datos brutos (`experimentos/`), visualizaciones de alta resolución y los **reportes técnicos en LaTeX** (`analisis/`) que generan la documentación final del TFG en formato PDF.
 
 ---
 
@@ -477,7 +475,7 @@ El sistema implementa un robusto motor de normalización que permite convertir l
 
 Se pueden configurar esquemas de escalado en `snp_tag/config.py` a través del parámetro `modo_normalizacion` (editable desde `user_config.ini`):
 
-1. **`static_proportional_limits` (Recomendado / Escalado Complejo)**:
+1. **`static_proportional_limits`**:
    
    * Calcula los límites teóricos (Ideal y Nadir) no de forma estática respecto al genoma absoluto, sino de forma matemáticamente **proporcional al tamaño del individuo** evaluado. 
    * **Impacto**: Esta fase es crítica cuando se trabaja en `modo_evaluacion=proportional`. Asegura que la distancia de una solución al óptimo teórico sea evaluada bajo un prisma de justicia relacional, comparando a los individuos más compactos con límites acordes a su escasez de recursos, y a los redundantes con topes más exigentes.
@@ -503,25 +501,21 @@ Se pueden configurar esquemas de escalado en `snp_tag/config.py` a través del p
 
 El motor incluye un subsistema avanzado (apoyado en `scikit-posthocs`) para auditar científicamente los resultados y prevenir falsos positivos derivados del comportamiento estocástico intrínseco de los algoritmos evolutivos. En lugar de limitarse a tabular promedios, el pipeline procesa la matriz en base a decenas de réplicas e inicializaciones.
 
-### 5.1 Test de Friedman y Kruskal-Wallis
+### 5.1 Test de Kruskal-Wallis
 
-El sistema evalúa el **Test de Friedman** para comparativas globales de algoritmos y el test de **Kruskal-Wallis** para el análisis independiente de cada métrica. Estos tests no paramétricos permiten detectar si las diferencias observadas son estadísticamente significativas ($p < 0.05$).
+El sistema evalúa el test de **Kruskal-Wallis** para el análisis estadístico no paramétrico de cada métrica. Este test permite detectar si las diferencias observadas en el rendimiento de los algoritmos son estadísticamente significativas ($p < 0.05$).
 
-### 5.2 Análisis Post-hoc (Nemenyi y Dunn)
+### 5.2 Análisis Post-hoc (Dunn)
 
 Si se detecta significancia, el sistema ejecuta automáticamente:
 
-* **Test de Nemenyi**: Para identificar grupos de algoritmos con rendimiento equivalente en el ranking global.
 * **Test de Dunn**: Para realizar comparaciones pareadas profundas sobre métricas individuales (como Hypervolume o IGD+).
 
-El resultado se visualiza mediante *Heatmaps estadísticos* y diagramas de Diferencia Crítica (CD).
-
-![Heatmap Nemenyi](readme_assets/heatmap_nemenyi.png)
-*Figura 7: Mapa de calor de significancia. Nemenyi desvela los grupos de algoritmos que, pese a tener medias dispares, son empíricamente equivalentes frente a las fluctuaciones probabilísticas del TSSP.*
+El resultado se visualiza mediante diagramas y tablas que facilitan la interpretación de equivalencias empíricas frente a las fluctuaciones probabilísticas del TSSP.
 
 ---
 
-## Sección 6: Diccionario de Métricas Técnicas y Supra-métricas
+## Sección 6: Diccionario de Métricas Técnicas
 
 Para diseccionar rigurosamente los frentes de Pareto resultantes, el sistema lo evalúa mediante una batería de escalares competitivos.
 
@@ -537,15 +531,6 @@ Para diseccionar rigurosamente los frentes de Pareto resultantes, el sistema lo 
 ![Heatmap Comparativa](readme_assets/heatmap_comparativa.png)
 
 *Figura 8: Mapa de calor de perfiles algorítmicos. Las zonas de color oscuro indican mejores posiciones (rankings bajos) para cada métrica individual.*
-
-### La Supra-métrica Analítica: Average Rank
-
-Puesto que en los ecosistemas *Many-Objective* rara vez un algoritmo domina simultáneamente todas las dimensiones, el pipeline resuelve el desempate mediante un condensador ordinal: el **Average Rank**.
-
-El **Average Rank** procesa las posiciones relativas (1º, 2º, 3º...) que obtiene cada configuración en las 7 métricas individuales y genera una media global ponderada. Este agregador es indispensable para dictaminar conclusiones cuando las varianzas son altísimas y los test de Friedman dictaminan empates múltiples, permitiendo coronar a los algoritmos con el comportamiento histórico más estable.
-
-![Ranking Global](readme_assets/rangos_promedio.png)
-*Figura 9: Visualización del Ranking Promedio consolidado. Se observa la superioridad de las variantes basadas en AGEMOEA-II y NSGA-III.*
 
 ---
 
@@ -570,3 +555,19 @@ Dado que los frentes de Pareto pueden contener cientos de soluciones, el sistema
 
 ![MCDM Pétalos](readme_assets/test_petal.png)
 *Figura 11: Representación en pétalos de una solución seleccionada, mostrando el balance de objetivos.*
+
+---
+
+## Autoría
+
+Este repositorio y el código base forman parte integral del **Trabajo de Fin de Grado (TFG)** para el **Grado en Ingeniería Informática en Ingeniería de Computadores**.
+
+* **Autor:** Samuel Corrionero Fernández
+* **Tutor:** José María Granado Criado
+* **Institución:** Escuela Politécnica, Universidad de Extremadura (UEx)
+
+Todo el código está abierto a revisión académica y constituye un esfuerzo por proporcionar una herramienta escalable y moderna para la comunidad genómica e informática.
+
+## Licencia
+
+Este proyecto se distribuye bajo la [Licencia MIT](file:///home/cofer/Documents/University/TFG/snp_tag_tfg/LICENSE). Eres libre de utilizar, modificar y distribuir este código con fines académicos o de investigación, siempre y cuando se incluya una copia de la licencia y se cite la autoría original.

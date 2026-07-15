@@ -100,7 +100,7 @@ def graficar_evolucion_generacional(df_gen: pd.DataFrame, dir_salida: Optional[s
     if not algoritmos_ordenados:
         return []
 
-    sns.set_theme(style='whitegrid')
+    # El tema global se inyecta desde reporting_pipeline
     artefactos = []
     
     for algoritmo in algoritmos_ordenados:
@@ -125,7 +125,13 @@ def graficar_evolucion_generacional(df_gen: pd.DataFrame, dir_salida: Optional[s
                 ax.axis('off')
                 continue
                 
-            INIT_COLORS = {'greedy_multi': '#1f77b4', 'greedy_ting': '#d62728', 'random_dense': '#2ca02c'}
+            INIT_COLORS = {
+                'greedy_multi': '#008B3E',
+                'greedy_ting': '#F1C40F',
+                'random_dense': '#222222',
+                'random_sparse': '#58585A',
+                'greedy_holistic': '#999999'
+            }
             CROSS_STYLES = {'1P': '-', '2P': '--', 'UX': ':', 'HUX': '-.'}
             CROSS_MARKERS = {'1P': 'o', '2P': 's', 'UX': '^', 'HUX': 'D'}
             
@@ -161,7 +167,13 @@ def graficar_evolucion_generacional(df_gen: pd.DataFrame, dir_salida: Optional[s
             axes[j].axis('off')
 
         from matplotlib.lines import Line2D
-        INIT_COLORS = {'greedy_multi': '#1f77b4', 'greedy_ting': '#d62728', 'random_dense': '#2ca02c'}
+        INIT_COLORS = {
+            'greedy_multi': '#008B3E',
+            'greedy_ting': '#F1C40F',
+            'random_dense': '#222222',
+            'random_sparse': '#58585A',
+            'greedy_holistic': '#999999'
+        }
         CROSS_STYLES = {'1P': '-', '2P': '--', 'UX': ':', 'HUX': '-.'}
         CROSS_MARKERS = {'1P': 'o', '2P': 's', 'UX': '^', 'HUX': 'D'}
         
@@ -222,10 +234,16 @@ def graficar_convergencia_hipervolumen(df_gen: pd.DataFrame, dir_salida: Optiona
     algoritmos_ordenados = [a for a in PREFERRED_ALGORITHMS_ORDER if a in algoritmos_presentes]
     algoritmos_ordenados.extend([a for a in algoritmos_presentes if a not in algoritmos_ordenados])
 
-    sns.set_theme(style='whitegrid')
+    # El tema global se inyecta desde reporting_pipeline
     artefactos = []
     
-    INIT_COLORS = {'greedy_multi': '#1f77b4', 'greedy_ting': '#d62728', 'random_dense': '#2ca02c'}
+    INIT_COLORS = {
+        'greedy_multi': '#008B3E',
+        'greedy_ting': '#F1C40F',
+        'random_dense': '#222222',
+        'random_sparse': '#58585A',
+        'greedy_holistic': '#999999'
+    }
     CROSS_STYLES = {'1P': '-', '2P': '--', 'UX': ':', 'HUX': '-.'}
     CROSS_MARKERS = {'1P': 'o', '2P': 's', 'UX': '^', 'HUX': 'D'}
 

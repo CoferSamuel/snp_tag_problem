@@ -70,13 +70,21 @@ def main():
     
     # Adición de una bandera (booleano) para activar el modo de generación exclusiva de reportes a partir de archivos CSV existentes.
     parser.add_argument(
-        '--post-processing',  # Nombre del argumento en la línea de comandos. Se almacena en args.post_processing.
-        action='store_true',  # Al indicarse la bandera, almacena el valor True.
-        help=(  # Mensaje informativo que se muestra al invocar la ayuda del script.
+        '--post-processing',
+        action='store_true',
+        help=(
             "Activa el modo de postprocesamiento exclusivo. El sistema selecciona automáticamente los CSV "
             "más recientes en el directorio snp_tag/input/ para generar visualizaciones y estadísticas."
         ),
     )
+    
+    parser.add_argument(
+        '--theme',
+        choices=['default', 'epcc'],
+        default='epcc',
+        help='Tema visual corporativo a usar en las gráficas (por defecto: %(default)s)'
+    )
+    
     args = parser.parse_args()  # Procesa y valida los argumentos de la CLI, guardando los valores como atributos en el objeto 'args' (args.mode, args.data_source, args.post_processing).
     
     try:  # Bloque try-except para capturar y controlar posibles excepciones ocurridas durante la ejecución del pipeline.

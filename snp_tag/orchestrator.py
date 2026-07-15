@@ -72,6 +72,8 @@ from snp_tag.pipelines.reporting_pipeline import \
 from snp_tag.utils.filesystem import crear_arbol_directorios_dataset
 # Registro de eventos (logger) y manejador de archivos
 from snp_tag.utils.logger import add_file_handler, logger
+# Tema visual
+from snp_tag.visualization.theme import configurar_tema
 # Cálculo adaptativo del número de trabajadores en paralelo
 from snp_tag.utils.runtime import calcular_max_workers_paralelo
 # Utilidades de impresión formateada en terminal
@@ -357,6 +359,8 @@ def ejecutar_pipeline_postprocessing(args: Any) -> str:
 
     # Se inicializa el objeto de configuración del experimento usando los valores extraídos del archivo
     cfg = inicializar_configuracion(modo=modo_final, data_source=data_source_final, overrides=overrides)
+    if hasattr(args, 'theme'): cfg.visual_theme = args.theme
+    configurar_tema(cfg.visual_theme)
 
     # Informa y muestra las características cargadas de la configuración
     informar_configuracion(cfg)
@@ -628,6 +632,8 @@ def ejecutar_pipeline(args: Any) -> str:
             
         overrides = cargar_params_tunables_desde_ini(ruta_config_exp)
         cfg = inicializar_configuracion(modo=modo_final, data_source=data_source_final, overrides=overrides)
+        if hasattr(args, 'theme'): cfg.visual_theme = args.theme
+        configurar_tema(cfg.visual_theme)
         informar_configuracion(cfg)
         
         ruta_base = str(ruta_resume)
@@ -668,6 +674,8 @@ def ejecutar_pipeline(args: Any) -> str:
         # 1. Configuración del sistema
         # Inicializa los parámetros operacionales a partir de los argumentos recibidos
         cfg = inicializar_configuracion(modo=args.mode, data_source=args.data_source)
+        if hasattr(args, 'theme'): cfg.visual_theme = args.theme
+        configurar_tema(cfg.visual_theme)
         # Imprime en la consola la tabla/información estructurada de la configuración
         informar_configuracion(cfg)
         

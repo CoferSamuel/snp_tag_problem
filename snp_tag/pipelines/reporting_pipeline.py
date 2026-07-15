@@ -43,6 +43,7 @@ from snp_tag.visualization.stats_plot import (graficar_analisis_kruskal_dunn,
                                               graficar_boxplot_metricas,
                                               graficar_media_std_metricas,
                                               graficar_violin_metricas)  # Gráficas estadísticas y tests.
+from snp_tag.visualization.theme import configurar_tema  # Módulo para el tema visual corporativo
 
 
 def _tarea_plot_frentes(
@@ -55,6 +56,7 @@ def _tarea_plot_frentes(
     limites_ejes: Optional[Dict[str, Tuple[float, float]]] = None,
     modo_transformacion_objetivos: str = 'neg',
     modo_evaluacion: str = 'absoluta',
+    visual_theme: str = 'default',
 ) -> Dict[str, Any]:
     """
     Dispatcher serializable para paralelizar tareas de graficado de frentes.
@@ -83,6 +85,7 @@ def _tarea_plot_frentes(
     Dict[str, Any]
         Diccionario de la tarea junto con la lista de artefactos generados.
     """
+    configurar_tema(visual_theme)
     salida = {'tarea': tipo_tarea, 'artefactos': []}  # Inicializa el diccionario de salida con la tarea y lista de artefactos.
     if tipo_tarea == 'correlation':  # Verifica si la tarea actual es graficar correlaciones.
         salida['artefactos'] = graficar_correlacion_objetivos_pareto(  # Llama a la función de correlación y asigna los artefactos.
@@ -183,6 +186,7 @@ def _tarea_sintesis_estadistica(
     dir_salida: str,
     etiqueta_modo: str,
     dpi: int,
+    visual_theme: str = 'default',
 ) -> Dict[str, Any]:
     """
     Worker serializable para paralelizar la síntesis estadística de rendimiento.
@@ -205,6 +209,7 @@ def _tarea_sintesis_estadistica(
     Dict[str, Any]
         Diccionario con identificador de la tarea y rutas creadas.
     """
+    configurar_tema(visual_theme)
     if tipo_tarea == 'boxplots':  # Comprueba si la tarea solicita diagramas de caja (boxplots).
         # Llama a la función de caja y bigotes para las métricas de rendimiento.
         artefactos = graficar_boxplot_metricas(df_final, dir_salida, etiqueta_modo, dpi=dpi, emitir_log=False)
@@ -240,6 +245,7 @@ def ejecutar_reportes_visualizacion(
     df_fronts_total : pd.DataFrame
         Matrices enlazadas del frente no-dominado global.
     """
+    configurar_tema(cfg.visual_theme)
     imprimir_encabezado("REPORTES")  # Imprime el banner del módulo en terminal.
 
     if df_fronts_total is None:  # Valida que el DataFrame consolidado de frentes no sea nulo.
@@ -347,6 +353,7 @@ def ejecutar_reportes_visualizacion(
                         limites_ejes,
                         cfg.modo_transformacion_objetivos,
                         cfg.modo_evaluacion,
+                        cfg.visual_theme,
                     )
                     for t in tareas_plot
                 ]
@@ -433,6 +440,7 @@ def ejecutar_reportes_visualizacion(
                         dir_salida,
                         cfg.modo_ejecucion,
                         cfg.report_plot_dpi,
+                        cfg.visual_theme,
                     )
                     for tarea, dir_salida in tareas_estadisticas
                 ]

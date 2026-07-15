@@ -1,8 +1,0 @@
-Group,Mean,Equivalence_Lines
-SPEA2,90.44338872813584,"['Equivalence_Line_1: SPEA2 to NSGA2', 'Equivalence_Line_2: NSGA2 to NSGA3', 'Equivalence_Line_3: AGEMOEA2 to SMSEMOA']"
-NSGA2,85.42720588008356,"['Equivalence_Line_1: SPEA2 to NSGA2', 'Equivalence_Line_2: NSGA2 to NSGA3', 'Equivalence_Line_3: AGEMOEA2 to SMSEMOA']"
-AGEMOEA2,83.48669518769253,"['Equivalence_Line_1: SPEA2 to NSGA2', 'Equivalence_Line_2: NSGA2 to NSGA3', 'Equivalence_Line_3: AGEMOEA2 to SMSEMOA']"
-NSGA3,82.34680849421541,"['Equivalence_Line_1: SPEA2 to NSGA2', 'Equivalence_Line_2: NSGA2 to NSGA3', 'Equivalence_Line_3: AGEMOEA2 to SMSEMOA']"
-UNSGA3,82.13431229207902,"['Equivalence_Line_1: SPEA2 to NSGA2', 'Equivalence_Line_2: NSGA2 to NSGA3', 'Equivalence_Line_3: AGEMOEA2 to SMSEMOA']"
-SMSEMOA,80.65636407842703,"['Equivalence_Line_1: SPEA2 to NSGA2', 'Equivalence_Line_2: NSGA2 to NSGA3', 'Equivalence_Line_3: AGEMOEA2 to SMSEMOA']"
-RVEA,52.830616965271034,"['Equivalence_Line_1: SPEA2 to NSGA2', 'Equivalence_Line_2: NSGA2 to NSGA3', 'Equivalence_Line_3: AGEMOEA2 to SMSEMOA']"

@@ -8,42 +8,37 @@ SPEA2, MOEA/D) configuradas para el problema de Tag SNPs.
 # =============================================================================
 # LIBRERÍAS DE TERCEROS
 # =============================================================================
-import numpy as np
-from pymoo.algorithms.moo.age2 import AGEMOEA2
-from pymoo.algorithms.moo.ctaea import CTAEA
-from pymoo.algorithms.moo.moead import MOEAD
-from pymoo.algorithms.moo.nsga2 import NSGA2
-from pymoo.algorithms.moo.nsga3 import NSGA3, HyperplaneNormalization
-from pymoo.algorithms.moo.rvea import RVEA
-from pymoo.algorithms.moo.sms import SMSEMOA
-from pymoo.algorithms.moo.spea2 import SPEA2, SPEA2Survival
-from pymoo.algorithms.moo.unsga3 import UNSGA3
-from pymoo.core.repair import Repair
-from pymoo.decomposition.pbi import PBI
-from pymoo.decomposition.tchebicheff import Tchebicheff
-from pymoo.decomposition.weighted_sum import WeightedSum
-from pymoo.operators.crossover.hux import HUX
-from pymoo.operators.crossover.pntx import (SinglePointCrossover,
-                                            TwoPointCrossover)
-from pymoo.operators.crossover.ux import UX
-from pymoo.operators.mutation.bitflip import BitflipMutation
-from pymoo.operators.sampling.rnd import BinaryRandomSampling
-from pymoo.util.dominator import Dominator
-from pymoo.util.misc import vectorized_cdist
-from pymoo.util.ref_dirs import get_reference_directions
+import numpy as np # Importa la librería NumPy para operaciones numéricas y de arrays
+from pymoo.algorithms.moo.age2 import AGEMOEA2 # Importa el algoritmo AGE-MOEA-II de PyMoo
+from pymoo.algorithms.moo.ctaea import CTAEA # Importa el algoritmo C-TAEA de PyMoo
+from pymoo.algorithms.moo.moead import MOEAD # Importa el algoritmo MOEA/D de PyMoo
+from pymoo.algorithms.moo.nsga2 import NSGA2 # Importa el algoritmo NSGA-II de PyMoo
+from pymoo.algorithms.moo.nsga3 import NSGA3, HyperplaneNormalization # Importa NSGA-III y utilidades de normalización de PyMoo
+from pymoo.algorithms.moo.rvea import RVEA # Importa el algoritmo RVEA de PyMoo
+from pymoo.algorithms.moo.sms import SMSEMOA # Importa el algoritmo SMS-EMOA de PyMoo
+from pymoo.algorithms.moo.spea2 import SPEA2, SPEA2Survival # Importa el algoritmo SPEA2 y su operador de supervivencia de PyMoo
+from pymoo.algorithms.moo.unsga3 import UNSGA3 # Importa el algoritmo U-NSGA-III de PyMoo
+from pymoo.core.repair import Repair # Importa la clase base Repair para operadores de reparación personalizados
+from pymoo.decomposition.pbi import PBI # Importa la descomposición PBI para algoritmos basados en descomposición
+from pymoo.decomposition.tchebicheff import Tchebicheff # Importa la descomposición de Tchebicheff
+from pymoo.decomposition.weighted_sum import WeightedSum # Importa la descomposición por Suma Ponderada
+from pymoo.operators.crossover.hux import HUX # Importa el operador de cruzamiento Half Uniform (HUX)
+from pymoo.operators.crossover.pntx import SinglePointCrossover, TwoPointCrossover # Importa operadores de cruzamiento de uno y dos puntos
+from pymoo.operators.crossover.ux import UX # Importa el operador de cruzamiento Uniforme (UX)
+from pymoo.operators.mutation.bitflip import BitflipMutation # Importa el operador de mutación Bitflip para genotipos binarios
+from pymoo.operators.sampling.rnd import BinaryRandomSampling # Importa el muestreo aleatorio binario estándar de PyMoo
+from pymoo.util.dominator import Dominator # Importa la utilidad Dominator para comparaciones de Pareto
+from pymoo.util.misc import vectorized_cdist # Importa la función de cálculo de distancias vectorizadas
+from pymoo.util.ref_dirs import get_reference_directions # Importa la función para generar direcciones de referencia (Das-Dennis)
 
 # =============================================================================
 # MÓDULOS LOCALES (snp_tag)
 # =============================================================================
-from snp_tag.config import ConfiguracionExperimento
-from snp_tag.core.sampling import (MuestreoAleatorioDisperso,
-                                   MuestreoGreedyHolistico,
-                                   MuestreoGreedyMultiCobertura,
-                                   MuestreoGreedyTing)
+from snp_tag.config import ConfiguracionExperimento # Importa la clase de configuración del experimento
+from snp_tag.core.sampling import MuestreoAleatorioDisperso, MuestreoGreedyHolistico, MuestreoGreedyMultiCobertura, MuestreoGreedyTing # Importa los métodos de inicialización personalizados
 
 
-
-def construir_direcciones_referencia(tam_poblacion, n_obj=4): # Función para generar las direcciones de referencia de Das-Dennis
+def construir_direcciones_referencia(tam_poblacion, n_obj=4):
     """
     Genera direcciones de referencia balanceadas para algoritmos basados en descomposición.
     Fuerza compatibilidad estricta con los tamaños de población de Das-Dennis.
@@ -70,13 +65,12 @@ def construir_direcciones_referencia(tam_poblacion, n_obj=4): # Función para ge
         p += 1 # Incrementa el número de particiones para la siguiente iteración del bucle
 
 
-
-class ReparacionSNP(Repair): # Clase de reparación de soluciones binarias
+class ReparacionSNP(Repair):
     """
     Operador de reparación que intercepta individuos vacíos (k=0) y activa 
     un SNP aleatorio para mantener la validez del fenotipo y la diversidad.
     """
-    def _do(self, problem, Z, **kwargs): # Método principal que implementa la lógica de la reparación
+    def _do(self, problem, Z, **kwargs):
         k = Z.sum(axis=1) # Suma las variables de decisión activas (True) de cada solución en la matriz Z
         vacios = np.where(k == 0)[0] # Encuentra los índices de aquellas soluciones que no tienen ningún SNP activo (k = 0)
         if len(vacios) > 0: # Comprueba si existe al menos un individuo vacío en el conjunto
@@ -84,8 +78,7 @@ class ReparacionSNP(Repair): # Clase de reparación de soluciones binarias
                 Z[idx, np.random.randint(0, problem.n_var)] = True # Activa un SNP al azar para evitar que la solución se quede sin Tag SNPs
         return Z # Retorna la matriz de variables de decisión reparada
 
-def fabricar_algoritmo(problema, H, nombre_algo, nombre_init, nombre_crossover, cfg: ConfiguracionExperimento, # Definición de la función constructora del algoritmo evolutivo
-                       semilla=42, dirs_ref=None): # Continuación de la firma de la función constructora con parámetros adicionales
+def fabricar_algoritmo(problema, H, nombre_algo, nombre_init, nombre_crossover, cfg: ConfiguracionExperimento, semilla=42, dirs_ref=None):
     """
     Instancia un algoritmo específico con su estrategia de muestreo y operadores.
     """
@@ -98,7 +91,6 @@ def fabricar_algoritmo(problema, H, nombre_algo, nombre_init, nombre_crossover, 
         sampling = MuestreoAleatorioDisperso(prob=prob_esperada, semilla=semilla) # Instancia el operador de muestreo aleatorio disperso con la probabilidad calculada
     elif base_init == 'random_dense': # Comprueba si se solicita muestreo denso aleatorio estándar
         sampling = BinaryRandomSampling() # Instancia la clase de muestreo binario aleatorio estándar de pymoo
-
     elif base_init == 'greedy_multi': # Comprueba si el método seleccionado es el muestreo greedy multi-cobertura
         sampling = MuestreoGreedyMultiCobertura( # Instancia la clase MuestreoGreedyMultiCobertura
             H, # Pasa el diccionario H con la información de los desequilibrios de ligamiento
@@ -230,7 +222,6 @@ def fabricar_algoritmo(problema, H, nombre_algo, nombre_init, nombre_crossover, 
             mutation=mutacion, # Asigna el operador de mutación para la exploración
             repair=reparador, # Asigna el reparador de cromosomas para evitar k=0
         ) # Cierre del constructor del algoritmo MOEAD
-
 
         return algoritmo # Retorna la instancia configurada del algoritmo MOEA/D
 

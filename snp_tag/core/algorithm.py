@@ -125,7 +125,7 @@ def fabricar_algoritmo(problema, H, nombre_algo, nombre_init, nombre_crossover, 
     else: # Si no se solicita ninguno de los anteriores, se asume cruce uniforme clásico
         cruce = UX(prob=cfg.pc) # Instancia el operador UX con la probabilidad de cruce configurada
         
-    mutacion = BitflipMutation(prob=cfg.pm) # Instancia el operador de mutación por inversión de bits (BitflipMutation)
+    mutacion = BitflipMutation(prob=1.0, prob_var=cfg.pm) # Instancia el operador de mutación por inversión de bits (BitflipMutation)
     reparador = ReparacionSNP() # Crea una instancia del operador de reparación personalizado para corregir soluciones vacías
 
     if nombre_algo == 'NSGA2': # Comprueba si el algoritmo solicitado es NSGA-II

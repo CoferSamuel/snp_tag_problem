@@ -6,3 +6,5 @@ seaborn
 scipy
 statsmodels
 scikit-posthocs
+numba
+pytest
